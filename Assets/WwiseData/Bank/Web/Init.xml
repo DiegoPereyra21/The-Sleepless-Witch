@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Web" BasePlatform="Web" SchemaVersion="16" SoundBankVersion="172">
+<SoundBanksInfo Platform="Web" BasePlatform="Web" SchemaVersion="16" SoundBankVersion="176">
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{89F7C2E8-EC7B-8322-277D-DE9A96C63FF2}">
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{B749F6D1-8959-B6EF-E20F-09532F6F68FF}">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -19,11 +19,11 @@
 				<Bus Id="3991942870" Name="Music" ObjectPath="\Busses\Default Work Unit\Main Audio Bus\Music" GUID="{1F6F3D9C-C5A2-433F-99C3-110E0EC47994}"/>
 			</Busses>
 			<GameParameters>
-				<GameParameter Id="421429125" Name="GeneralVolume" ObjectPath="\Game Parameters\Default Work Unit\GeneralVolume" GUID="{CE83A0A2-18A9-473F-B22F-D508DE388C9C}"/>
-				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume" GUID="{DFB3BC0A-887E-4C08-9D50-CE0433B1106E}"/>
-				<GameParameter Id="1786260118" Name="MenuVolume" ObjectPath="\Game Parameters\Default Work Unit\MenuVolume" GUID="{E3388098-B798-4C09-B900-93DCECD91828}"/>
-				<GameParameter Id="2346531308" Name="MusicVolume" ObjectPath="\Game Parameters\Default Work Unit\MusicVolume" GUID="{63AE203E-86D2-4D19-A59B-BE928F65C12C}"/>
-				<GameParameter Id="3546521921" Name="AmbientVolume" ObjectPath="\Game Parameters\Default Work Unit\AmbientVolume" GUID="{8163CA6C-8E10-4D16-A6F4-CFBA9F5472BA}"/>
+				<GameParameter Id="421429125" Name="GeneralVolume" ObjectPath="\Game Parameters\Default Work Unit\GeneralVolume" GUID="{CE83A0A2-18A9-473F-B22F-D508DE388C9C}" Min="0" Max="100" DefaultValue="100"/>
+				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume" GUID="{DFB3BC0A-887E-4C08-9D50-CE0433B1106E}" Min="0" Max="100" DefaultValue="100"/>
+				<GameParameter Id="1786260118" Name="MenuVolume" ObjectPath="\Game Parameters\Default Work Unit\MenuVolume" GUID="{E3388098-B798-4C09-B900-93DCECD91828}" Min="0" Max="100" DefaultValue="100"/>
+				<GameParameter Id="2346531308" Name="MusicVolume" ObjectPath="\Game Parameters\Default Work Unit\MusicVolume" GUID="{63AE203E-86D2-4D19-A59B-BE928F65C12C}" Min="0" Max="100" DefaultValue="100"/>
+				<GameParameter Id="3546521921" Name="AmbientVolume" ObjectPath="\Game Parameters\Default Work Unit\AmbientVolume" GUID="{8163CA6C-8E10-4D16-A6F4-CFBA9F5472BA}" Min="0" Max="100" DefaultValue="100"/>
 			</GameParameters>
 			<SwitchGroups>
 				<SwitchGroup Id="3729505769" Name="TimeOfDay" ObjectPath="\Switches\Default Work Unit\TimeOfDay" GUID="{23F89E85-B734-4984-91E6-411EE61C94F0}">
@@ -35,5 +35,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{0BC3B044-079D-3ADE-C13B-1BE62610925E}</FileHash>
+	<FileHash>{255EF975-A740-4175-103F-9321F8BB54BC}</FileHash>
 </SoundBanksInfo>

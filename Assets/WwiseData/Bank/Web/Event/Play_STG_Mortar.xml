@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Web" BasePlatform="Web" SchemaVersion="16" SoundBankVersion="172">
+<SoundBanksInfo Platform="Web" BasePlatform="Web" SchemaVersion="16" SoundBankVersion="176">
 	<SoundBanks>
-		<SoundBank Id="358402734" Type="Event" GUID="{74918F02-B781-4BB8-959D-34AF096650FF}" Language="SFX" Hash="{1DB80FAB-AAA9-CAB6-3FED-1092ADB4E37B}">
+		<SoundBank Id="358402734" Type="Event" GUID="{74918F02-B781-4BB8-959D-34AF096650FF}" Language="SFX" Hash="{4D466212-38EC-4C12-B582-DC9D55CDFA35}">
 			<ObjectPath>Play_STG_Mortar</ObjectPath>
 			<ShortName>Play_STG_Mortar</ShortName>
 			<Path>Event/Play_STG_Mortar.bnk</Path>
@@ -9,7 +9,7 @@
 				<File Id="71216937" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>fronbondi_skegs-sfx-unsettling-grinding-of-ceramic-tiles-sound-effects-243893.wav</ShortName>
 					<Path>Media/71216937.wem</Path>
-					<CachePath>A9/{A9311BDA-8271-0E5D-B868-D24DBD1356A3}.wem</CachePath>
+					<CachePath>54/{54BE5952-D852-E42E-A785-D98D4B6FAECB}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -21,5 +21,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{24580224-E030-EBC7-4D75-C28F02479447}</FileHash>
+	<FileHash>{538B0611-4737-B135-3401-B777E81CF652}</FileHash>
 </SoundBanksInfo>

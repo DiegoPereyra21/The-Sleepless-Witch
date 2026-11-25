@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="Project" SchemaVersion="133" WwiseVersion="v2025.1.10" WwiseBuild="9233">
+<WwiseDocument Type="Project" SchemaVersion="139" WwiseVersion="v2026.1.4" WwiseBuild="9341">
 	<ProjectInfo>
 		<Project Name="GAGD-JAM_WwiseProject" ID="{E07FC0C7-F1D1-4C29-A3EE-58989F0229E3}">
 			<Platforms>
-				<Platform Name="Mac" ReferencePlatform="Mac" ID="{AE98B059-9A74-45E4-A5A1-646222D73B46}" />
-				<Platform Name="Web" ReferencePlatform="Web" ID="{A54A8524-6820-44D4-B4A8-871FD8EA99A8}" />
-				<Platform Name="Windows" ReferencePlatform="Windows" ID="{46139708-5573-4FAC-BC72-7C16EEEEEB20}" />
-				<Platform Name="XboxOne" ReferencePlatform="XboxOne" ID="{F2301E07-3C02-4DB0-AFB3-7E4B9D25B670}" />
-				<Platform Name="XboxSeriesX" ReferencePlatform="XboxSeriesX" ID="{F09830F2-0797-4767-B233-EF9E6DB9F347}" />
+				<Platform Name="Mac" ReferencePlatform="Mac" ID="{AE98B059-0000-0000-0000-000000000000}" />
+				<Platform Name="Web" ReferencePlatform="Web" ID="{A54A8524-0000-0000-0000-000000000000}" />
+				<Platform Name="Windows" ReferencePlatform="Windows" ID="{46139708-0000-0000-0000-000000000000}" />
+				<Platform Name="XboxOne" ReferencePlatform="XboxOne" ID="{F2301E07-0000-0000-0000-000000000000}" />
+				<Platform Name="XboxSeriesX" ReferencePlatform="XboxSeriesX" ID="{F09830F2-0000-0000-0000-000000000000}" />
 			</Platforms>
 			<LanguageList>
 				<Language Name="English(US)" ID="{9A456FA4-E765-4BE0-822B-5E0CAE28EE45}" />
@@ -19,20 +19,20 @@
 				<Property Name="AutoSoundBankEnabled" Type="bool" Value="True" />
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
+						<Value Platform="Windows"></Value>
 						<Value Platform="Web"></Value>
 						<Value Platform="Mac"></Value>
 						<Value Platform="XboxSeriesX"></Value>
 						<Value Platform="XboxOne"></Value>
-						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="ExternalSourcesOutputPath" Type="string">
 					<ValueList>
+						<Value Platform="Windows">..\Assets\GeneratedSoundBanks\Windows</Value>
 						<Value Platform="Web">..\Assets\GeneratedSoundBanks\Web</Value>
 						<Value Platform="Mac">..\Assets\GeneratedSoundBanks\Mac</Value>
 						<Value Platform="XboxSeriesX">..\Assets\GeneratedSoundBanks\XboxSeriesX</Value>
 						<Value Platform="XboxOne">..\Assets\GeneratedSoundBanks\XboxOne</Value>
-						<Value Platform="Windows">..\Assets\GeneratedSoundBanks\Windows</Value>
 					</ValueList>
 				</Property>
 				<Property Name="GenerateMainSoundBank" Type="bool" Value="True" />
@@ -41,47 +41,47 @@
 				<Property Name="SoundBankGenerateEstimatedDuration" Type="bool" Value="True" /><Property Name="SoundBankHeaderFilePath" Type="string" Value="..\Assets\WwiseData\Bank" />
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>
+						<Value Platform="Windows">..\Assets\WwiseData\Bank\Windows\</Value>
 						<Value Platform="Web">..\Assets\WwiseData\Bank\Web\</Value>
 						<Value Platform="Mac">..\Assets\WwiseData\Bank\Mac\</Value>
 						<Value Platform="XboxSeriesX">..\Assets\WwiseData\Bank\XboxSeriesX\</Value>
 						<Value Platform="XboxOne">..\Assets\WwiseData\Bank\XboxOne\</Value>
-						<Value Platform="Windows">..\Assets\WwiseData\Bank\Windows\</Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">
 					<ValueList>
+						<Value Platform="Windows"></Value>
 						<Value Platform="Web"></Value>
 						<Value Platform="Mac"></Value>
 						<Value Platform="XboxSeriesX"></Value>
 						<Value Platform="XboxOne"></Value>
-						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPostGenerateCustomCmdLines" Type="string">
 					<ValueList>
+						<Value Platform="Windows"></Value>
 						<Value Platform="Web"></Value>
 						<Value Platform="Mac"></Value>
 						<Value Platform="XboxSeriesX"></Value>
 						<Value Platform="XboxOne"></Value>
-						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPreGenerateCustomCmdDescription" Type="string">
 					<ValueList>
+						<Value Platform="Windows"></Value>
 						<Value Platform="Web"></Value>
 						<Value Platform="Mac"></Value>
 						<Value Platform="XboxSeriesX"></Value>
 						<Value Platform="XboxOne"></Value>
-						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPreGenerateCustomCmdLines" Type="string">
 					<ValueList>
+						<Value Platform="Windows"></Value>
 						<Value Platform="Web"></Value>
 						<Value Platform="Mac"></Value>
 						<Value Platform="XboxSeriesX"></Value>
 						<Value Platform="XboxOne"></Value>
-						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="WwiseVersionWhenCreated" Type="string" Value="Branch=wwise_v2025.1.10|Build=9233|VersionName=v2025.1.10|Config=Release" />
@@ -3918,16 +3918,6 @@
 				</SharedPropertyList>
 				<SharedPropertyList ClassName="RTPC" PluginType="0" CompanyID="1" PluginID="22">
 					<PropertyList>
-						<Property Name="Color" Type="int16">
-							<ValueList>
-								<Value>0</Value>
-							</ValueList>
-						</Property>
-						<Property Name="OverrideColor" Type="bool">
-							<ValueList>
-								<Value>False</Value>
-							</ValueList>
-						</Property>
 						<Property Name="PropertyName" Type="string">
 							<ValueList>
 								<Value></Value>
@@ -4056,7 +4046,7 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="MusicSegment" PluginType="0" CompanyID="1" PluginID="27">
+				<SharedPropertyList ClassName="Segment" PluginType="0" CompanyID="1" PluginID="27">
 					<PropertyList>
 						<Property Name="3DPosition" Type="int16">
 							<ValueList>
@@ -4468,9 +4458,14 @@
 								<Value>0</Value>
 							</ValueList>
 						</Property>
+						<Property Name="Weight" Type="Real64">
+							<ValueList>
+								<Value>50</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="MusicTrack" PluginType="0" CompanyID="1" PluginID="28">
+				<SharedPropertyList ClassName="Track" PluginType="0" CompanyID="1" PluginID="28">
 					<PropertyList>
 						<Property Name="3DPosition" Type="int16">
 							<ValueList>
@@ -4607,11 +4602,6 @@
 								<Value>True</Value>
 							</ValueList>
 						</Property>
-						<Property Name="LookAheadTime" Type="int16">
-							<ValueList>
-								<Value>100</Value>
-							</ValueList>
-						</Property>
 						<Property Name="LoudnessNormalizationTarget" Type="Real64">
 							<ValueList>
 								<Value>-23</Value>
@@ -4643,11 +4633,6 @@
 							</ValueList>
 						</Property>
 						<Property Name="MidiTempoSource" Type="int16">
-							<ValueList>
-								<Value>0</Value>
-							</ValueList>
-						</Property>
-						<Property Name="MusicTrackType" Type="int16">
 							<ValueList>
 								<Value>0</Value>
 							</ValueList>
@@ -4785,6 +4770,11 @@
 						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32">
 							<ValueList>
 								<Value>100</Value>
+							</ValueList>
+						</Property>
+						<Property Name="TrackType" Type="int16">
+							<ValueList>
+								<Value>0</Value>
 							</ValueList>
 						</Property>
 						<Property Name="UseGameAuxSends" Type="bool">
@@ -5493,11 +5483,6 @@
 								<Value>0</Value>
 							</ValueList>
 						</Property>
-						<Property Name="MusicSegment" Type="string">
-							<ValueList>
-								<Value></Value>
-							</ValueList>
-						</Property>
 						<Property Name="NumericOperator" Type="int16">
 							<ValueList>
 								<Value>0</Value>
@@ -5541,6 +5526,11 @@
 						<Property Name="SampleRateConversionType" Type="int16">
 							<ValueList>
 								<Value>0</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Segment" Type="string">
+							<ValueList>
+								<Value></Value>
 							</ValueList>
 						</Property>
 						<Property Name="SoundType" Type="int16">
@@ -6497,7 +6487,7 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="MusicTransition" PluginType="0" CompanyID="1" PluginID="37">
+				<SharedPropertyList ClassName="Transition" PluginType="0" CompanyID="1" PluginID="37">
 					<PropertyList>
 						<Property Name="Color" Type="int16">
 							<ValueList>
@@ -6601,7 +6591,7 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="MusicStinger" PluginType="0" CompanyID="1" PluginID="38">
+				<SharedPropertyList ClassName="Stinger" PluginType="0" CompanyID="1" PluginID="38">
 					<PropertyList>
 						<Property Name="Color" Type="int16">
 							<ValueList>
@@ -6635,7 +6625,7 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="MusicFade" PluginType="0" CompanyID="1" PluginID="39">
+				<SharedPropertyList ClassName="Fade" PluginType="0" CompanyID="1" PluginID="39">
 					<PropertyList>
 						<Property Name="FadeCurve" Type="int16">
 							<ValueList>
@@ -7106,7 +7096,7 @@
 					</PropertyList>
 				</SharedPropertyList>
 				<SharedPropertyList ClassName="ExternalSource" PluginType="0" CompanyID="1" PluginID="57" />
-				<SharedPropertyList ClassName="MusicTrackSequence" PluginType="0" CompanyID="1" PluginID="58">
+				<SharedPropertyList ClassName="TrackSequence" PluginType="0" CompanyID="1" PluginID="58">
 					<PropertyList>
 						<Property Name="Color" Type="int16">
 							<ValueList>
@@ -7120,7 +7110,7 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="MusicCue" PluginType="0" CompanyID="1" PluginID="59">
+				<SharedPropertyList ClassName="Cue" PluginType="0" CompanyID="1" PluginID="59">
 					<PropertyList>
 						<Property Name="Color" Type="int16">
 							<ValueList>
@@ -7144,7 +7134,7 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="MusicClip" PluginType="0" CompanyID="1" PluginID="60">
+				<SharedPropertyList ClassName="AudioClip" PluginType="0" CompanyID="1" PluginID="60">
 					<PropertyList>
 						<Property Name="BeginTrimOffset" Type="Real64">
 							<ValueList>
@@ -7432,7 +7422,7 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="MusicClipMidi" PluginType="0" CompanyID="1" PluginID="62">
+				<SharedPropertyList ClassName="MidiClip" PluginType="0" CompanyID="1" PluginID="62">
 					<PropertyList>
 						<Property Name="BeginTrimOffset" Type="Real64">
 							<ValueList>
@@ -7777,8 +7767,18 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="MusicEventCue" PluginType="0" CompanyID="1" PluginID="77">
+				<SharedPropertyList ClassName="EventCue" PluginType="0" CompanyID="1" PluginID="77">
 					<PropertyList>
+						<Property Name="Color" Type="int16">
+							<ValueList>
+								<Value>0</Value>
+							</ValueList>
+						</Property>
+						<Property Name="OverrideColor" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="PlayAt" Type="Real64">
 							<ValueList>
 								<Value>0</Value>
@@ -7897,6 +7897,16 @@
 				<SharedPropertyList ClassName="EffectSlot" PluginType="0" CompanyID="1" PluginID="84">
 					<PropertyList>
 						<Property Name="Bypass" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Color" Type="int16">
+							<ValueList>
+								<Value>0</Value>
+							</ValueList>
+						</Property>
+						<Property Name="OverrideColor" Type="bool">
 							<ValueList>
 								<Value>False</Value>
 							</ValueList>
@@ -8053,6 +8063,40 @@
 						<Property Name="Path" Type="string">
 							<ValueList>
 								<Value></Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+				</SharedPropertyList>
+				<SharedPropertyList ClassName="Ducking" PluginType="0" CompanyID="0" PluginID="91">
+					<PropertyList>
+						<Property Name="DuckingVolume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+						<Property Name="FadeInCurve" Type="int16">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+						<Property Name="FadeInTime" Type="Real64">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="FadeOutCurve" Type="int16">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+						<Property Name="FadeOutTime" Type="Real64">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="TargetProp" Type="int32">
+							<ValueList>
+								<Value>0</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -10311,6 +10355,11 @@
 								<Value>0</Value>
 							</ValueList>
 						</Property>
+						<Property Name="Gain" Type="Real32">
+							<ValueList>
+								<Value>0</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Hold" Type="Real32">
 							<ValueList>
 								<Value>0</Value>
@@ -12192,6 +12241,31 @@
 								<Value>True</Value>
 							</ValueList>
 						</Property>
+						<Property Name="Gain_Band0" Type="Real32">
+							<ValueList>
+								<Value>0</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Gain_Band1" Type="Real32">
+							<ValueList>
+								<Value>0</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Gain_Band2" Type="Real32">
+							<ValueList>
+								<Value>0</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Gain_Band3" Type="Real32">
+							<ValueList>
+								<Value>0</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Gain_Band4" Type="Real32">
+							<ValueList>
+								<Value>0</Value>
+							</ValueList>
+						</Property>
 						<Property Name="HighFrequency_Band1" Type="Real32">
 							<ValueList>
 								<Value>200</Value>
@@ -12265,6 +12339,11 @@
 						<Property Name="InfiniteHold" Type="bool">
 							<ValueList>
 								<Value>False</Value>
+							</ValueList>
+						</Property>
+						<Property Name="InputGain" Type="Real32">
+							<ValueList>
+								<Value>0</Value>
 							</ValueList>
 						</Property>
 						<Property Name="LowFrequency_Band1" Type="Real32">
@@ -12488,6 +12567,65 @@
 						<Property Name="OverrideColor" Type="bool">
 							<ValueList>
 								<Value>False</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+				</SharedPropertyList>
+				<SharedPropertyList ClassName="Tempest 3D AudioTech" PluginType="3" CompanyID="0" PluginID="211">
+					<PropertyList>
+						<Property Name="AmbisonicsBedOrder" Type="int32">
+							<ValueList>
+								<Value>5</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Color" Type="int16">
+							<ValueList>
+								<Value>0</Value>
+							</ValueList>
+						</Property>
+						<Property Name="ForceSoftwareProcessing" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
+						<Property Name="HrtfObjects" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="HrtfPersonalization" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="IgnoreOutputDeviceConfig" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Inclusion" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="MaxObjectCount" Type="int32">
+							<ValueList>
+								<Value>128</Value>
+							</ValueList>
+						</Property>
+						<Property Name="OverrideColor" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
+						<Property Name="ReferenceTriangleLookup" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
+						<Property Name="SameAsMainMixCfg" Type="int32">
+							<ValueList>
+								<Value>0</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>

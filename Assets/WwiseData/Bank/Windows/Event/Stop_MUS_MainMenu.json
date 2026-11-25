@@ -3,14 +3,14 @@
   "Platform": "Windows",
   "BasePlatform": "Windows",
   "SchemaVersion": "16",
-  "SoundBankVersion": "172",
+  "SoundBankVersion": "176",
   "SoundBanks": [
    {
     "Id": "4243441902",
     "Type": "Event",
     "GUID": "{00063086-C8F5-4E31-B546-3BA30C57B3FC}",
     "Language": "SFX",
-    "Hash": "{FDB06760-B43A-5E05-07E3-677004BC09A6}",
+    "Hash": "{D3204238-3E3A-3D1B-E01E-B54A56F7E297}",
     "ObjectPath": "Stop_MUS_MainMenu",
     "ShortName": "Stop_MUS_MainMenu",
     "Path": "Event/Stop_MUS_MainMenu.bnk",
@@ -28,6 +28,6 @@
     ]
    }
   ],
-  "FileHash": "{FF5CFE41-D0B8-1770-80CE-0CEC46A83C06}"
+  "FileHash": "{EDDE96D5-9EA4-7B99-FBC3-22AC155F6098}"
  }
 }

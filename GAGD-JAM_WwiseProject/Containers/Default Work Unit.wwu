@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{129C928C-6633-4E7A-A9C1-A240A4FE716E}" SchemaVersion="133">
+<WwiseDocument Type="WorkUnit" ID="{129C928C-6633-4E7A-A9C1-A240A4FE716E}" SchemaVersion="139">
 	<Containers>
 		<WorkUnit Name="Default Work Unit" ID="{129C928C-6633-4E7A-A9C1-A240A4FE716E}" PersistMode="Standalone">
 			<ChildrenList>
@@ -1520,40 +1520,43 @@
 								</Reference>
 								<Reference Name="TransitionRoot">
 									<Custom>
-										<MusicTransition Name="Root" ID="{65FD3600-CAE1-4360-A885-39FB38379DCE}">
+										<Transition Name="Root" ID="{65FD3600-CAE1-4360-A885-39FB38379DCE}">
 											<PropertyList>
 												<Property Name="IsFolder" Type="bool" Value="True"/>
 											</PropertyList>
 											<ChildrenList>
-												<MusicTransition Name="Transition" ID="{B64256FF-24AB-4B9C-B270-617DA6A29252}">
+												<Transition Name="Transition" ID="{B64256FF-24AB-4B9C-B270-617DA6A29252}">
 													<PropertyList>
 														<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
 														<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
 														<Property Name="ExitSourceAt" Type="int16" Value="2"/>
 													</PropertyList>
-													<TransitionInfo>
-														<SourceFadeOut>
-															<MusicFade Name="Source Fade-out" ID="{EC31FC19-1018-4563-9977-F96C00C0D188}">
-																<PropertyList>
-																	<Property Name="FadeCurve" Type="int16" Value="5"/>
-																	<Property Name="FadeTime" Type="Real64" Value="1.5"/>
-																	<Property Name="FadeType" Type="int16" Value="1"/>
-																</PropertyList>
-															</MusicFade>
-														</SourceFadeOut>
-														<DestinationFadeIn>
-															<MusicFade Name="Destination Fade-in" ID="{FC847240-AF94-42B3-A30A-8244D646E322}">
-																<PropertyList>
-																	<Property Name="FadeCurve" Type="int16" Value="5"/>
-																	<Property Name="FadeTime" Type="Real64" Value="1.5"/>
-																</PropertyList>
-															</MusicFade>
-														</DestinationFadeIn>
-													</TransitionInfo>
-												</MusicTransition>
+													<ReferenceList>
+														<Reference Name="DestinationFadeIn">
+															<Custom>
+																<Fade Name="Destination Fade-in" ID="{FC847240-AF94-42B3-A30A-8244D646E322}">
+																	<PropertyList>
+																		<Property Name="FadeCurve" Type="int16" Value="5"/>
+																		<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+																	</PropertyList>
+																</Fade>
+															</Custom>
+														</Reference>
+														<Reference Name="SourceFadeOut">
+															<Custom>
+																<Fade Name="Source Fade-out" ID="{EC31FC19-1018-4563-9977-F96C00C0D188}">
+																	<PropertyList>
+																		<Property Name="FadeCurve" Type="int16" Value="5"/>
+																		<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+																		<Property Name="FadeType" Type="int16" Value="1"/>
+																	</PropertyList>
+																</Fade>
+															</Custom>
+														</Reference>
+													</ReferenceList>
+												</Transition>
 											</ChildrenList>
-											<TransitionInfo/>
-										</MusicTransition>
+										</Transition>
 									</Custom>
 								</Reference>
 							</ReferenceList>
@@ -1590,22 +1593,19 @@
 										</Reference>
 										<Reference Name="TransitionRoot">
 											<Custom>
-												<MusicTransition Name="Root" ID="{F83437A9-D7D5-413D-9F08-D7E93DCD05A3}">
+												<Transition Name="Root" ID="{F83437A9-D7D5-413D-9F08-D7E93DCD05A3}">
 													<PropertyList>
 														<Property Name="IsFolder" Type="bool" Value="True"/>
 													</PropertyList>
 													<ChildrenList>
-														<MusicTransition Name="Transition" ID="{A99E77F7-71DD-44BE-9A28-89E2837D6997}">
-															<TransitionInfo/>
-														</MusicTransition>
+														<Transition Name="Transition" ID="{A99E77F7-71DD-44BE-9A28-89E2837D6997}"/>
 													</ChildrenList>
-													<TransitionInfo/>
-												</MusicTransition>
+												</Transition>
 											</Custom>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<MusicSegment Name="Day" ID="{D7C2B311-5B99-4382-AABF-CA0257AD6E67}" ShortID="468624580">
+										<Segment Name="Day" ID="{D7C2B311-5B99-4382-AABF-CA0257AD6E67}" ShortID="468624580">
 											<PropertyList>
 												<Property Name="EndPosition" Type="Real64" Value="112024.083700153"/>
 												<Property Name="Volume" Type="Real64">
@@ -1623,7 +1623,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<MusicTrack Name="DayTrack" ID="{A119841F-04A6-4471-AE99-6578790DA0EF}" ShortID="777238006">
+												<Track Name="DayTrack" ID="{A119841F-04A6-4471-AE99-6578790DA0EF}" ShortID="777238006">
 													<PropertyList>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
@@ -1637,12 +1637,11 @@
 														</Reference>
 														<Reference Name="TransitionRoot">
 															<Custom>
-																<MusicTransition Name="Root" ID="{411FC504-7524-4A44-A6DC-DD394E9AD55C}">
+																<Transition Name="Root" ID="{411FC504-7524-4A44-A6DC-DD394E9AD55C}">
 																	<PropertyList>
 																		<Property Name="IsFolder" Type="bool" Value="True"/>
 																	</PropertyList>
-																	<TransitionInfo/>
-																</MusicTransition>
+																</Transition>
 															</Custom>
 														</Reference>
 													</ReferenceList>
@@ -1657,36 +1656,36 @@
 													</ChildrenList>
 													<ObjectLists>
 														<ObjectList Name="Sequences">
-															<MusicTrackSequence Name="" ID="{1086B094-E49E-4F35-ACFC-B82FAC8B3126}">
+															<TrackSequence Name="" ID="{1086B094-E49E-4F35-ACFC-B82FAC8B3126}">
 																<ObjectLists>
 																	<ObjectList Name="Clips">
-																		<MusicClip Name="Minimal mix" ID="{DBCE1C39-BE14-44DC-A7EE-6895AC2C05B3}">
+																		<AudioClip Name="Minimal mix" ID="{DBCE1C39-BE14-44DC-A7EE-6895AC2C05B3}">
 																			<PropertyList>
 																				<Property Name="EndTrimOffset" Type="Real64" Value="93333.3333333333"/>
 																				<Property Name="FadeInMode" Type="int16" Value="0"/>
 																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																			</PropertyList>
 																			<AudioSourceRef Name="Minimal mix" ID="{9DE9C117-31A9-49C8-8EC3-911F42E77320}"/>
-																		</MusicClip>
+																		</AudioClip>
 																	</ObjectList>
 																</ObjectLists>
-															</MusicTrackSequence>
+															</TrackSequence>
 														</ObjectList>
 													</ObjectLists>
-												</MusicTrack>
+												</Track>
 											</ChildrenList>
 											<ObjectLists>
 												<ObjectList Name="Cues">
-													<MusicCue Name="Entry Cue" ID="{7919A2CC-2EE4-42B0-A65B-F06CEDA2B657}"/>
-													<MusicCue Name="Exit Cue" ID="{4406B94C-A42B-4CB6-A6CF-A9BBF01515A6}">
+													<Cue Name="Entry Cue" ID="{7919A2CC-2EE4-42B0-A65B-F06CEDA2B657}"/>
+													<Cue Name="Exit Cue" ID="{4406B94C-A42B-4CB6-A6CF-A9BBF01515A6}">
 														<PropertyList>
 															<Property Name="CueType" Type="int16" Value="1"/>
 															<Property Name="TimeMs" Type="Real64" Value="93304.3815152547"/>
 														</PropertyList>
-													</MusicCue>
+													</Cue>
 												</ObjectList>
 											</ObjectLists>
-										</MusicSegment>
+										</Segment>
 									</ChildrenList>
 								</MusicPlaylistContainer>
 								<MusicPlaylistContainer Name="NightLoop" ID="{1BCBE885-D487-4C0D-A780-E317319141F5}" ShortID="34211420">
@@ -1721,22 +1720,19 @@
 										</Reference>
 										<Reference Name="TransitionRoot">
 											<Custom>
-												<MusicTransition Name="Root" ID="{303D0453-3414-4F51-A82E-813DFAEB4911}">
+												<Transition Name="Root" ID="{303D0453-3414-4F51-A82E-813DFAEB4911}">
 													<PropertyList>
 														<Property Name="IsFolder" Type="bool" Value="True"/>
 													</PropertyList>
 													<ChildrenList>
-														<MusicTransition Name="Transition" ID="{7B4C735D-BD0F-4F9E-950D-92914B827753}">
-															<TransitionInfo/>
-														</MusicTransition>
+														<Transition Name="Transition" ID="{7B4C735D-BD0F-4F9E-950D-92914B827753}"/>
 													</ChildrenList>
-													<TransitionInfo/>
-												</MusicTransition>
+												</Transition>
 											</Custom>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<MusicSegment Name="Night" ID="{A09B8193-EBF9-4CD8-8E9F-BCDF7BB8180F}" ShortID="624417301">
+										<Segment Name="Night" ID="{A09B8193-EBF9-4CD8-8E9F-BCDF7BB8180F}" ShortID="624417301">
 											<PropertyList>
 												<Property Name="EndPosition" Type="Real64" Value="99283.8295081217"/>
 												<Property Name="Volume" Type="Real64">
@@ -1754,7 +1750,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<MusicTrack Name="NightTrack" ID="{B70CAC5F-A232-4100-B2DC-725A9E957DC1}" ShortID="869238393">
+												<Track Name="NightTrack" ID="{B70CAC5F-A232-4100-B2DC-725A9E957DC1}" ShortID="869238393">
 													<PropertyList>
 														<Property Name="OverrideEffect" Type="bool" Value="True"/>
 														<Property Name="Volume" Type="Real64">
@@ -1772,12 +1768,11 @@
 														</Reference>
 														<Reference Name="TransitionRoot">
 															<Custom>
-																<MusicTransition Name="Root" ID="{69F2C357-A800-4E94-BBC8-DAB0B66387A6}">
+																<Transition Name="Root" ID="{69F2C357-A800-4E94-BBC8-DAB0B66387A6}">
 																	<PropertyList>
 																		<Property Name="IsFolder" Type="bool" Value="True"/>
 																	</PropertyList>
-																	<TransitionInfo/>
-																</MusicTransition>
+																</Transition>
 															</Custom>
 														</Reference>
 													</ReferenceList>
@@ -1801,10 +1796,10 @@
 															</EffectSlot>
 														</ObjectList>
 														<ObjectList Name="Sequences">
-															<MusicTrackSequence Name="" ID="{83EE2E9B-9AFE-4D5D-90C4-127F6214D607}">
+															<TrackSequence Name="" ID="{83EE2E9B-9AFE-4D5D-90C4-127F6214D607}">
 																<ObjectLists>
 																	<ObjectList Name="Clips">
-																		<MusicClip Name="Full Mix Low" ID="{3105B868-DBAB-45D3-9565-CDD0945F1B13}">
+																		<AudioClip Name="Full Mix Low" ID="{3105B868-DBAB-45D3-9565-CDD0945F1B13}">
 																			<PropertyList>
 																				<Property Name="EndTrimOffset" Type="Real64" Value="93333.3333333333"/>
 																				<Property Name="FadeInMode" Type="int16" Value="0"/>
@@ -1812,30 +1807,30 @@
 																				<Property Name="PlayAt" Type="Real64" Value="323.396531238501"/>
 																			</PropertyList>
 																			<AudioSourceRef Name="Full Mix Low" ID="{04B88353-05F4-4622-952D-4B77914425FD}"/>
-																		</MusicClip>
+																		</AudioClip>
 																	</ObjectList>
 																</ObjectLists>
-															</MusicTrackSequence>
+															</TrackSequence>
 														</ObjectList>
 													</ObjectLists>
-												</MusicTrack>
+												</Track>
 											</ChildrenList>
 											<ObjectLists>
 												<ObjectList Name="Cues">
-													<MusicCue Name="Entry Cue" ID="{F78D1161-69EA-48B0-8010-87E238D327E1}">
+													<Cue Name="Entry Cue" ID="{F78D1161-69EA-48B0-8010-87E238D327E1}">
 														<PropertyList>
 															<Property Name="TimeMs" Type="Real64" Value="323.396531238501"/>
 														</PropertyList>
-													</MusicCue>
-													<MusicCue Name="Exit Cue" ID="{5BAD52C7-ADD9-4493-904B-769BDE71CEF4}">
+													</Cue>
+													<Cue Name="Exit Cue" ID="{5BAD52C7-ADD9-4493-904B-769BDE71CEF4}">
 														<PropertyList>
 															<Property Name="CueType" Type="int16" Value="1"/>
 															<Property Name="TimeMs" Type="Real64" Value="93656.7298645718"/>
 														</PropertyList>
-													</MusicCue>
+													</Cue>
 												</ObjectList>
 											</ObjectLists>
-										</MusicSegment>
+										</Segment>
 									</ChildrenList>
 								</MusicPlaylistContainer>
 							</ChildrenList>

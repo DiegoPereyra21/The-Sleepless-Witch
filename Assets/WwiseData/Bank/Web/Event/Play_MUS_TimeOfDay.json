@@ -3,14 +3,14 @@
   "Platform": "Web",
   "BasePlatform": "Web",
   "SchemaVersion": "16",
-  "SoundBankVersion": "172",
+  "SoundBankVersion": "176",
   "SoundBanks": [
    {
     "Id": "1108381680",
     "Type": "Event",
     "GUID": "{F02C81DF-6990-4FB5-A1AF-9DB27C5C8916}",
     "Language": "SFX",
-    "Hash": "{25B569EB-C3FE-186C-7599-84FD5FC2C725}",
+    "Hash": "{E5A204F7-ECF7-0ABD-5ADE-5DADBD56BF9B}",
     "ObjectPath": "Play_MUS_TimeOfDay",
     "ShortName": "Play_MUS_TimeOfDay",
     "Path": "Event/Play_MUS_TimeOfDay.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "Minimal mix.wav",
       "Path": "Media/501813684.wem",
-      "CachePath": "7B/{7B36CC42-A5BE-4F7A-9094-C57264D839B3}.wem"
+      "CachePath": "50/{50CA8959-9CA3-8589-9BF6-658B747B08B3}.wem"
      },
      {
       "Id": "742675129",
@@ -31,7 +31,7 @@
       "Location": "Loose",
       "ShortName": "Full Mix Low.wav",
       "Path": "Media/742675129.wem",
-      "CachePath": "B8/{B841B54B-FEC5-8DCA-12AB-2F29A70F6E35}.wem"
+      "CachePath": "FC/{FC9C7F2E-C902-569B-D681-3596304F6CC8}.wem"
      }
     ],
     "Plugins": {
@@ -114,6 +114,6 @@
     ]
    }
   ],
-  "FileHash": "{93754560-78F0-ADC8-7D59-45EB22E7EFC4}"
+  "FileHash": "{EE791BD8-EEE7-484B-E47A-B5D16DFF31D9}"
  }
 }

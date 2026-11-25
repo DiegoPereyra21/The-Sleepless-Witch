@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="176">
 	<SoundBanks>
-		<SoundBank Id="176225071" Type="Event" GUID="{3988C77F-BCBF-402F-9B7C-54086E13365D}" Language="SFX" Hash="{22747D65-13DC-9D49-D270-9357C748941C}">
+		<SoundBank Id="176225071" Type="Event" GUID="{3988C77F-BCBF-402F-9B7C-54086E13365D}" Language="SFX" Hash="{47F42573-8AC6-2B46-D121-110CAFC5FF83}">
 			<ObjectPath>Play_STG_Cut</ObjectPath>
 			<ShortName>Play_STG_Cut</ShortName>
 			<Path>Event/Play_STG_Cut.bnk</Path>
@@ -9,7 +9,7 @@
 				<File Id="504329888" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>jam.wav</ShortName>
 					<Path>Media/504329888.wem</Path>
-					<CachePath>8D/{8D8C3892-B17A-15E5-4D55-F5576A814CB9}.wem</CachePath>
+					<CachePath>04/{04C032F0-E92F-E5AA-CA0C-E51D8747A3C8}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -21,5 +21,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A4243150-76CD-4A56-049A-185F2D898B59}</FileHash>
+	<FileHash>{2D3775D4-2A9A-F9E4-733A-D8EF5256D317}</FileHash>
 </SoundBanksInfo>

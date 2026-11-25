@@ -3,14 +3,14 @@
   "Platform": "Web",
   "BasePlatform": "Web",
   "SchemaVersion": "16",
-  "SoundBankVersion": "172",
+  "SoundBankVersion": "176",
   "SoundBanks": [
    {
     "Id": "358402734",
     "Type": "Event",
     "GUID": "{74918F02-B781-4BB8-959D-34AF096650FF}",
     "Language": "SFX",
-    "Hash": "{1DB80FAB-AAA9-CAB6-3FED-1092ADB4E37B}",
+    "Hash": "{4D466212-38EC-4C12-B582-DC9D55CDFA35}",
     "ObjectPath": "Play_STG_Mortar",
     "ShortName": "Play_STG_Mortar",
     "Path": "Event/Play_STG_Mortar.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "fronbondi_skegs-sfx-unsettling-grinding-of-ceramic-tiles-sound-effects-243893.wav",
       "Path": "Media/71216937.wem",
-      "CachePath": "A9/{A9311BDA-8271-0E5D-B868-D24DBD1356A3}.wem"
+      "CachePath": "54/{54BE5952-D852-E42E-A785-D98D4B6FAECB}.wem"
      }
     ],
     "Events": [
@@ -43,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{40A9F661-98FD-6ADB-79DB-11DDB2C2C965}"
+  "FileHash": "{93FDDA86-0037-3DAE-2F01-5BF21DC839AA}"
  }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PlatformInfo>
-	<Platform Name="Windows" BasePlatform="Windows" Generator="2025.1.10.9233"/>
+	<Platform Name="Windows" BasePlatform="Windows" Generator="2026.1.4.9341"/>
 	<RootPaths>
 		<ProjectRoot>../../../../GAGD-JAM_WwiseProject</ProjectRoot>
 		<SourceFilesRoot>../../../../GAGD-JAM_WwiseProject/.cache</SourceFilesRoot>
@@ -29,5 +29,5 @@
 		<PrintObjectPath>true</PrintObjectPath>
 		<PrintObjectColor>true</PrintObjectColor>
 	</Settings>
-	<FileHash>{043EDAC4-9618-1CFE-E50C-6394C904ADE0}</FileHash>
+	<FileHash>{642E7E14-E86F-19C3-B4FC-7CFF07D30C59}</FileHash>
 </PlatformInfo>

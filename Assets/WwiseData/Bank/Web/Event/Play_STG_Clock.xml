@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Web" BasePlatform="Web" SchemaVersion="16" SoundBankVersion="172">
+<SoundBanksInfo Platform="Web" BasePlatform="Web" SchemaVersion="16" SoundBankVersion="176">
 	<SoundBanks>
-		<SoundBank Id="3069328145" Type="Event" GUID="{8F0ABEC4-8BFE-4EF0-978D-9BAE7533E3A0}" Language="SFX" Hash="{5AC71150-A724-D15C-613D-46BEDD9BDD48}">
+		<SoundBank Id="3069328145" Type="Event" GUID="{8F0ABEC4-8BFE-4EF0-978D-9BAE7533E3A0}" Language="SFX" Hash="{56E95A71-317D-6EC9-DC81-4BFBB1FBF890}">
 			<ObjectPath>Play_STG_Clock</ObjectPath>
 			<ShortName>Play_STG_Clock</ShortName>
 			<Path>Event/Play_STG_Clock.bnk</Path>
@@ -9,7 +9,7 @@
 				<File Id="665275161" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>dragon-studio-slow-cinematic-clock-ticking-405471.wav</ShortName>
 					<Path>Media/665275161.wem</Path>
-					<CachePath>F5/{F5E59E60-4C4B-450B-98EE-92DE1A8B8A04}.wem</CachePath>
+					<CachePath>ED/{ED8CE5C0-487B-D012-56C6-E77E993841E6}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -21,5 +21,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{F79EB214-8C9C-9788-E8F5-643A2DCC62BD}</FileHash>
+	<FileHash>{0DB561F0-7771-2699-DFDA-D08FE0450E57}</FileHash>
 </SoundBanksInfo>

@@ -3,14 +3,14 @@
   "Platform": "Web",
   "BasePlatform": "Web",
   "SchemaVersion": "16",
-  "SoundBankVersion": "172",
+  "SoundBankVersion": "176",
   "SoundBanks": [
    {
     "Id": "176225071",
     "Type": "Event",
     "GUID": "{3988C77F-BCBF-402F-9B7C-54086E13365D}",
     "Language": "SFX",
-    "Hash": "{22747D65-13DC-9D49-D270-9357C748941C}",
+    "Hash": "{47F42573-8AC6-2B46-D121-110CAFC5FF83}",
     "ObjectPath": "Play_STG_Cut",
     "ShortName": "Play_STG_Cut",
     "Path": "Event/Play_STG_Cut.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "jam.wav",
       "Path": "Media/504329888.wem",
-      "CachePath": "8D/{8D8C3892-B17A-15E5-4D55-F5576A814CB9}.wem"
+      "CachePath": "04/{04C032F0-E92F-E5AA-CA0C-E51D8747A3C8}.wem"
      }
     ],
     "Events": [
@@ -43,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{7AE992D4-1EE4-089B-3F58-64C209A451AD}"
+  "FileHash": "{A90A9A4D-2255-38A6-D2BE-599874A23FD4}"
  }
 }

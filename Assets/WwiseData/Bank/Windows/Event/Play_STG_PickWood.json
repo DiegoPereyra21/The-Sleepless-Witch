@@ -3,14 +3,14 @@
   "Platform": "Windows",
   "BasePlatform": "Windows",
   "SchemaVersion": "16",
-  "SoundBankVersion": "172",
+  "SoundBankVersion": "176",
   "SoundBanks": [
    {
     "Id": "3595425793",
     "Type": "Event",
     "GUID": "{4D88A7F9-FA1B-4C1A-8047-30FE86D158B6}",
     "Language": "SFX",
-    "Hash": "{24E55EDD-26F3-95D6-B02C-E73819ADF7EA}",
+    "Hash": "{4D6A54E9-BA76-C50F-9BF8-7D2FF146238C}",
     "ObjectPath": "Play_STG_PickWood",
     "ShortName": "Play_STG_PickWood",
     "Path": "Event/Play_STG_PickWood.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "freesound_community-tomar-un-objeto-46562.wav",
       "Path": "Media/669185545.wem",
-      "CachePath": "74/{74A824FF-55CF-8E38-E71A-A9C4504AD640}.wem"
+      "CachePath": "4B/{4B44C09E-1004-D719-E9CA-D9A302D4F292}.wem"
      }
     ],
     "Events": [
@@ -43,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{88BF7D45-E82E-2605-803C-46AAF43289DB}"
+  "FileHash": "{CB426281-E29B-9A6B-F860-3D9C7A05387A}"
  }
 }

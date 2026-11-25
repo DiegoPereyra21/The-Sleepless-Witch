@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="176">
 	<RootPaths>
 		<ProjectRoot>../../../../GAGD-JAM_WwiseProject</ProjectRoot>
 		<SourceFilesRoot>../../../../GAGD-JAM_WwiseProject/.cache</SourceFilesRoot>
@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="176225071" Type="Event" GUID="{3988C77F-BCBF-402F-9B7C-54086E13365D}" Language="SFX" Hash="{22747D65-13DC-9D49-D270-9357C748941C}">
+		<SoundBank Id="176225071" Type="Event" GUID="{3988C77F-BCBF-402F-9B7C-54086E13365D}" Language="SFX" Hash="{47F42573-8AC6-2B46-D121-110CAFC5FF83}">
 			<ObjectPath>Play_STG_Cut</ObjectPath>
 			<ShortName>Play_STG_Cut</ShortName>
 			<Path>Event/Play_STG_Cut.bnk</Path>
@@ -17,7 +17,7 @@
 				<File Id="504329888" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>jam.wav</ShortName>
 					<Path>Media/504329888.wem</Path>
-					<CachePath>8D/{8D8C3892-B17A-15E5-4D55-F5576A814CB9}.wem</CachePath>
+					<CachePath>04/{04C032F0-E92F-E5AA-CA0C-E51D8747A3C8}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -28,7 +28,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="358402734" Type="Event" GUID="{74918F02-B781-4BB8-959D-34AF096650FF}" Language="SFX" Hash="{1DB80FAB-AAA9-CAB6-3FED-1092ADB4E37B}">
+		<SoundBank Id="358402734" Type="Event" GUID="{74918F02-B781-4BB8-959D-34AF096650FF}" Language="SFX" Hash="{4D466212-38EC-4C12-B582-DC9D55CDFA35}">
 			<ObjectPath>Play_STG_Mortar</ObjectPath>
 			<ShortName>Play_STG_Mortar</ShortName>
 			<Path>Event/Play_STG_Mortar.bnk</Path>
@@ -36,7 +36,7 @@
 				<File Id="71216937" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>fronbondi_skegs-sfx-unsettling-grinding-of-ceramic-tiles-sound-effects-243893.wav</ShortName>
 					<Path>Media/71216937.wem</Path>
-					<CachePath>A9/{A9311BDA-8271-0E5D-B868-D24DBD1356A3}.wem</CachePath>
+					<CachePath>54/{54BE5952-D852-E42E-A785-D98D4B6FAECB}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -47,7 +47,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="546793308" Type="Event" GUID="{2B3B6BF4-26D2-43DC-A20A-057242F7AE98}" Language="SFX" Hash="{288DCFA5-38AA-ACE6-E803-4803C825C403}">
+		<SoundBank Id="546793308" Type="Event" GUID="{2B3B6BF4-26D2-43DC-A20A-057242F7AE98}" Language="SFX" Hash="{9620F8AF-31EC-AD5A-9355-0D224EA50B78}">
 			<ObjectPath>Play_Grass_Footsteps</ObjectPath>
 			<ShortName>Play_Grass_Footsteps</ShortName>
 			<Path>Event/Play_Grass_Footsteps.bnk</Path>
@@ -55,77 +55,77 @@
 				<File Id="3496576" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 09_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/3496576.wem</Path>
-					<CachePath>24/{240A7C36-7372-C911-A02E-EFD02FE06E35}.wem</CachePath>
+					<CachePath>8E/{8E5B254F-CDF5-D925-2C02-0B351885CCA5}.wem</CachePath>
 				</File>
 				<File Id="51774552" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 05_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/51774552.wem</Path>
-					<CachePath>B2/{B2DCC31D-56ED-C294-29D4-0099121C2C16}.wem</CachePath>
+					<CachePath>19/{19B8DF57-8794-3FF0-70D7-CD86E49BB6C5}.wem</CachePath>
 				</File>
 				<File Id="86574945" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 10_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/86574945.wem</Path>
-					<CachePath>ED/{ED84DD71-B240-3F0B-F626-E7EFC1C5E116}.wem</CachePath>
+					<CachePath>08/{08606AFB-4DB2-0642-D2D2-02DAEA869A95}.wem</CachePath>
 				</File>
 				<File Id="99849529" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 03_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/99849529.wem</Path>
-					<CachePath>00/{0032FA28-9559-9CBA-DB38-BFCF8C0900C0}.wem</CachePath>
+					<CachePath>C2/{C2717248-513D-E126-F092-F3AAE2795D57}.wem</CachePath>
 				</File>
 				<File Id="228208572" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 04_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/228208572.wem</Path>
-					<CachePath>0D/{0D3E97D5-4821-784B-94ED-D7A61DBE5967}.wem</CachePath>
+					<CachePath>96/{96458CF3-9BDA-E88A-9F30-88BFD36749FA}.wem</CachePath>
 				</File>
 				<File Id="229322620" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 02_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/229322620.wem</Path>
-					<CachePath>A6/{A66C8F23-AA8C-5EE8-3236-E3A6DAD90926}.wem</CachePath>
+					<CachePath>5B/{5B234F38-78D8-7D74-902D-1C7CD6AA2CBD}.wem</CachePath>
 				</File>
 				<File Id="260049539" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 01_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/260049539.wem</Path>
-					<CachePath>E1/{E1CC66BC-948A-F350-F7E5-1E9246909C53}.wem</CachePath>
+					<CachePath>D0/{D09DA2EA-C0DA-AEBB-735A-9901108C89EE}.wem</CachePath>
 				</File>
 				<File Id="277566653" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 14_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/277566653.wem</Path>
-					<CachePath>38/{38C7FD6B-0F08-C39B-E8FF-67448AF65BE0}.wem</CachePath>
+					<CachePath>A5/{A5E3E4DA-0B05-38FB-C012-C06FAAE40EF0}.wem</CachePath>
 				</File>
 				<File Id="354389179" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 12_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/354389179.wem</Path>
-					<CachePath>78/{786A904D-75F5-AD17-BD87-971831F47B57}.wem</CachePath>
+					<CachePath>72/{72D1061D-5109-3CCE-AF97-9DD9315310C3}.wem</CachePath>
 				</File>
 				<File Id="358363011" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 11_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/358363011.wem</Path>
-					<CachePath>7F/{7FBAF725-246D-FD1E-B3D8-86D1F8577C39}.wem</CachePath>
+					<CachePath>CC/{CCC1D750-26B3-6974-92F6-CA7AD4533344}.wem</CachePath>
 				</File>
 				<File Id="392187951" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 13_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/392187951.wem</Path>
-					<CachePath>06/{065ECADE-97E9-F059-0F55-68388BAEE1FA}.wem</CachePath>
+					<CachePath>27/{2724DA8C-D003-6AEB-A089-96249E0758BB}.wem</CachePath>
 				</File>
 				<File Id="635418451" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 08_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/635418451.wem</Path>
-					<CachePath>D1/{D1F1AB11-5FE3-1009-5D34-66991A72E6C3}.wem</CachePath>
+					<CachePath>72/{72B8B0F3-05B7-C0DD-DFD6-6787FEDCBEA2}.wem</CachePath>
 				</File>
 				<File Id="656645410" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 07_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/656645410.wem</Path>
-					<CachePath>2C/{2CE6DF8B-6308-35FE-573D-4D99F1AEF43F}.wem</CachePath>
+					<CachePath>73/{739976F7-4CD2-136D-3B7F-1060EEAC2ADC}.wem</CachePath>
 				</File>
 				<File Id="749912226" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 15_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/749912226.wem</Path>
-					<CachePath>09/{09E82503-9A65-A0BE-4DBC-6B23C88694F8}.wem</CachePath>
+					<CachePath>00/{00BC8A1F-FF97-4839-3C69-14D931737C03}.wem</CachePath>
 				</File>
 				<File Id="1028783762" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 06_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/1028783762.wem</Path>
-					<CachePath>6E/{6E409FF9-37EB-8F72-76F0-C53CFDA3AC86}.wem</CachePath>
+					<CachePath>A1/{A1AFF970-33FF-9614-D1FA-F1E26493AA85}.wem</CachePath>
 				</File>
 			</Media>
 			<Plugins>
@@ -160,7 +160,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1043591872" Type="Event" GUID="{344BF274-586D-4BCF-A53C-82A9B8102F15}" Language="SFX" Hash="{92761509-4161-01D5-0C4A-5BFC35B89525}">
+		<SoundBank Id="1043591872" Type="Event" GUID="{344BF274-586D-4BCF-A53C-82A9B8102F15}" Language="SFX" Hash="{ACF90BCF-4D22-E799-CA7D-6F0AE6652A4B}">
 			<ObjectPath>Play_MUS_MainMenu</ObjectPath>
 			<ShortName>Play_MUS_MainMenu</ShortName>
 			<Path>Event/Play_MUS_MainMenu.bnk</Path>
@@ -168,7 +168,7 @@
 				<File Id="869888867" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>idoberg-creepy-halloween-bells-loop-408748.wav</ShortName>
 					<Path>Media/869888867.wem</Path>
-					<CachePath>1A/{1A1AF148-38C9-1504-BEF0-F3877CB6F06D}.wem</CachePath>
+					<CachePath>B5/{B5855EA7-44AA-B2B5-34FE-2F70DDC7173E}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -179,7 +179,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1108381680" Type="Event" GUID="{F02C81DF-6990-4FB5-A1AF-9DB27C5C8916}" Language="SFX" Hash="{25B569EB-C3FE-186C-7599-84FD5FC2C725}">
+		<SoundBank Id="1108381680" Type="Event" GUID="{F02C81DF-6990-4FB5-A1AF-9DB27C5C8916}" Language="SFX" Hash="{E5A204F7-ECF7-0ABD-5ADE-5DADBD56BF9B}">
 			<ObjectPath>Play_MUS_TimeOfDay</ObjectPath>
 			<ShortName>Play_MUS_TimeOfDay</ShortName>
 			<Path>Event/Play_MUS_TimeOfDay.bnk</Path>
@@ -187,12 +187,12 @@
 				<File Id="501813684" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Minimal mix.wav</ShortName>
 					<Path>Media/501813684.wem</Path>
-					<CachePath>7B/{7B36CC42-A5BE-4F7A-9094-C57264D839B3}.wem</CachePath>
+					<CachePath>50/{50CA8959-9CA3-8589-9BF6-658B747B08B3}.wem</CachePath>
 				</File>
 				<File Id="742675129" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Full Mix Low.wav</ShortName>
 					<Path>Media/742675129.wem</Path>
-					<CachePath>B8/{B841B54B-FEC5-8DCA-12AB-2F29A70F6E35}.wem</CachePath>
+					<CachePath>FC/{FC9C7F2E-C902-569B-D681-3596304F6CC8}.wem</CachePath>
 				</File>
 			</Media>
 			<Plugins>
@@ -232,7 +232,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{2C35A696-9D5F-A94E-8A54-8CADD60C94CD}">
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{76211F31-1D18-47EE-E685-7A5758B93975}">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -250,11 +250,11 @@
 				<Bus Id="3991942870" Name="Music" ObjectPath="\Busses\Default Work Unit\Main Audio Bus\Music" GUID="{1F6F3D9C-C5A2-433F-99C3-110E0EC47994}"/>
 			</Busses>
 			<GameParameters>
-				<GameParameter Id="421429125" Name="GeneralVolume" ObjectPath="\Game Parameters\Default Work Unit\GeneralVolume" GUID="{CE83A0A2-18A9-473F-B22F-D508DE388C9C}"/>
-				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume" GUID="{DFB3BC0A-887E-4C08-9D50-CE0433B1106E}"/>
-				<GameParameter Id="1786260118" Name="MenuVolume" ObjectPath="\Game Parameters\Default Work Unit\MenuVolume" GUID="{E3388098-B798-4C09-B900-93DCECD91828}"/>
-				<GameParameter Id="2346531308" Name="MusicVolume" ObjectPath="\Game Parameters\Default Work Unit\MusicVolume" GUID="{63AE203E-86D2-4D19-A59B-BE928F65C12C}"/>
-				<GameParameter Id="3546521921" Name="AmbientVolume" ObjectPath="\Game Parameters\Default Work Unit\AmbientVolume" GUID="{8163CA6C-8E10-4D16-A6F4-CFBA9F5472BA}"/>
+				<GameParameter Id="421429125" Name="GeneralVolume" ObjectPath="\Game Parameters\Default Work Unit\GeneralVolume" GUID="{CE83A0A2-18A9-473F-B22F-D508DE388C9C}" Min="0" Max="100" DefaultValue="100"/>
+				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume" GUID="{DFB3BC0A-887E-4C08-9D50-CE0433B1106E}" Min="0" Max="100" DefaultValue="100"/>
+				<GameParameter Id="1786260118" Name="MenuVolume" ObjectPath="\Game Parameters\Default Work Unit\MenuVolume" GUID="{E3388098-B798-4C09-B900-93DCECD91828}" Min="0" Max="100" DefaultValue="100"/>
+				<GameParameter Id="2346531308" Name="MusicVolume" ObjectPath="\Game Parameters\Default Work Unit\MusicVolume" GUID="{63AE203E-86D2-4D19-A59B-BE928F65C12C}" Min="0" Max="100" DefaultValue="100"/>
+				<GameParameter Id="3546521921" Name="AmbientVolume" ObjectPath="\Game Parameters\Default Work Unit\AmbientVolume" GUID="{8163CA6C-8E10-4D16-A6F4-CFBA9F5472BA}" Min="0" Max="100" DefaultValue="100"/>
 			</GameParameters>
 			<SwitchGroups>
 				<SwitchGroup Id="3729505769" Name="TimeOfDay" ObjectPath="\Switches\Default Work Unit\TimeOfDay" GUID="{23F89E85-B734-4984-91E6-411EE61C94F0}">
@@ -265,7 +265,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1532146285" Type="Event" GUID="{413F87E7-B318-4C26-9D8C-522516E4F81A}" Language="SFX" Hash="{80D55AE7-F30B-0001-49D6-1457324A6F81}">
+		<SoundBank Id="1532146285" Type="Event" GUID="{413F87E7-B318-4C26-9D8C-522516E4F81A}" Language="SFX" Hash="{C9265205-4E69-1128-7664-36098620EB50}">
 			<ObjectPath>Play_STG_Pickup</ObjectPath>
 			<ShortName>Play_STG_Pickup</ShortName>
 			<Path>Event/Play_STG_Pickup.bnk</Path>
@@ -273,12 +273,12 @@
 				<File Id="10179816" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>a.wav</ShortName>
 					<Path>Media/10179816.wem</Path>
-					<CachePath>E1/{E136A2D0-604C-A290-CBAA-A7BA9F911C80}.wem</CachePath>
+					<CachePath>36/{3635496E-58FE-3A4D-EEA7-8E6D22EBD4F4}.wem</CachePath>
 				</File>
 			</Media>
 			<Plugins>
 				<Custom>
-					<Plugin Id="213844949" Name="Parametric EQ (Custom)" ObjectPath="\Containers\Default Work Unit\SFX\Stingers\UI\a\[Effect Slot [0]: (Parametric EQ)]\Parametric EQ (Custom)" GUID="{73A24686-4B8F-481A-BFE8-C85120C75762}" LibName="Wwise Parametric EQ" LibId="6881283"/>
+					<Plugin Id="213844949" Name="Parametric EQ (Custom)" ObjectPath="\Containers\Default Work Unit\SFX\Stingers\UI\a\[0 - Parametric EQ]\Parametric EQ (Custom)" GUID="{73A24686-4B8F-481A-BFE8-C85120C75762}" LibName="Wwise Parametric EQ" LibId="6881283"/>
 				</Custom>
 			</Plugins>
 			<Events>
@@ -294,7 +294,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3069328145" Type="Event" GUID="{8F0ABEC4-8BFE-4EF0-978D-9BAE7533E3A0}" Language="SFX" Hash="{5AC71150-A724-D15C-613D-46BEDD9BDD48}">
+		<SoundBank Id="3069328145" Type="Event" GUID="{8F0ABEC4-8BFE-4EF0-978D-9BAE7533E3A0}" Language="SFX" Hash="{56E95A71-317D-6EC9-DC81-4BFBB1FBF890}">
 			<ObjectPath>Play_STG_Clock</ObjectPath>
 			<ShortName>Play_STG_Clock</ShortName>
 			<Path>Event/Play_STG_Clock.bnk</Path>
@@ -302,7 +302,7 @@
 				<File Id="665275161" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>dragon-studio-slow-cinematic-clock-ticking-405471.wav</ShortName>
 					<Path>Media/665275161.wem</Path>
-					<CachePath>F5/{F5E59E60-4C4B-450B-98EE-92DE1A8B8A04}.wem</CachePath>
+					<CachePath>ED/{ED8CE5C0-487B-D012-56C6-E77E993841E6}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -313,7 +313,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3305792757" Type="Event" GUID="{D41A0C01-0A22-450B-AA1C-9CAC988C1B3B}" Language="SFX" Hash="{3C0628A9-1C71-BD95-5DAC-AC123DBFC1D1}">
+		<SoundBank Id="3305792757" Type="Event" GUID="{D41A0C01-0A22-450B-AA1C-9CAC988C1B3B}" Language="SFX" Hash="{848CEE02-2244-C1AE-E59B-4FFC9E839C4A}">
 			<ObjectPath>Play_Menu_Button_Hover</ObjectPath>
 			<ShortName>Play_Menu_Button_Hover</ShortName>
 			<Path>Event/Play_Menu_Button_Hover.bnk</Path>
@@ -321,7 +321,7 @@
 				<File Id="809076942" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>p.wav</ShortName>
 					<Path>Media/809076942.wem</Path>
-					<CachePath>2A/{2A3D866E-717E-519C-7E80-61CD236C1F4C}.wem</CachePath>
+					<CachePath>9B/{9B6709DE-C5F7-044C-1EF1-F62B0897C942}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -332,7 +332,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3595425793" Type="Event" GUID="{4D88A7F9-FA1B-4C1A-8047-30FE86D158B6}" Language="SFX" Hash="{24E55EDD-26F3-95D6-B02C-E73819ADF7EA}">
+		<SoundBank Id="3595425793" Type="Event" GUID="{4D88A7F9-FA1B-4C1A-8047-30FE86D158B6}" Language="SFX" Hash="{4D6A54E9-BA76-C50F-9BF8-7D2FF146238C}">
 			<ObjectPath>Play_STG_PickWood</ObjectPath>
 			<ShortName>Play_STG_PickWood</ShortName>
 			<Path>Event/Play_STG_PickWood.bnk</Path>
@@ -340,7 +340,7 @@
 				<File Id="669185545" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>freesound_community-tomar-un-objeto-46562.wav</ShortName>
 					<Path>Media/669185545.wem</Path>
-					<CachePath>74/{74A824FF-55CF-8E38-E71A-A9C4504AD640}.wem</CachePath>
+					<CachePath>4B/{4B44C09E-1004-D719-E9CA-D9A302D4F292}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -351,7 +351,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4243441902" Type="Event" GUID="{00063086-C8F5-4E31-B546-3BA30C57B3FC}" Language="SFX" Hash="{FDB06760-B43A-5E05-07E3-677004BC09A6}">
+		<SoundBank Id="4243441902" Type="Event" GUID="{00063086-C8F5-4E31-B546-3BA30C57B3FC}" Language="SFX" Hash="{D3204238-3E3A-3D1B-E01E-B54A56F7E297}">
 			<ObjectPath>Stop_MUS_MainMenu</ObjectPath>
 			<ShortName>Stop_MUS_MainMenu</ShortName>
 			<Path>Event/Stop_MUS_MainMenu.bnk</Path>
@@ -360,5 +360,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{736F40CC-375F-D585-6D2B-8A0D9F3DBC9F}</FileHash>
+	<FileHash>{1C828934-3B6C-0EB9-94F2-DE7F231D7944}</FileHash>
 </SoundBanksInfo>

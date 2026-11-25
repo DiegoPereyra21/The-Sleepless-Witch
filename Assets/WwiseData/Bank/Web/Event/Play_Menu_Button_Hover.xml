@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Web" BasePlatform="Web" SchemaVersion="16" SoundBankVersion="172">
+<SoundBanksInfo Platform="Web" BasePlatform="Web" SchemaVersion="16" SoundBankVersion="176">
 	<SoundBanks>
-		<SoundBank Id="3305792757" Type="Event" GUID="{D41A0C01-0A22-450B-AA1C-9CAC988C1B3B}" Language="SFX" Hash="{3C0628A9-1C71-BD95-5DAC-AC123DBFC1D1}">
+		<SoundBank Id="3305792757" Type="Event" GUID="{D41A0C01-0A22-450B-AA1C-9CAC988C1B3B}" Language="SFX" Hash="{848CEE02-2244-C1AE-E59B-4FFC9E839C4A}">
 			<ObjectPath>Play_Menu_Button_Hover</ObjectPath>
 			<ShortName>Play_Menu_Button_Hover</ShortName>
 			<Path>Event/Play_Menu_Button_Hover.bnk</Path>
@@ -9,7 +9,7 @@
 				<File Id="809076942" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>p.wav</ShortName>
 					<Path>Media/809076942.wem</Path>
-					<CachePath>2A/{2A3D866E-717E-519C-7E80-61CD236C1F4C}.wem</CachePath>
+					<CachePath>9B/{9B6709DE-C5F7-044C-1EF1-F62B0897C942}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -21,5 +21,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{13BDE7EB-088B-083F-B2DF-AA94BE2BCC98}</FileHash>
+	<FileHash>{2C693845-A11D-D681-BF43-040B2AABECDD}</FileHash>
 </SoundBanksInfo>

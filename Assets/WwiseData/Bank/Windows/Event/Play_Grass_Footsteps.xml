@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="176">
 	<SoundBanks>
-		<SoundBank Id="546793308" Type="Event" GUID="{2B3B6BF4-26D2-43DC-A20A-057242F7AE98}" Language="SFX" Hash="{288DCFA5-38AA-ACE6-E803-4803C825C403}">
+		<SoundBank Id="546793308" Type="Event" GUID="{2B3B6BF4-26D2-43DC-A20A-057242F7AE98}" Language="SFX" Hash="{9620F8AF-31EC-AD5A-9355-0D224EA50B78}">
 			<ObjectPath>Play_Grass_Footsteps</ObjectPath>
 			<ShortName>Play_Grass_Footsteps</ShortName>
 			<Path>Event/Play_Grass_Footsteps.bnk</Path>
@@ -9,77 +9,77 @@
 				<File Id="3496576" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 09_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/3496576.wem</Path>
-					<CachePath>24/{240A7C36-7372-C911-A02E-EFD02FE06E35}.wem</CachePath>
+					<CachePath>8E/{8E5B254F-CDF5-D925-2C02-0B351885CCA5}.wem</CachePath>
 				</File>
 				<File Id="51774552" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 05_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/51774552.wem</Path>
-					<CachePath>B2/{B2DCC31D-56ED-C294-29D4-0099121C2C16}.wem</CachePath>
+					<CachePath>19/{19B8DF57-8794-3FF0-70D7-CD86E49BB6C5}.wem</CachePath>
 				</File>
 				<File Id="86574945" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 10_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/86574945.wem</Path>
-					<CachePath>ED/{ED84DD71-B240-3F0B-F626-E7EFC1C5E116}.wem</CachePath>
+					<CachePath>08/{08606AFB-4DB2-0642-D2D2-02DAEA869A95}.wem</CachePath>
 				</File>
 				<File Id="99849529" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 03_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/99849529.wem</Path>
-					<CachePath>00/{0032FA28-9559-9CBA-DB38-BFCF8C0900C0}.wem</CachePath>
+					<CachePath>C2/{C2717248-513D-E126-F092-F3AAE2795D57}.wem</CachePath>
 				</File>
 				<File Id="228208572" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 04_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/228208572.wem</Path>
-					<CachePath>0D/{0D3E97D5-4821-784B-94ED-D7A61DBE5967}.wem</CachePath>
+					<CachePath>96/{96458CF3-9BDA-E88A-9F30-88BFD36749FA}.wem</CachePath>
 				</File>
 				<File Id="229322620" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 02_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/229322620.wem</Path>
-					<CachePath>A6/{A66C8F23-AA8C-5EE8-3236-E3A6DAD90926}.wem</CachePath>
+					<CachePath>5B/{5B234F38-78D8-7D74-902D-1C7CD6AA2CBD}.wem</CachePath>
 				</File>
 				<File Id="260049539" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 01_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/260049539.wem</Path>
-					<CachePath>E1/{E1CC66BC-948A-F350-F7E5-1E9246909C53}.wem</CachePath>
+					<CachePath>D0/{D09DA2EA-C0DA-AEBB-735A-9901108C89EE}.wem</CachePath>
 				</File>
 				<File Id="277566653" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 14_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/277566653.wem</Path>
-					<CachePath>38/{38C7FD6B-0F08-C39B-E8FF-67448AF65BE0}.wem</CachePath>
+					<CachePath>A5/{A5E3E4DA-0B05-38FB-C012-C06FAAE40EF0}.wem</CachePath>
 				</File>
 				<File Id="354389179" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 12_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/354389179.wem</Path>
-					<CachePath>78/{786A904D-75F5-AD17-BD87-971831F47B57}.wem</CachePath>
+					<CachePath>72/{72D1061D-5109-3CCE-AF97-9DD9315310C3}.wem</CachePath>
 				</File>
 				<File Id="358363011" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 11_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/358363011.wem</Path>
-					<CachePath>7F/{7FBAF725-246D-FD1E-B3D8-86D1F8577C39}.wem</CachePath>
+					<CachePath>CC/{CCC1D750-26B3-6974-92F6-CA7AD4533344}.wem</CachePath>
 				</File>
 				<File Id="392187951" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 13_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/392187951.wem</Path>
-					<CachePath>06/{065ECADE-97E9-F059-0F55-68388BAEE1FA}.wem</CachePath>
+					<CachePath>27/{2724DA8C-D003-6AEB-A089-96249E0758BB}.wem</CachePath>
 				</File>
 				<File Id="635418451" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 08_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/635418451.wem</Path>
-					<CachePath>D1/{D1F1AB11-5FE3-1009-5D34-66991A72E6C3}.wem</CachePath>
+					<CachePath>72/{72B8B0F3-05B7-C0DD-DFD6-6787FEDCBEA2}.wem</CachePath>
 				</File>
 				<File Id="656645410" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 07_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/656645410.wem</Path>
-					<CachePath>2C/{2CE6DF8B-6308-35FE-573D-4D99F1AEF43F}.wem</CachePath>
+					<CachePath>73/{739976F7-4CD2-136D-3B7F-1060EEAC2ADC}.wem</CachePath>
 				</File>
 				<File Id="749912226" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 15_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/749912226.wem</Path>
-					<CachePath>09/{09E82503-9A65-A0BE-4DBC-6B23C88694F8}.wem</CachePath>
+					<CachePath>00/{00BC8A1F-FF97-4839-3C69-14D931737C03}.wem</CachePath>
 				</File>
 				<File Id="1028783762" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 06_AUDIOELK_AUDIOELK.wav</ShortName>
 					<Path>Media/1028783762.wem</Path>
-					<CachePath>6E/{6E409FF9-37EB-8F72-76F0-C53CFDA3AC86}.wem</CachePath>
+					<CachePath>A1/{A1AFF970-33FF-9614-D1FA-F1E26493AA85}.wem</CachePath>
 				</File>
 			</Media>
 			<Plugins>
@@ -115,5 +115,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A5B3E6AE-76E4-DBA2-C11C-C363BA7E9A16}</FileHash>
+	<FileHash>{6B387187-0DA4-C849-3684-D6C441B27022}</FileHash>
 </SoundBanksInfo>

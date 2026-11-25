@@ -3,14 +3,14 @@
   "Platform": "Web",
   "BasePlatform": "Web",
   "SchemaVersion": "16",
-  "SoundBankVersion": "172",
+  "SoundBankVersion": "176",
   "SoundBanks": [
    {
     "Id": "3069328145",
     "Type": "Event",
     "GUID": "{8F0ABEC4-8BFE-4EF0-978D-9BAE7533E3A0}",
     "Language": "SFX",
-    "Hash": "{5AC71150-A724-D15C-613D-46BEDD9BDD48}",
+    "Hash": "{56E95A71-317D-6EC9-DC81-4BFBB1FBF890}",
     "ObjectPath": "Play_STG_Clock",
     "ShortName": "Play_STG_Clock",
     "Path": "Event/Play_STG_Clock.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "dragon-studio-slow-cinematic-clock-ticking-405471.wav",
       "Path": "Media/665275161.wem",
-      "CachePath": "F5/{F5E59E60-4C4B-450B-98EE-92DE1A8B8A04}.wem"
+      "CachePath": "ED/{ED8CE5C0-487B-D012-56C6-E77E993841E6}.wem"
      }
     ],
     "Events": [
@@ -43,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{19E52AB9-AF2C-8E34-A826-CEFB2EC9C1A6}"
+  "FileHash": "{CB1A047E-50E9-46E7-25CD-AF0EFB894658}"
  }
 }

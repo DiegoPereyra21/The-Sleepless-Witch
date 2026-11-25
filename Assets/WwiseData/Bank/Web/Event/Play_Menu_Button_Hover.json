@@ -3,14 +3,14 @@
   "Platform": "Web",
   "BasePlatform": "Web",
   "SchemaVersion": "16",
-  "SoundBankVersion": "172",
+  "SoundBankVersion": "176",
   "SoundBanks": [
    {
     "Id": "3305792757",
     "Type": "Event",
     "GUID": "{D41A0C01-0A22-450B-AA1C-9CAC988C1B3B}",
     "Language": "SFX",
-    "Hash": "{3C0628A9-1C71-BD95-5DAC-AC123DBFC1D1}",
+    "Hash": "{848CEE02-2244-C1AE-E59B-4FFC9E839C4A}",
     "ObjectPath": "Play_Menu_Button_Hover",
     "ShortName": "Play_Menu_Button_Hover",
     "Path": "Event/Play_Menu_Button_Hover.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "p.wav",
       "Path": "Media/809076942.wem",
-      "CachePath": "2A/{2A3D866E-717E-519C-7E80-61CD236C1F4C}.wem"
+      "CachePath": "9B/{9B6709DE-C5F7-044C-1EF1-F62B0897C942}.wem"
      }
     ],
     "Events": [
@@ -43,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{D5C800A4-12EB-1807-0D66-074224CD8E67}"
+  "FileHash": "{DF0236FE-E035-040D-5979-55548C3D952A}"
  }
 }

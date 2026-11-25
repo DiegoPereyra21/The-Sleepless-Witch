@@ -3,7 +3,7 @@
   "Platform": {
    "Name": "Web",
    "BasePlatform": "Web",
-   "Generator": "2025.1.10.9233"
+   "Generator": "2026.1.4.9341"
   },
   "RootPaths": {
    "ProjectRoot": "../../../../GAGD-JAM_WwiseProject",
@@ -33,6 +33,6 @@
    "PrintObjectPath": "true",
    "PrintObjectColor": "true"
   },
-  "FileHash": "{D59979EB-5545-D4A6-A44D-09DE95D02FDA}"
+  "FileHash": "{0D85926A-BA80-5928-31A8-9809FD87F704}"
  }
 }

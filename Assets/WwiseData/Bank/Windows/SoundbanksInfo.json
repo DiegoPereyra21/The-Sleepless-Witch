@@ -3,7 +3,7 @@
   "Platform": "Windows",
   "BasePlatform": "Windows",
   "SchemaVersion": "16",
-  "SoundBankVersion": "172",
+  "SoundBankVersion": "176",
   "RootPaths": {
    "ProjectRoot": "../../../../GAGD-JAM_WwiseProject",
    "SourceFilesRoot": "../../../../GAGD-JAM_WwiseProject/.cache",
@@ -18,7 +18,7 @@
     "Type": "Event",
     "GUID": "{3988C77F-BCBF-402F-9B7C-54086E13365D}",
     "Language": "SFX",
-    "Hash": "{22747D65-13DC-9D49-D270-9357C748941C}",
+    "Hash": "{47F42573-8AC6-2B46-D121-110CAFC5FF83}",
     "ObjectPath": "Play_STG_Cut",
     "ShortName": "Play_STG_Cut",
     "Path": "Event/Play_STG_Cut.bnk",
@@ -30,7 +30,7 @@
       "Location": "Loose",
       "ShortName": "jam.wav",
       "Path": "Media/504329888.wem",
-      "CachePath": "8D/{8D8C3892-B17A-15E5-4D55-F5576A814CB9}.wem"
+      "CachePath": "04/{04C032F0-E92F-E5AA-CA0C-E51D8747A3C8}.wem"
      }
     ],
     "Events": [
@@ -55,7 +55,7 @@
     "Type": "Event",
     "GUID": "{74918F02-B781-4BB8-959D-34AF096650FF}",
     "Language": "SFX",
-    "Hash": "{1DB80FAB-AAA9-CAB6-3FED-1092ADB4E37B}",
+    "Hash": "{4D466212-38EC-4C12-B582-DC9D55CDFA35}",
     "ObjectPath": "Play_STG_Mortar",
     "ShortName": "Play_STG_Mortar",
     "Path": "Event/Play_STG_Mortar.bnk",
@@ -67,7 +67,7 @@
       "Location": "Loose",
       "ShortName": "fronbondi_skegs-sfx-unsettling-grinding-of-ceramic-tiles-sound-effects-243893.wav",
       "Path": "Media/71216937.wem",
-      "CachePath": "A9/{A9311BDA-8271-0E5D-B868-D24DBD1356A3}.wem"
+      "CachePath": "54/{54BE5952-D852-E42E-A785-D98D4B6FAECB}.wem"
      }
     ],
     "Events": [
@@ -92,7 +92,7 @@
     "Type": "Event",
     "GUID": "{2B3B6BF4-26D2-43DC-A20A-057242F7AE98}",
     "Language": "SFX",
-    "Hash": "{288DCFA5-38AA-ACE6-E803-4803C825C403}",
+    "Hash": "{9620F8AF-31EC-AD5A-9355-0D224EA50B78}",
     "ObjectPath": "Play_Grass_Footsteps",
     "ShortName": "Play_Grass_Footsteps",
     "Path": "Event/Play_Grass_Footsteps.bnk",
@@ -104,7 +104,7 @@
       "Location": "Loose",
       "ShortName": "FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 09_AUDIOELK_AUDIOELK.wav",
       "Path": "Media/3496576.wem",
-      "CachePath": "24/{240A7C36-7372-C911-A02E-EFD02FE06E35}.wem"
+      "CachePath": "8E/{8E5B254F-CDF5-D925-2C02-0B351885CCA5}.wem"
      },
      {
       "Id": "51774552",
@@ -113,7 +113,7 @@
       "Location": "Loose",
       "ShortName": "FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 05_AUDIOELK_AUDIOELK.wav",
       "Path": "Media/51774552.wem",
-      "CachePath": "B2/{B2DCC31D-56ED-C294-29D4-0099121C2C16}.wem"
+      "CachePath": "19/{19B8DF57-8794-3FF0-70D7-CD86E49BB6C5}.wem"
      },
      {
       "Id": "86574945",
@@ -122,7 +122,7 @@
       "Location": "Loose",
       "ShortName": "FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 10_AUDIOELK_AUDIOELK.wav",
       "Path": "Media/86574945.wem",
-      "CachePath": "ED/{ED84DD71-B240-3F0B-F626-E7EFC1C5E116}.wem"
+      "CachePath": "08/{08606AFB-4DB2-0642-D2D2-02DAEA869A95}.wem"
      },
      {
       "Id": "99849529",
@@ -131,7 +131,7 @@
       "Location": "Loose",
       "ShortName": "FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 03_AUDIOELK_AUDIOELK.wav",
       "Path": "Media/99849529.wem",
-      "CachePath": "00/{0032FA28-9559-9CBA-DB38-BFCF8C0900C0}.wem"
+      "CachePath": "C2/{C2717248-513D-E126-F092-F3AAE2795D57}.wem"
      },
      {
       "Id": "228208572",
@@ -140,7 +140,7 @@
       "Location": "Loose",
       "ShortName": "FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 04_AUDIOELK_AUDIOELK.wav",
       "Path": "Media/228208572.wem",
-      "CachePath": "0D/{0D3E97D5-4821-784B-94ED-D7A61DBE5967}.wem"
+      "CachePath": "96/{96458CF3-9BDA-E88A-9F30-88BFD36749FA}.wem"
      },
      {
       "Id": "229322620",
@@ -149,7 +149,7 @@
       "Location": "Loose",
       "ShortName": "FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 02_AUDIOELK_AUDIOELK.wav",
       "Path": "Media/229322620.wem",
-      "CachePath": "A6/{A66C8F23-AA8C-5EE8-3236-E3A6DAD90926}.wem"
+      "CachePath": "5B/{5B234F38-78D8-7D74-902D-1C7CD6AA2CBD}.wem"
      },
      {
       "Id": "260049539",
@@ -158,7 +158,7 @@
       "Location": "Loose",
       "ShortName": "FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 01_AUDIOELK_AUDIOELK.wav",
       "Path": "Media/260049539.wem",
-      "CachePath": "E1/{E1CC66BC-948A-F350-F7E5-1E9246909C53}.wem"
+      "CachePath": "D0/{D09DA2EA-C0DA-AEBB-735A-9901108C89EE}.wem"
      },
      {
       "Id": "277566653",
@@ -167,7 +167,7 @@
       "Location": "Loose",
       "ShortName": "FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 14_AUDIOELK_AUDIOELK.wav",
       "Path": "Media/277566653.wem",
-      "CachePath": "38/{38C7FD6B-0F08-C39B-E8FF-67448AF65BE0}.wem"
+      "CachePath": "A5/{A5E3E4DA-0B05-38FB-C012-C06FAAE40EF0}.wem"
      },
      {
       "Id": "354389179",
@@ -176,7 +176,7 @@
       "Location": "Loose",
       "ShortName": "FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 12_AUDIOELK_AUDIOELK.wav",
       "Path": "Media/354389179.wem",
-      "CachePath": "78/{786A904D-75F5-AD17-BD87-971831F47B57}.wem"
+      "CachePath": "72/{72D1061D-5109-3CCE-AF97-9DD9315310C3}.wem"
      },
      {
       "Id": "358363011",
@@ -185,7 +185,7 @@
       "Location": "Loose",
       "ShortName": "FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 11_AUDIOELK_AUDIOELK.wav",
       "Path": "Media/358363011.wem",
-      "CachePath": "7F/{7FBAF725-246D-FD1E-B3D8-86D1F8577C39}.wem"
+      "CachePath": "CC/{CCC1D750-26B3-6974-92F6-CA7AD4533344}.wem"
      },
      {
       "Id": "392187951",
@@ -194,7 +194,7 @@
       "Location": "Loose",
       "ShortName": "FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 13_AUDIOELK_AUDIOELK.wav",
       "Path": "Media/392187951.wem",
-      "CachePath": "06/{065ECADE-97E9-F059-0F55-68388BAEE1FA}.wem"
+      "CachePath": "27/{2724DA8C-D003-6AEB-A089-96249E0758BB}.wem"
      },
      {
       "Id": "635418451",
@@ -203,7 +203,7 @@
       "Location": "Loose",
       "ShortName": "FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 08_AUDIOELK_AUDIOELK.wav",
       "Path": "Media/635418451.wem",
-      "CachePath": "D1/{D1F1AB11-5FE3-1009-5D34-66991A72E6C3}.wem"
+      "CachePath": "72/{72B8B0F3-05B7-C0DD-DFD6-6787FEDCBEA2}.wem"
      },
      {
       "Id": "656645410",
@@ -212,7 +212,7 @@
       "Location": "Loose",
       "ShortName": "FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 07_AUDIOELK_AUDIOELK.wav",
       "Path": "Media/656645410.wem",
-      "CachePath": "2C/{2CE6DF8B-6308-35FE-573D-4D99F1AEF43F}.wem"
+      "CachePath": "73/{739976F7-4CD2-136D-3B7F-1060EEAC2ADC}.wem"
      },
      {
       "Id": "749912226",
@@ -221,7 +221,7 @@
       "Location": "Loose",
       "ShortName": "FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 15_AUDIOELK_AUDIOELK.wav",
       "Path": "Media/749912226.wem",
-      "CachePath": "09/{09E82503-9A65-A0BE-4DBC-6B23C88694F8}.wem"
+      "CachePath": "00/{00BC8A1F-FF97-4839-3C69-14D931737C03}.wem"
      },
      {
       "Id": "1028783762",
@@ -230,7 +230,7 @@
       "Location": "Loose",
       "ShortName": "FEETHmn-GRASS_AUDIOELK-Fs Grass Shoes Outdoors 06_AUDIOELK_AUDIOELK.wav",
       "Path": "Media/1028783762.wem",
-      "CachePath": "6E/{6E409FF9-37EB-8F72-76F0-C53CFDA3AC86}.wem"
+      "CachePath": "A1/{A1AFF970-33FF-9614-D1FA-F1E26493AA85}.wem"
      }
     ],
     "Plugins": {
@@ -316,7 +316,7 @@
     "Type": "Event",
     "GUID": "{344BF274-586D-4BCF-A53C-82A9B8102F15}",
     "Language": "SFX",
-    "Hash": "{92761509-4161-01D5-0C4A-5BFC35B89525}",
+    "Hash": "{ACF90BCF-4D22-E799-CA7D-6F0AE6652A4B}",
     "ObjectPath": "Play_MUS_MainMenu",
     "ShortName": "Play_MUS_MainMenu",
     "Path": "Event/Play_MUS_MainMenu.bnk",
@@ -328,7 +328,7 @@
       "Location": "Loose",
       "ShortName": "idoberg-creepy-halloween-bells-loop-408748.wav",
       "Path": "Media/869888867.wem",
-      "CachePath": "1A/{1A1AF148-38C9-1504-BEF0-F3877CB6F06D}.wem"
+      "CachePath": "B5/{B5855EA7-44AA-B2B5-34FE-2F70DDC7173E}.wem"
      }
     ],
     "Events": [
@@ -351,7 +351,7 @@
     "Type": "Event",
     "GUID": "{F02C81DF-6990-4FB5-A1AF-9DB27C5C8916}",
     "Language": "SFX",
-    "Hash": "{25B569EB-C3FE-186C-7599-84FD5FC2C725}",
+    "Hash": "{E5A204F7-ECF7-0ABD-5ADE-5DADBD56BF9B}",
     "ObjectPath": "Play_MUS_TimeOfDay",
     "ShortName": "Play_MUS_TimeOfDay",
     "Path": "Event/Play_MUS_TimeOfDay.bnk",
@@ -363,7 +363,7 @@
       "Location": "Loose",
       "ShortName": "Minimal mix.wav",
       "Path": "Media/501813684.wem",
-      "CachePath": "7B/{7B36CC42-A5BE-4F7A-9094-C57264D839B3}.wem"
+      "CachePath": "50/{50CA8959-9CA3-8589-9BF6-658B747B08B3}.wem"
      },
      {
       "Id": "742675129",
@@ -372,7 +372,7 @@
       "Location": "Loose",
       "ShortName": "Full Mix Low.wav",
       "Path": "Media/742675129.wem",
-      "CachePath": "B8/{B841B54B-FEC5-8DCA-12AB-2F29A70F6E35}.wem"
+      "CachePath": "FC/{FC9C7F2E-C902-569B-D681-3596304F6CC8}.wem"
      }
     ],
     "Plugins": {
@@ -459,7 +459,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{2C35A696-9D5F-A94E-8A54-8CADD60C94CD}",
+    "Hash": "{76211F31-1D18-47EE-E685-7A5758B93975}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -520,31 +520,46 @@
       "Id": "421429125",
       "Name": "GeneralVolume",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\GeneralVolume",
-      "GUID": "{CE83A0A2-18A9-473F-B22F-D508DE388C9C}"
+      "GUID": "{CE83A0A2-18A9-473F-B22F-D508DE388C9C}",
+      "Min": "0",
+      "Max": "100",
+      "DefaultValue": "100"
      },
      {
       "Id": "988953028",
       "Name": "SFXVolume",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\SFXVolume",
-      "GUID": "{DFB3BC0A-887E-4C08-9D50-CE0433B1106E}"
+      "GUID": "{DFB3BC0A-887E-4C08-9D50-CE0433B1106E}",
+      "Min": "0",
+      "Max": "100",
+      "DefaultValue": "100"
      },
      {
       "Id": "1786260118",
       "Name": "MenuVolume",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\MenuVolume",
-      "GUID": "{E3388098-B798-4C09-B900-93DCECD91828}"
+      "GUID": "{E3388098-B798-4C09-B900-93DCECD91828}",
+      "Min": "0",
+      "Max": "100",
+      "DefaultValue": "100"
      },
      {
       "Id": "2346531308",
       "Name": "MusicVolume",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\MusicVolume",
-      "GUID": "{63AE203E-86D2-4D19-A59B-BE928F65C12C}"
+      "GUID": "{63AE203E-86D2-4D19-A59B-BE928F65C12C}",
+      "Min": "0",
+      "Max": "100",
+      "DefaultValue": "100"
      },
      {
       "Id": "3546521921",
       "Name": "AmbientVolume",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\AmbientVolume",
-      "GUID": "{8163CA6C-8E10-4D16-A6F4-CFBA9F5472BA}"
+      "GUID": "{8163CA6C-8E10-4D16-A6F4-CFBA9F5472BA}",
+      "Min": "0",
+      "Max": "100",
+      "DefaultValue": "100"
      }
     ],
     "SwitchGroups": [
@@ -575,7 +590,7 @@
     "Type": "Event",
     "GUID": "{413F87E7-B318-4C26-9D8C-522516E4F81A}",
     "Language": "SFX",
-    "Hash": "{80D55AE7-F30B-0001-49D6-1457324A6F81}",
+    "Hash": "{C9265205-4E69-1128-7664-36098620EB50}",
     "ObjectPath": "Play_STG_Pickup",
     "ShortName": "Play_STG_Pickup",
     "Path": "Event/Play_STG_Pickup.bnk",
@@ -587,7 +602,7 @@
       "Location": "Loose",
       "ShortName": "a.wav",
       "Path": "Media/10179816.wem",
-      "CachePath": "E1/{E136A2D0-604C-A290-CBAA-A7BA9F911C80}.wem"
+      "CachePath": "36/{3635496E-58FE-3A4D-EEA7-8E6D22EBD4F4}.wem"
      }
     ],
     "Plugins": {
@@ -595,7 +610,7 @@
       {
        "Id": "213844949",
        "Name": "Parametric EQ (Custom)",
-       "ObjectPath": "\\Containers\\Default Work Unit\\SFX\\Stingers\\UI\\a\\[Effect Slot [0]: (Parametric EQ)]\\Parametric EQ (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\SFX\\Stingers\\UI\\a\\[0 - Parametric EQ]\\Parametric EQ (Custom)",
        "GUID": "{73A24686-4B8F-481A-BFE8-C85120C75762}",
        "LibName": "Wwise Parametric EQ",
        "LibId": "6881283"
@@ -631,7 +646,7 @@
     "Type": "Event",
     "GUID": "{8F0ABEC4-8BFE-4EF0-978D-9BAE7533E3A0}",
     "Language": "SFX",
-    "Hash": "{5AC71150-A724-D15C-613D-46BEDD9BDD48}",
+    "Hash": "{56E95A71-317D-6EC9-DC81-4BFBB1FBF890}",
     "ObjectPath": "Play_STG_Clock",
     "ShortName": "Play_STG_Clock",
     "Path": "Event/Play_STG_Clock.bnk",
@@ -643,7 +658,7 @@
       "Location": "Loose",
       "ShortName": "dragon-studio-slow-cinematic-clock-ticking-405471.wav",
       "Path": "Media/665275161.wem",
-      "CachePath": "F5/{F5E59E60-4C4B-450B-98EE-92DE1A8B8A04}.wem"
+      "CachePath": "ED/{ED8CE5C0-487B-D012-56C6-E77E993841E6}.wem"
      }
     ],
     "Events": [
@@ -668,7 +683,7 @@
     "Type": "Event",
     "GUID": "{D41A0C01-0A22-450B-AA1C-9CAC988C1B3B}",
     "Language": "SFX",
-    "Hash": "{3C0628A9-1C71-BD95-5DAC-AC123DBFC1D1}",
+    "Hash": "{848CEE02-2244-C1AE-E59B-4FFC9E839C4A}",
     "ObjectPath": "Play_Menu_Button_Hover",
     "ShortName": "Play_Menu_Button_Hover",
     "Path": "Event/Play_Menu_Button_Hover.bnk",
@@ -680,7 +695,7 @@
       "Location": "Loose",
       "ShortName": "p.wav",
       "Path": "Media/809076942.wem",
-      "CachePath": "2A/{2A3D866E-717E-519C-7E80-61CD236C1F4C}.wem"
+      "CachePath": "9B/{9B6709DE-C5F7-044C-1EF1-F62B0897C942}.wem"
      }
     ],
     "Events": [
@@ -705,7 +720,7 @@
     "Type": "Event",
     "GUID": "{4D88A7F9-FA1B-4C1A-8047-30FE86D158B6}",
     "Language": "SFX",
-    "Hash": "{24E55EDD-26F3-95D6-B02C-E73819ADF7EA}",
+    "Hash": "{4D6A54E9-BA76-C50F-9BF8-7D2FF146238C}",
     "ObjectPath": "Play_STG_PickWood",
     "ShortName": "Play_STG_PickWood",
     "Path": "Event/Play_STG_PickWood.bnk",
@@ -717,7 +732,7 @@
       "Location": "Loose",
       "ShortName": "freesound_community-tomar-un-objeto-46562.wav",
       "Path": "Media/669185545.wem",
-      "CachePath": "74/{74A824FF-55CF-8E38-E71A-A9C4504AD640}.wem"
+      "CachePath": "4B/{4B44C09E-1004-D719-E9CA-D9A302D4F292}.wem"
      }
     ],
     "Events": [
@@ -742,7 +757,7 @@
     "Type": "Event",
     "GUID": "{00063086-C8F5-4E31-B546-3BA30C57B3FC}",
     "Language": "SFX",
-    "Hash": "{FDB06760-B43A-5E05-07E3-677004BC09A6}",
+    "Hash": "{D3204238-3E3A-3D1B-E01E-B54A56F7E297}",
     "ObjectPath": "Stop_MUS_MainMenu",
     "ShortName": "Stop_MUS_MainMenu",
     "Path": "Event/Stop_MUS_MainMenu.bnk",
@@ -760,6 +775,6 @@
     ]
    }
   ],
-  "FileHash": "{307BF0D3-EC18-D013-2392-973D1CE9A062}"
+  "FileHash": "{3728A5EC-E8D9-7C2C-B7B5-0574DCDD915A}"
  }
 }
