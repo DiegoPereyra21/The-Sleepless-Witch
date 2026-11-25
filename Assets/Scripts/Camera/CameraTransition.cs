@@ -55,6 +55,7 @@ public class CameraTransition : MonoBehaviour
     public void TransitionToPlayer(Action onComplete = null)
     {
         activeAnchor = null;
+        RefreshFollowCamera();
 
         StartBlend(cinemachineCameraTransform, defaultFov, () =>
         {
@@ -63,6 +64,21 @@ public class CameraTransition : MonoBehaviour
             Cursor.visible = false;
             onComplete?.Invoke();
         });
+    }
+
+    // Con el brain apagado la cámara de seguimiento no se actualiza: se recoloca detrás del player antes del blend
+    private void RefreshFollowCamera()
+    {
+        if (!cinemachineCameraTransform.TryGetComponent(out CinemachineCamera followCamera)) return;
+
+        if (followCamera.Follow != null)
+        {
+            PlayerLook look = followCamera.Follow.GetComponentInParent<PlayerLook>();
+            if (look != null) look.ApplyRotation();
+        }
+
+        followCamera.PreviousStateIsValid = false;
+        followCamera.UpdateCameraState(Vector3.up, -1f);
     }
 
     private void LateUpdate()
