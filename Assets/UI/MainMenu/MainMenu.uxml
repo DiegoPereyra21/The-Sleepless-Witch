@@ -29,7 +29,7 @@
             <ui:VisualElement name="LanguageSection" class="language-section" style="flex-grow: 1; min-height: 24px; max-height: 25%; padding-top: 0; padding-bottom: 0; height: 10%;">
                 <ui:Label text="Idioma" name="LanguageLabel"/>
                 <ui:VisualElement name="LanguageButtonContainer" style="flex-grow: 1;">
-                    <ui:Toggle label="Espanhol" name="SpanishToggle" class="spanish-toggle" style="height: 70px; width: 250px;"/>
+                    <ui:Toggle label="Español" name="SpanishToggle" class="spanish-toggle" style="height: 70px; width: 250px;"/>
                     <ui:Toggle label="Ingles" name="EnglishToggle" toggle-on-label-click="true" class="english-toggle" style="height: 70px; width: 250px;"/>
                 </ui:VisualElement>
             </ui:VisualElement>
@@ -80,15 +80,15 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="AskTutorialPanel" focusable="false" class="confirm-panel" style="display: none;">
-    <ui:Label text="¿Querés hacer el tutorial antes de empezar?" name="AskTutorialLabel" class="confirm-label"/>
-    <ui:VisualElement name="AskTutorialButtonsRow" class="confirm-buttons-row">
-        <ui:Button text="Sí" name="AskTutorialYesButton" class="menu-button confirm-button">
-            <ui:VisualElement name="Sparkles" picking-mode="Ignore" class="sparkles" style="flex-grow: 1;"/>
-        </ui:Button>
-        <ui:Button text="No" name="AskTutorialNoButton" class="menu-button confirm-button">
-            <ui:VisualElement name="Sparkles" picking-mode="Ignore" class="sparkles" style="flex-grow: 1;"/>
-        </ui:Button>
-    </ui:VisualElement>
-</ui:VisualElement>
+            <ui:Label text="¿Querés hacer el tutorial antes de empezar?" name="AskTutorialLabel" class="confirm-label"/>
+            <ui:VisualElement name="AskTutorialButtonsRow" class="confirm-buttons-row">
+                <ui:Button text="Sí" name="AskTutorialYesButton" class="menu-button confirm-button">
+                    <ui:VisualElement name="Sparkles" picking-mode="Ignore" class="sparkles" style="flex-grow: 1;"/>
+                </ui:Button>
+                <ui:Button text="No" name="AskTutorialNoButton" class="menu-button confirm-button">
+                    <ui:VisualElement name="Sparkles" picking-mode="Ignore" class="sparkles" style="flex-grow: 1;"/>
+                </ui:Button>
+            </ui:VisualElement>
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
