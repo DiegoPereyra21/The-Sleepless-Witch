@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerFovKick : MonoBehaviour
 {
     [SerializeField] private CinemachineCamera followCamera;
+    [SerializeField] private CinemachineCamera firstPersonCamera;
     [Tooltip("Grados extra sobre el FOV base al correr")]
     [SerializeField, Min(0f)] private float runKick = 8f;
     [Tooltip("Tiempo aproximado para alcanzar el objetivo, en segundos")]
@@ -13,6 +14,7 @@ public class PlayerFovKick : MonoBehaviour
 
     private PlayerMovement movement;
     private float baseFov;
+    private float firstPersonBaseFov;
     private float kick;
     private float kickVelocity;
 
@@ -20,13 +22,14 @@ public class PlayerFovKick : MonoBehaviour
     {
         movement = GetComponent<PlayerMovement>();
         baseFov = followCamera.Lens.FieldOfView;
+        if (firstPersonCamera != null) firstPersonBaseFov = firstPersonCamera.Lens.FieldOfView;
     }
 
     private void OnDisable()
     {
         kick = 0f;
         kickVelocity = 0f;
-        if (followCamera != null) Apply();
+        Apply();
     }
 
     private void Update()
@@ -40,8 +43,16 @@ public class PlayerFovKick : MonoBehaviour
 
     private void Apply()
     {
-        LensSettings lens = followCamera.Lens;
-        lens.FieldOfView = baseFov + kick;
-        followCamera.Lens = lens;
+        SetFov(followCamera, baseFov + kick);
+        SetFov(firstPersonCamera, firstPersonBaseFov + kick);
+    }
+
+    private static void SetFov(CinemachineCamera cam, float fov)
+    {
+        if (cam == null) return;
+
+        LensSettings lens = cam.Lens;
+        lens.FieldOfView = fov;
+        cam.Lens = lens;
     }
 }
