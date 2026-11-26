@@ -45,9 +45,10 @@ public class PlayerMovement : MonoBehaviour
     public float HorizontalSpeed => horizontalVelocity.magnitude;
     public bool IsGrounded => controller.isGrounded;
     // 0 caminando, 1 corriendo a máxima velocidad
-    public float RunBlend => Mathf.InverseLerp(WalkSpeed, WalkSpeed * runMultiplier, HorizontalSpeed);
+    public float RunBlend => Mathf.InverseLerp(WalkSpeed, RunSpeed, HorizontalSpeed);
 
-    private float WalkSpeed => GameProgressManager.Instance.IsOutside ? outdoorSpeed : indoorSpeed;
+    public float WalkSpeed => GameProgressManager.Instance.IsOutside ? outdoorSpeed : indoorSpeed;
+    public float RunSpeed => WalkSpeed * runMultiplier;
 
     private void Awake()
     {

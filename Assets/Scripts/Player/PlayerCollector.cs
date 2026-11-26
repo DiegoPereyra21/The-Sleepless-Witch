@@ -67,6 +67,10 @@ public class PlayerCollector : MonoBehaviour
             return;
         }
 
+        // el hada deja de escapar apenas se la agarra
+        if (target.TryGetComponent(out FairyHover fairy))
+            fairy.Catch();
+
         playerMovement.FreezeMovement(target.FreezeDuration);
         animator.SetTrigger("Interact");
 
