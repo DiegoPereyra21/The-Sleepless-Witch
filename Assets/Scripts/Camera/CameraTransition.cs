@@ -57,7 +57,18 @@ public class CameraTransition : MonoBehaviour
         activeAnchor = null;
         RefreshFollowCamera();
 
-        StartBlend(cinemachineCameraTransform, defaultFov, () =>
+        // La cámara de destino depende de si el player está en una zona de 1ra persona
+        Transform liveCamera = cinemachineCameraTransform;
+        float liveFov = defaultFov;
+        PlayerCameraRig rig = cinemachineCameraTransform.GetComponentInParent<PlayerCameraRig>();
+        if (rig != null)
+        {
+            rig.RefreshMode();
+            liveCamera = rig.ActiveCamera.transform;
+            liveFov = rig.ActiveCamera.Lens.FieldOfView;
+        }
+
+        StartBlend(liveCamera, liveFov, () =>
         {
             cinemachineBrain.enabled = true;
             Cursor.lockState = CursorLockMode.Locked;
