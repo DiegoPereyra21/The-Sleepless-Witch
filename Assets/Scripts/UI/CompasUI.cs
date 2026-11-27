@@ -39,9 +39,6 @@ public class CompassUI : MonoBehaviour
 
     private void Awake()
     {
-        // Hace que el Compass sobreviva al cambiar de escena
-        DontDestroyOnLoad(gameObject);
-
         uiDocument = GetComponent<UIDocument>();
     }
 

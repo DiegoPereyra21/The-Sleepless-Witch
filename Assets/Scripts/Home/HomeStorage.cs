@@ -29,7 +29,6 @@ public class HomeStorage : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
 
         Pantry.OnChanged += RaiseStorageChanged;
         Cauldron.OnChanged += RaiseStorageChanged;

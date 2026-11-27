@@ -26,6 +26,16 @@ public class AudioSettingsUI : MonoBehaviour
     private const float GeneralDefaultVolume = 100f;
     private const float DefaultVolume = 50f;
 
+    // Aplica los volúmenes guardados sin necesidad de tener la UI abierta
+    public static void ApplySavedVolumes()
+    {
+        AkSoundEngine.SetRTPCValue(GeneralRTPC, PlayerPrefs.GetFloat(GeneralKey, GeneralDefaultVolume));
+        AkSoundEngine.SetRTPCValue(MenuRTPC, PlayerPrefs.GetFloat(MenuKey, DefaultVolume));
+        AkSoundEngine.SetRTPCValue(MusicRTPC, PlayerPrefs.GetFloat(MusicKey, DefaultVolume));
+        AkSoundEngine.SetRTPCValue(SFXRTPC, PlayerPrefs.GetFloat(SFXKey, DefaultVolume));
+        AkSoundEngine.SetRTPCValue(AmbientRTPC, PlayerPrefs.GetFloat(AmbientKey, DefaultVolume));
+    }
+
     private void OnEnable()
     {
         VisualElement root = uiDocument.rootVisualElement;
@@ -77,11 +87,7 @@ public class AudioSettingsUI : MonoBehaviour
         if (sfxSlider != null) sfxSlider.value = sfxVolume;
         if (ambientSlider != null) ambientSlider.value = ambientVolume;
 
-        AkSoundEngine.SetRTPCValue(GeneralRTPC, generalVolume);
-        AkSoundEngine.SetRTPCValue(MenuRTPC, menuVolume);
-        AkSoundEngine.SetRTPCValue(MusicRTPC, musicVolume);
-        AkSoundEngine.SetRTPCValue(SFXRTPC, sfxVolume);
-        AkSoundEngine.SetRTPCValue(AmbientRTPC, ambientVolume);
+        ApplySavedVolumes();
     }
 
     private void OnGeneralChanged(ChangeEvent<float> evt)

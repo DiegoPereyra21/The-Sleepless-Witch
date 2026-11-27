@@ -112,7 +112,6 @@ public class GameProgressManager : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
         TutorialModeFlag.IsActive = false;
         Load();
         OnDayStarted += SetDayMusic;
@@ -131,9 +130,10 @@ public class GameProgressManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "MainMenu")
+        if (IsMenuScene(scene.name))
         {
             AkSoundEngine.StopAll(gameObject);
+            SetCompassVisible(false);
             return;
         }
 
@@ -323,15 +323,18 @@ public class GameProgressManager : MonoBehaviour
     // funciones para cambiar musica con wwise
     private void SetDayMusic()
     {
-        if (SceneManager.GetActiveScene().name == "MainMenu") return;
+        if (IsMenuScene(SceneManager.GetActiveScene().name)) return;
         AkSoundEngine.SetSwitch("TimeOfDay", "Day", gameObject);
     }
 
     private void SetNightMusic()
     {
-        if (SceneManager.GetActiveScene().name == "MainMenu") return;
+        if (IsMenuScene(SceneManager.GetActiveScene().name)) return;
         AkSoundEngine.SetSwitch("TimeOfDay", "Night", gameObject);
     }
+
+    // Escenas sin partida en curso: no llevan música del juego ni brújula
+    private static bool IsMenuScene(string sceneName) => sceneName == "Boot" || sceneName == "MainMenu";
 
 
 

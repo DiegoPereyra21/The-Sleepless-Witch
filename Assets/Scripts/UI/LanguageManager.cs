@@ -6,8 +6,6 @@ using UnityEngine.Localization.Settings;
 
 public class LanguageManager : MonoBehaviour
 {
-    public static LanguageManager Instance { get; private set; }
-
     [Header("UI")]
     [SerializeField] private UIDocument uiDocument;
 
@@ -18,18 +16,6 @@ public class LanguageManager : MonoBehaviour
     private Toggle englishToggle;
 
     private bool changingLanguage;
-
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
 
     private void OnEnable()
     {
