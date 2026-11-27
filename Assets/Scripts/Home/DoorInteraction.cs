@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class DoorInteraction : Interactable
@@ -9,7 +10,7 @@ public class DoorInteraction : Interactable
     [SerializeField] private QuestManager questManager;
 
     [SerializeField] private CharacterController playerController;
-    [SerializeField] private Transform teleportDestination;
+    [SerializeField] private DoorPassage passage;
     [SerializeField] private DayTransition dayTransition;
 
     public bool EntryBlocked { get; set; }
@@ -27,6 +28,13 @@ public class DoorInteraction : Interactable
             return;
         }
 
+        playerController.GetComponent<PlayerAutoWalk>()
+            .PassDoor(passage, true, cameraTransition, FinishNight, null);
+    }
+
+    // Pasa con la pantalla en negro, antes de aparecer adentro
+    private IEnumerator FinishNight()
+    {
         int itemsCollected = inventory.TotalCount;
 
         HomeStorage.Instance.Deposit(inventory);
@@ -37,12 +45,7 @@ public class DoorInteraction : Interactable
         basketDisplay.ClearAll();
         basketDisplay.SetAvailable(false);
 
-        // El salto adentro se hace con la pantalla ya cubierta
-        dayTransition.PlayEndOfNight(itemsCollected, () =>
-        {
-            playerController.GetComponent<PlayerMovement>().Teleport(teleportDestination);
-            GameProgressManager.Instance.EnterHouse();
-            cameraTransition.SnapToPlayer();
-        });
+        dayTransition.PlayEndOfNight(itemsCollected, () => GameProgressManager.Instance.EnterHouse(), true);
+        yield return new WaitWhile(() => dayTransition.IsPlaying);
     }
 }

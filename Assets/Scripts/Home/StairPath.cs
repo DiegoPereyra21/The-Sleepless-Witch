@@ -7,6 +7,14 @@ public class StairPath : MonoBehaviour
 {
     [SerializeField] private Transform pointsRoot;
 
+    [Header("Corte en escaleras largas")]
+    [Tooltip("Se muestra un tramo en cada piso y se salta el del medio")]
+    [SerializeField] private bool skipMiddle = true;
+    [Tooltip("Escalones que se ven del lado de abajo")]
+    [SerializeField, Min(1)] private int bottomSteps = 4;
+    [Tooltip("Escalones que se ven del lado de arriba")]
+    [SerializeField, Min(1)] private int topSteps = 3;
+
     [Header("Cámaras que muestran al personaje")]
     [SerializeField] private Transform lowerCamera;
     [SerializeField] private Transform upperCamera;
@@ -23,7 +31,19 @@ public class StairPath : MonoBehaviour
         return points;
     }
 
-    // La cámara que mejor ve al personaje según la altura de sus pies
+    public Transform LowerCamera => lowerCamera;
+    public Transform UpperCamera => upperCamera;
+
+    // Puntos (en el orden de GetPoints) donde se corta el recorrido y donde se retoma.
+    // false si la escalera se recorre entera
+    public bool TryGetCut(bool goingUp, out int leaveAt, out int resumeAt)
+    {
+        leaveAt = goingUp ? bottomSteps : topSteps;
+        resumeAt = pointsRoot.childCount - 1 - (goingUp ? topSteps : bottomSteps);
+        return skipMiddle && resumeAt > leaveAt + 1;
+    }
+
+    // La cámara que mejor ve al personaje según la altura de sus pies (recorrido sin corte)
     public Transform CameraFor(Vector3 feet)
     {
         float top = pointsRoot.GetChild(pointsRoot.childCount - 1).position.y;

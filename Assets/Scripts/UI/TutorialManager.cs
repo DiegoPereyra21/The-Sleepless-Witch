@@ -12,7 +12,6 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private DoorExitInteraction doorExit;
     [SerializeField] private QuestManager questManager;
     [SerializeField] private CraftingRoom craftingRoom;
-    [SerializeField] private Cauldron cauldron;
     [SerializeField] private DeliveryInteraction deliveryInteraction;
     [SerializeField] private PlayerCollector playerCollector;
     [SerializeField] private DoorInteraction doorInteraction;
@@ -45,19 +44,17 @@ public class TutorialManager : MonoBehaviour
     private readonly TutorialHighlighter highlighter = new TutorialHighlighter();
     private Mailbox mailbox;
     private BedInteraction bed;
-    private WorkTable[] workTables;
     private Collectible[] collectibles;
     private float guideTimer;
     private string lastCraftingHint;
-    private TableType? hintTable; // mesa fuera de la pantalla a la que hay que ir
 
     private void Start()
     {
         mailbox = FindFirstObjectByType<Mailbox>();
         bed = FindFirstObjectByType<BedInteraction>();
-        workTables = FindObjectsByType<WorkTable>(FindObjectsSortMode.None);
 
-        Show("Usá WASD para moverte, el mouse para mirar y E para usar lo que estés mirando (se ilumina). Empezá bajando las escaleras.");
+        DialogueUI.Instance.SetCompact();
+        Show("Movete con WASD, mirá con el mouse y usá con E lo que se ilumine. Empezá bajando las escaleras.");
     }
 
     private void Update()
@@ -71,7 +68,7 @@ public class TutorialManager : MonoBehaviour
             if (hasAll && !collectedMessageShown)
             {
                 collectedMessageShown = true;
-                Show("¡Ya tenés todo lo necesario! Volvé a la casa por la puerta para preparar las pociones.");
+                Show("¡Ya tenés todo! Volvé a la casa para preparar las pociones.");
             }
         }
 
@@ -124,8 +121,11 @@ public class TutorialManager : MonoBehaviour
         if (basketDisplay != null) basketDisplay.OnOpened += HandleInventoryOpened;
         if (basketDisplay != null) basketDisplay.OnClosed += HandleInventoryClosed;
 
-        if (craftingRoom != null) craftingRoom.OnEntered += HandleEnteredCrafting;
-        if (cauldron != null) cauldron.OnPotionCrafted += HandlePotionCrafted;
+        if (craftingRoom != null)
+        {
+            craftingRoom.OnEntered += HandleEnteredCrafting;
+            craftingRoom.Table.PotionCrafted += HandlePotionCrafted;
+        }
 
         if (deliveryInteraction != null)
             deliveryInteraction.OnInteracted += HandleDelivered;
@@ -144,8 +144,11 @@ public class TutorialManager : MonoBehaviour
         if (basketDisplay != null) basketDisplay.OnOpened -= HandleInventoryOpened;
         if (basketDisplay != null) basketDisplay.OnClosed -= HandleInventoryClosed;
 
-        if (craftingRoom != null) craftingRoom.OnEntered -= HandleEnteredCrafting;
-        if (cauldron != null) cauldron.OnPotionCrafted -= HandlePotionCrafted;
+        if (craftingRoom != null)
+        {
+            craftingRoom.OnEntered -= HandleEnteredCrafting;
+            craftingRoom.Table.PotionCrafted -= HandlePotionCrafted;
+        }
 
         if (deliveryInteraction != null)
             deliveryInteraction.OnInteracted -= HandleDelivered;
@@ -164,7 +167,7 @@ public class TutorialManager : MonoBehaviour
         if (currentStep != Step.Movement) return;
 
         currentStep = Step.GoOutside;
-        Show("¡Bien! Ahora salí por la puerta: afuera están el buzón con los pedidos y los ingredientes.");
+        Show("¡Bien! Salí por la puerta: afuera están el buzón y los ingredientes.");
     }
 
     private void HandleWentOutside()
@@ -172,7 +175,7 @@ public class TutorialManager : MonoBehaviour
         if (currentStep != Step.GoOutside) return;
 
         currentStep = Step.CheckMailbox;
-        Show("Acercate al buzón, miralo y pulsá E para aceptar los pedidos. Cada pedido es una poción que vas a tener que preparar.");
+        Show("Mirá el buzón y pulsá E para aceptar los pedidos. Cada pedido es una poción para preparar.");
 
         if (playerCollector != null) playerCollector.CollectionBlocked = true;
 
@@ -189,7 +192,7 @@ public class TutorialManager : MonoBehaviour
         if (questManager.ActiveQuests.Count < questsNeededForNextStep) return;
 
         currentStep = Step.CollectItems;
-        Show("¡Pedidos aceptados! En el diario de objetivos ves qué ingredientes te faltan. Los que necesitás brillan: acercate y pulsá E para juntarlos. Con TAB revisás tu canasto.");
+        Show("Juntá con E los ingredientes que brillan. El diario de objetivos muestra cuáles faltan y con TAB ves tu canasto.");
 
         if (playerCollector != null) playerCollector.CollectionBlocked = false;
         if (doorInteraction != null) doorInteraction.EntryBlocked = false;
@@ -200,7 +203,7 @@ public class TutorialManager : MonoBehaviour
         if (currentStep != Step.CollectItems || inventoryOpenedOnce) return;
         inventoryOpenedOnce = true;
 
-        Show("Este es tu canasto. Si juntaste algo que no sirve, hacé click sobre él para tirarlo. Pulsá TAB para cerrarlo.");
+        Show("Este es tu canasto: hacé click en lo que no sirva para tirarlo. Cerralo con TAB.");
     }
 
     private void HandleInventoryClosed()
@@ -208,7 +211,7 @@ public class TutorialManager : MonoBehaviour
         if (currentStep != Step.CollectItems || !inventoryOpenedOnce || inventoryClosedMessageShown) return;
         inventoryClosedMessageShown = true;
 
-        Show("Juntá todo antes de que amanezca: de día los ingredientes se marchitan y ya no se pueden recolectar.");
+        Show("Juntá todo antes de que amanezca: de día los ingredientes se marchitan.");
     }
 
     // Aviso del grimorio (tecla J): sale una sola vez al juntar el primer ingrediente.
@@ -218,7 +221,7 @@ public class TutorialManager : MonoBehaviour
         if (inventory.TotalCount <= 0) return;
 
         grimoireTipShown = true;
-        Show("¿No conocés un ingrediente? Pulsá J para abrir el grimorio: en la pestaña Compendio ves qué es y para qué sirve cada uno.");
+        Show("¿No conocés un ingrediente? Pulsá J y mirá la pestaña Compendio del grimorio.");
     }
 
     // Entrar a la casa cierra la parte de afuera pase lo que pase (te saltees el buzón o no) —
@@ -230,7 +233,7 @@ public class TutorialManager : MonoBehaviour
 
         nightPhaseDone = true;
         currentStep = Step.CraftingIntro;
-        Show("Ahora toca preparar las pociones. Acercate al caldero, miralo y pulsá E.");
+        Show("A preparar las pociones: mirá el caldero de la mesa y pulsá E.");
     }
 
     private void HandleEnteredCrafting()
@@ -250,7 +253,7 @@ public class TutorialManager : MonoBehaviour
         if (QuestRequirements.GetUncoveredQuests(questManager).Count > 0) return;
 
         currentStep = Step.Deliver;
-        Show("¡Pociones listas! Pulsá E para salir de la mesa y dejalas en el mostrador para entregarlas.");
+        Show("¡Pociones listas! Salí de la mesa con E y entregalas en el mostrador.");
     }
 
     private void HandleDelivered()
@@ -259,7 +262,7 @@ public class TutorialManager : MonoBehaviour
         if (!AllQuestsDelivered()) return;
 
         currentStep = Step.WaitingToSleep;
-        Show("Los pedidos se cobran cuando dormís. Juntá dinero para comprar el ingrediente especial de tu poción del sueño pesado lo antes posible… si no, ya vas a ver. Ahora subí las escaleras y andá a la cama.");
+        Show("Cobrás los pedidos al dormir. Juntá pronto para el ingrediente especial de tu poción del sueño pesado… o ya vas a ver. Subí y andá a la cama.");
     }
 
     private void HandleSlept()
@@ -286,7 +289,6 @@ public class TutorialManager : MonoBehaviour
     // Decide qué titila según el paso actual (y en el crafteo, también qué indicación mostrar).
     private void RefreshGuide()
     {
-        hintTable = null;
         switch (currentStep)
         {
             case Step.Movement:
@@ -324,7 +326,7 @@ public class TutorialManager : MonoBehaviour
                 break;
         }
 
-        if (craftingRoom != null) craftingRoom.View.PointTo(hintTable);
+        if (craftingRoom != null) TutorialUI.Instance.SetCompact(craftingRoom.IsInside);
 
         highlighter.Apply();
     }
@@ -377,28 +379,28 @@ public class TutorialManager : MonoBehaviour
 
     private void GuideCrafting()
     {
-        if (craftingRoom == null || cauldron == null) return;
+        if (craftingRoom == null) return;
 
         if (!craftingRoom.IsInside)
         {
             highlighter.Add(craftingRoom);
-            ShowCraftingHint("Acercate al caldero, miralo y pulsá E para seguir preparando las pociones.");
+            ShowCraftingHint("Mirá el caldero de la mesa y pulsá E para seguir preparando.");
             return;
         }
+
+        // Mientras algo se está moliendo, cortando o revolviendo no hay nada que indicar
+        if (craftingRoom.Table.Service == null || craftingRoom.IsBusy) return;
 
         PotionData target = GetTargetPotion();
         if (target == null)
         {
-            ShowCraftingHint("¡Muy bien! Ya tenés las pociones de todos los pedidos.");
+            ShowCraftingHint("¡Muy bien! Ya tenés todas las pociones.");
             return;
         }
 
         string instruction = BuildCraftingInstruction(target);
 
-        string controls = craftingRoom.View.ControlsHint;
-        if (!string.IsNullOrEmpty(controls)) controls += "   ·   ";
-
-        ShowCraftingHint($"Preparando: {TutorialUI.Item(target.DisplayName)}\n{instruction}\n<size=75%>{controls}E: salir de la mesa</size>");
+        ShowCraftingHint(instruction);
     }
 
     private PotionData GetTargetPotion()
@@ -415,27 +417,21 @@ public class TutorialManager : MonoBehaviour
     // Indica el próximo paso para la receta y hace titilar lo que hay que tocar.
     private string BuildCraftingInstruction(PotionData target)
     {
-        HomeStorage storage = HomeStorage.Instance;
-        ItemContainer pot = storage.Cauldron;
+        CraftingTable table = craftingRoom.Table;
+        ItemContainer pantry = table.Service.Pantry;
+        ItemContainer pot = table.Service.Cauldron;
         Dictionary<ItemKey, int> required = target.GetRequirements();
 
         // 1) Algo en el caldero que no va (o de más)
-        List<ItemKey> extra = new List<ItemKey>();
         foreach (KeyValuePair<ItemKey, int> pair in pot.Contents)
         {
             required.TryGetValue(pair.Key, out int needed);
-            if (pair.Value > needed) extra.Add(pair.Key);
-        }
+            if (pair.Value <= needed) continue;
 
-        if (extra.Count > 0)
-        {
-            foreach (ItemVisual visual in FindObjectsByType<ItemVisual>(FindObjectsSortMode.None))
-            {
-                if (visual.Owner == cauldron && extra.Contains(visual.Key))
-                    highlighter.AddObject(visual.gameObject);
-            }
+            foreach (InteractableOutline outline in table.Cauldron.OutlinesOf(pair.Key))
+                highlighter.Add(outline);
 
-            return $"En el caldero hay {TutorialUI.Item(extra[0].DisplayName)} que no va en esta poción: hacé click sobre él para sacarlo.";
+            return $"Sobra {TutorialUI.Item(pair.Key.DisplayName)} en el caldero: hacé click encima para sacarlo.";
         }
 
         // 2) El primer ingrediente que falta, en el orden de la receta
@@ -449,84 +445,39 @@ public class TutorialManager : MonoBehaviour
             if (missing <= 0) continue;
 
             string amount = missing > 1 ? $" (faltan {missing})" : "";
-            TableType table = key.Item.Table;
 
-            if (key.State == ItemState.Processed)
+            if (pantry.Count(key) > 0)
             {
-                if (storage.Pantry.Count(key) > 0)
-                    return ClickToCauldron(key, amount, "");
-
-                ItemKey raw = ItemKey.Raw(key.Item);
-                if (storage.Pantry.Count(raw) > 0)
-                {
-                    bool visible = HighlightShelfItem(raw);
-                    highlighter.AddObject(GetStation(table));
-
-                    string where = table == TableType.Mortar ? "al mortero para molerlo" : "a la tabla de picar para cortarlo";
-                    return WithNavigation(visible, table, $"Arrastrá {TutorialUI.Item(raw.DisplayName)} {where}{amount}.");
-                }
-            }
-            else if (storage.Pantry.Count(key) > 0)
-            {
-                return ClickToCauldron(key, amount, " No hace falta procesarlo.");
+                HighlightSlot(key);
+                string extra = key.State == ItemState.Raw ? " Va sin procesar." : "";
+                return $"Hacé click en {TutorialUI.Item(key.DisplayName)} para echarlo al caldero{amount}.{extra}";
             }
 
-            return $"Te falta {TutorialUI.Item(key.Item.DisplayName)} y no tenés más en la casa: vas a tener que salir a recolectarlo.";
+            ItemKey raw = ItemKey.Raw(key.Item);
+            if (key.State == ItemState.Processed && pantry.Count(raw) > 0)
+            {
+                HighlightSlot(raw);
+                highlighter.Add(table.FindStation(key.Item.Table));
+
+                string where = key.Item.Table == TableType.Mortar ? "al mortero para molerlo" : "a la tabla de picar para cortarlo";
+                return $"Arrastrá {TutorialUI.Item(raw.DisplayName)} {where}{amount}.";
+            }
+
+            return $"No te queda {TutorialUI.Item(key.Item.DisplayName)}: salí a recolectarlo.";
         }
 
         // 3) Está todo: a revolver
-        highlighter.AddObject(cauldron.ClickTarget);
-        return "¡Ya está todo en el caldero! Hacé click en la cuchara para preparar la poción.";
+        highlighter.Add(table.Ladle);
+        return "¡Está todo! Hacé click en el cucharón para preparar la poción.";
     }
 
-    private string ClickToCauldron(ItemKey key, string amount, string extraText)
+    private void HighlightSlot(ItemKey key)
     {
-        bool visible = HighlightShelfItem(key);
-        return WithNavigation(visible, key.Item.Table,
-            $"Hacé click en {TutorialUI.Item(key.DisplayName)} para echarlo al caldero{amount}.{extraText}");
-    }
+        IngredientSlot slot = craftingRoom.Table.FindSlot(key);
+        if (slot == null) return;
 
-    // Hace titilar los modelos de ese ítem en los estantes. Devuelve si alguno se ve en pantalla.
-    private bool HighlightShelfItem(ItemKey key)
-    {
-        bool anyVisible = false;
-
-        foreach (ItemVisual visual in FindObjectsByType<ItemVisual>(FindObjectsSortMode.None))
-        {
-            if (!(visual.Owner is ItemShelfView) || visual.Key != key) continue;
-
-            highlighter.AddObject(visual.gameObject);
-            anyVisible |= IsOnScreen(visual.transform.position);
-        }
-
-        return anyVisible;
-    }
-
-    private string WithNavigation(bool visible, TableType table, string text)
-    {
-        if (visible) return text;
-
-        hintTable = table;
-
-        string directions = craftingRoom.View.DirectionsTo(table);
-        return string.IsNullOrEmpty(directions) ? text : $"{text}\n{directions}";
-    }
-
-    private GameObject GetStation(TableType table)
-    {
-        if (workTables == null) return null;
-
-        WorkTable workTable = workTables.FirstOrDefault(t => t != null && t.Table == table);
-        return workTable != null ? workTable.Station : null;
-    }
-
-    private static bool IsOnScreen(Vector3 worldPosition)
-    {
-        Camera camera = Camera.main;
-        if (camera == null) return true;
-
-        Vector3 viewport = camera.WorldToViewportPoint(worldPosition);
-        return viewport.z > 0f && viewport.x >= 0f && viewport.x <= 1f && viewport.y >= 0f && viewport.y <= 1f;
+        foreach (InteractableOutline outline in slot.Outlines)
+            highlighter.Add(outline);
     }
 
     private void ShowCraftingHint(string text)

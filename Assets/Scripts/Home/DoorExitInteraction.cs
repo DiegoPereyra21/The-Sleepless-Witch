@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class DoorExitInteraction : TriggerInteractable
@@ -6,9 +7,8 @@ public class DoorExitInteraction : TriggerInteractable
     //activa desactiva el canasto
     [SerializeField] private BasketDisplay basketDisplay;
 
-    //para que por ahora me tepee al otro lado de la puerta, luego agregaremos animacion de puerta y que se mueva obligadamente hacia afuera
     [SerializeField] private CharacterController playerController;
-    [SerializeField] private Transform teleportDestination;
+    [SerializeField] private DoorPassage passage;
     public event System.Action OnUsed;
 
     public override string Prompt => Localized("Salir", "Go outside");
@@ -22,13 +22,18 @@ public class DoorExitInteraction : TriggerInteractable
             return;
         }
 
-        playerController.GetComponent<PlayerMovement>().Teleport(teleportDestination);
+        playerController.GetComponent<PlayerAutoWalk>()
+            .PassDoor(passage, false, cameraTransition, GoOutside, () => OnUsed?.Invoke());
+    }
+
+    // Pasa con la pantalla en negro, ya del lado de afuera
+    private IEnumerator GoOutside()
+    {
         ForgetPlayer();
 
         basketDisplay.SetAvailable(true);
         GameProgressManager.Instance.MarkWentOutside();
         GameProgressManager.Instance.MarkOutside();
-        cameraTransition.SnapToPlayer();
-        OnUsed?.Invoke();
+        yield break;
     }
 }

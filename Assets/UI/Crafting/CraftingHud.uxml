@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="CraftingHud.uss" />
+    <ui:VisualElement name="CraftingRoot" picking-mode="Ignore" class="screen">
+        <ui:VisualElement name="RecipePanel" class="recipe" style="display: none;">
+            <ui:VisualElement class="recipe__bar">
+                <ui:Button name="RecipePrevious" text="&lt;" focusable="false" class="recipe__arrow" />
+                <ui:Label name="RecipeHeader" class="recipe__header" />
+                <ui:Button name="RecipeNext" text="&gt;" focusable="false" class="recipe__arrow" />
+            </ui:VisualElement>
+            <ui:Label name="RecipeTitle" class="recipe__title" />
+            <ui:VisualElement name="RecipeRows" />
+        </ui:VisualElement>
+        <ui:Label name="PointerTooltip" picking-mode="Ignore" class="tooltip" style="display: none;" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -53,46 +53,20 @@ public class HomeStorage : MonoBehaviour
 
     // ---------- Crafteo ----------
 
-    public bool TryProcess(ItemData item)
-    {
-        if (item == null || !item.Processable) return false;
-        if (!Pantry.TryRemove(ItemKey.Raw(item))) return false;
-
-        Pantry.TryAdd(ItemKey.Processed(item));
-        return true;
-    }
-
-    public bool TryMoveToCauldron(ItemKey key)
-    {
-        if (!Pantry.TryRemove(key)) return false;
-
-        Cauldron.TryAdd(key);
-        return true;
-    }
-
-    public bool TryReturnFromCauldron(ItemKey key)
-    {
-        if (!Cauldron.TryRemove(key)) return false;
-
-        Pantry.TryAdd(key);
-        return true;
-    }
-
+    // Las reglas de la mesa están en CraftingService; acá solo queda lo que usan otros sistemas
     public void ReturnCauldronToPantry() => Cauldron.MoveAllTo(Pantry);
-
-    // Vacía el caldero y agrega la poción. La coincidencia con la receta se valida antes de llamar.
-    public void CompleteCraft(PotionData potion)
-    {
-        if (potion == null) return;
-
-        Cauldron.Clear();
-        craftedPotions.Add(potion);
-        RaisePotionsChanged();
-    }
 
     // ---------- Pociones ----------
 
     public bool HasCraftedPotion(PotionData potion) => craftedPotions.Contains(potion);
+
+    public void AddCraftedPotion(PotionData potion)
+    {
+        if (potion == null) return;
+
+        craftedPotions.Add(potion);
+        RaisePotionsChanged();
+    }
 
     public bool RemoveCraftedPotion(PotionData potion)
     {

@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     private InputAction sprintAction;
     private CinemachineBrain cinemachineBrain;
     private CameraTransition cameraTransition;
-    private PlayerStairClimber climber;
+    private PlayerAutoWalk autoWalk;
     private Vector3 horizontalVelocity;
     private float lastYaw;
     private float turnRate;
@@ -40,9 +40,9 @@ public class PlayerMovement : MonoBehaviour
     private int freezeCount;
     //para pausar al pj cuando este recolectando hongos, la ides es q sea reutilizable para distintas situaciones donde necesite una pausa
     // También queda quieto mientras la cámara vuelve desde una vista fija
-    // Y mientras recorre una escalera, que lo mueve PlayerStairClimber
-    public bool IsFrozen => freezeCount > 0 || IsClimbing || (cameraTransition != null && cameraTransition.IsReturningToPlayer);
-    public bool IsClimbing => climber != null && climber.IsClimbing;
+    // Y mientras camina solo (escalera, puerta), que lo mueve PlayerAutoWalk
+    public bool IsFrozen => freezeCount > 0 || IsAutoWalking || (cameraTransition != null && cameraTransition.IsReturningToPlayer);
+    public bool IsAutoWalking => autoWalk != null && autoWalk.IsBusy;
     
     public bool IsPickupInProgress { get; private set; }
 
@@ -64,13 +64,13 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         cinemachineBrain = cameraTransform.GetComponent<CinemachineBrain>();
         cameraTransition = cameraTransform.GetComponent<CameraTransition>();
-        climber = GetComponent<PlayerStairClimber>();
+        autoWalk = GetComponent<PlayerAutoWalk>();
         lastYaw = transform.eulerAngles.y;
     }
 
     private void Update()
     {
-        if (IsClimbing) return;
+        if (IsAutoWalking) return;
 
         Vector2 input = IsFrozen ? Vector2.zero : moveAction.ReadValue<Vector2>();
 

@@ -19,6 +19,8 @@ MonoBehaviour:
   table: 1
   processable: 1
   isKeyItem: 0
+  rawTableScale: 1
+  processedTableScale: 1.6
   rawIcon: {fileID: 21300000, guid: 3ecf6b58a4a37b54c904ffdcd148d82c, type: 3}
   rawModel: {fileID: 6590866449139015112, guid: 74b97f2f3ffc9a748bc262ea20850b77, type: 3}
   basketScale: 0.71

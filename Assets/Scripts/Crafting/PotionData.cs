@@ -45,24 +45,4 @@ public class PotionData : GameDataAsset
 
         return result;
     }
-
-    // Coincidencia exacta: mismos ítems, mismos estados, mismas cantidades, nada de más.
-    public bool Matches(IReadOnlyDictionary<ItemKey, int> contents)
-    {
-        Dictionary<ItemKey, int> required = GetRequirements();
-        if (required.Count == 0) return false;
-
-        int presentKeys = 0;
-
-        foreach (KeyValuePair<ItemKey, int> pair in contents)
-        {
-            if (pair.Value <= 0) continue;
-            presentKeys++;
-
-            if (!required.TryGetValue(pair.Key, out int needed) || needed != pair.Value)
-                return false;
-        }
-
-        return presentKeys == required.Count;
-    }
 }

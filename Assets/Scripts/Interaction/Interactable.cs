@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Localization.Settings;
 
 // Algo del mundo que se activa con la acción Interact. PlayerInteractor elige cuál:
 // en 1ra persona el que se está mirando y en 3ra el más cercano. Solo ese se resalta.
@@ -83,11 +82,7 @@ public abstract class Interactable : MonoBehaviour
 
     protected bool IsWithin(Vector3 point, float radius) => Vector3.Distance(transform.position, point) <= radius;
 
-    protected static string Localized(string spanish, string english)
-    {
-        var locale = LocalizationSettings.SelectedLocale;
-        return locale != null && locale.Identifier.Code != "es" ? english : spanish;
-    }
+    protected static string Localized(string spanish, string english) => GameText.Pick(spanish, english);
 
     private void OnDrawGizmosSelected()
     {

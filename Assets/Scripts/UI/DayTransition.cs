@@ -39,6 +39,8 @@ public class DayTransition : MonoBehaviour
     private VisualElement inventoryItemContainer;
 
     private Coroutine transitionCoroutine;
+    private VisualElement backdrop; // fondo negro para encadenar con el cierre en círculo
+    public bool IsPlaying => transitionCoroutine != null;
     private float previousTimeScale;
     private bool hasTriggered;
 
@@ -51,6 +53,16 @@ public class DayTransition : MonoBehaviour
         uiDocument = GetComponent<UIDocument>();
 
         VisualElement root = uiDocument.rootVisualElement;
+
+        backdrop = new VisualElement { pickingMode = PickingMode.Ignore };
+        backdrop.style.position = Position.Absolute;
+        backdrop.style.left = 0;
+        backdrop.style.right = 0;
+        backdrop.style.top = 0;
+        backdrop.style.bottom = 0;
+        backdrop.style.backgroundColor = Color.black;
+        backdrop.style.display = DisplayStyle.None;
+        root.Insert(0, backdrop); // detrás de todo lo demás
 
         transitionPanel = root.Q<VisualElement>("TransitionDayPanel");
         dayTitle = root.Q<Label>("DayTransitionTitle");
@@ -258,15 +270,17 @@ public class DayTransition : MonoBehaviour
         transitionCoroutine = null;
     }
 
-    public void PlayEndOfNight(int itemsCollected, Action onComplete = null)
+    // overBlack: la pantalla ya está en negro y tiene que seguir así detrás del panel
+    public void PlayEndOfNight(int itemsCollected, Action onComplete = null, bool overBlack = false)
     {
         if (transitionCoroutine != null) return;
-        transitionCoroutine = StartCoroutine(PlayEndOfNightRoutine(itemsCollected, onComplete));
+        transitionCoroutine = StartCoroutine(PlayEndOfNightRoutine(itemsCollected, onComplete, overBlack));
     }
 
-    private IEnumerator PlayEndOfNightRoutine(int itemsCollected, Action onComplete)
+    private IEnumerator PlayEndOfNightRoutine(int itemsCollected, Action onComplete, bool overBlack)
     {
         PauseGame();
+        backdrop.style.display = overBlack ? DisplayStyle.Flex : DisplayStyle.None;
 
         if (hudDocument != null)
             hudDocument.rootVisualElement.style.display = DisplayStyle.None;
@@ -315,6 +329,7 @@ public class DayTransition : MonoBehaviour
         if (questJournalDocument != null)
             questJournalDocument.rootVisualElement.style.display = DisplayStyle.Flex;
 
+        backdrop.style.display = DisplayStyle.None;
         ResumeGame();
         transitionCoroutine = null;
     }

@@ -1,0 +1,67 @@
+/* El cartel se ajusta al texto y queda centrado abajo */
+.tutorial-anchor {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 14px;
+    align-items: center;
+    -unity-font-definition: url("project://database/Assets/Art/Fonts/Alegreya,Jim_Nightshade,Noto_Serif/Alegreya/Alegreya-Italic-VariableFont_wght.ttf?fileID=12800000&guid=abb940bfb20575541b04e7e3299b35c1&type=3#Alegreya-Italic-VariableFont_wght");
+}
+
+.tutorial {
+    max-width: 780px;
+    align-items: center;
+    padding: 8px 24px 12px 24px;
+    background-color: rgba(52, 8, 12, 0.88);
+    border-radius: 18px;
+}
+
+.tutorial__title {
+    margin: 0;
+    padding: 0;
+    font-size: 21px;
+    color: rgb(255, 213, 74);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.tutorial__text {
+    margin: 2px 0 0 0;
+    padding: 0;
+    font-size: 29px;
+    color: rgb(244, 232, 238);
+    white-space: normal;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.tutorial__next {
+    align-self: flex-end;
+    margin: 8px 0 0 0;
+    padding: 4px 18px;
+    font-size: 24px;
+    color: rgb(219, 219, 219);
+    background-color: rgb(0, 0, 0);
+    border-width: 0;
+    border-radius: 14px;
+    -unity-font-style: bold;
+}
+
+/* En la mesa de crafteo: más arriba (debajo va el cartel de la E), sin título y algo más ancho */
+.tutorial-anchor--crafting {
+    bottom: 78px;
+}
+
+.tutorial-anchor--crafting .tutorial {
+    max-width: 940px;
+    padding: 6px 22px 8px 22px;
+}
+
+.tutorial-anchor--crafting .tutorial__title {
+    display: none;
+}
+
+.tutorial-anchor--crafting .tutorial__text {
+    margin-top: 0;
+    font-size: 27px;
+}

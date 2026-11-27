@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-// Entrar y salir de la vista de crafteo.
+// Entrar y salir de la mesa de crafteo
 public class CraftingRoom : Interactable
 {
     [Header("Player")]
@@ -15,7 +15,8 @@ public class CraftingRoom : Interactable
     [Tooltip("Qué se ve mientras se craftea")]
     [SerializeField] private CraftingView view;
 
-    [Header("Interacción")]
+    [Header("Mesa")]
+    [SerializeField] private CraftingTable table;
     [SerializeField] private CraftingPointer pointer;
     [SerializeField] private float interactRadius = 2f;
 
@@ -23,8 +24,8 @@ public class CraftingRoom : Interactable
     public event Action OnExited;
 
     public bool IsInside { get; private set; }
-    public bool IsBusy { get; private set; }
-    public CraftingView View => view;
+    public bool IsBusy => table.IsBusy;
+    public CraftingTable Table => table;
 
     private PlayerInteractor user;
 
@@ -33,8 +34,6 @@ public class CraftingRoom : Interactable
         : Localized("Preparar pociones", "Brew potions");
 
     public override bool IsInRange(Vector3 playerPosition) => IsWithin(playerPosition, interactRadius);
-
-    public void SetBusy(bool busy) => IsBusy = busy;
 
     public override void Interact(PlayerInteractor player)
     {
@@ -53,14 +52,14 @@ public class CraftingRoom : Interactable
         SetPlayerVisible(false);
         if (playerSpotlight != null) playerSpotlight.enabled = false;
 
-        view.Activate();
+        float aspect = Camera.main != null ? Camera.main.aspect : 16f / 9f;
+        cameraTransition.TransitionTo(view.Anchor, view.FieldOfViewFor(aspect));
         OnEntered?.Invoke();
     }
 
     private void Exit()
     {
-        pointer.CancelDrag();
-        view.Deactivate();
+        pointer.Release();
 
         IsInside = false;
         playerMovement.SetFrozen(false);

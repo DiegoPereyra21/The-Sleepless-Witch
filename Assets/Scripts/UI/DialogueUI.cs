@@ -28,6 +28,30 @@ public class DialogueUI : MonoBehaviour
         root.style.opacity = 0f;
     }
 
+    // Durante el tutorial convive con su cartel: se achica para no ocupar media pantalla
+    public void SetCompact()
+    {
+        root.style.width = 780;
+        root.style.left = 570;
+        root.style.top = 24;
+        root.style.minHeight = 0;
+        root.style.paddingTop = 8;
+        root.style.paddingBottom = 12;
+        root.style.paddingLeft = 24;
+        root.style.paddingRight = 24;
+        root.style.borderTopLeftRadius = 18;
+        root.style.borderTopRightRadius = 18;
+        root.style.borderBottomLeftRadius = 18;
+        root.style.borderBottomRightRadius = 18;
+        root.style.wordSpacing = 0;
+        root.style.letterSpacing = 0;
+
+        nameLabel.style.fontSize = 24;
+        textLabel.style.fontSize = 28;
+        textLabel.style.marginTop = 2;
+        textLabel.style.letterSpacing = 0;
+    }
+
     public void ShowMessage(string speakerName, string message, float? duration = null)
     {
         if (isShowing) return;

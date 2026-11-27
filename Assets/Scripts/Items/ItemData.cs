@@ -12,6 +12,11 @@ public class ItemData : GameDataAsset
     [SerializeField] private bool processable = true;
     [Tooltip("No se puede tirar del canasto.")]
     [SerializeField] private bool isKeyItem;
+    [Header("Mesa de crafteo")]
+    [Tooltip("Agranda o achica el modelo crudo en la mesa.")]
+    [SerializeField, Min(0.1f)] private float rawTableScale = 1f;
+    [Tooltip("Agranda o achica el modelo procesado en la mesa.")]
+    [SerializeField, Min(0.1f)] private float processedTableScale = 1f;
 
     [Header("Crudo")]
     [SerializeField] private Sprite rawIcon;
@@ -30,6 +35,7 @@ public class ItemData : GameDataAsset
     public bool Processable => processable;
     public bool IsKeyItem => isKeyItem;
     public float BasketScale => basketScale;
+    public float GetTableScale(ItemState state) => state == ItemState.Raw ? rawTableScale : processedTableScale;
 
     public bool IsGrindable => processable && table == TableType.Mortar;
     public bool IsCuttable => processable && table == TableType.CuttingBoard;

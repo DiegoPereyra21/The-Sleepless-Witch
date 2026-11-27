@@ -33,9 +33,9 @@ public class FootstepController : MonoBehaviour
         if (distance <= 0f)
             return;
 
-        // No reproduce pasos mientras está en el aire (en la escalera sí, aunque el controlador esté apagado)
-        bool climbing = playerMovement != null && playerMovement.IsClimbing;
-        if (!characterController.isGrounded && !climbing)
+        // No reproduce pasos mientras está en el aire (caminando solo sí, aunque el controlador esté apagado)
+        bool autoWalking = playerMovement != null && playerMovement.IsAutoWalking;
+        if (!characterController.isGrounded && !autoWalking)
             return;
 
         distanceWalked += distance;

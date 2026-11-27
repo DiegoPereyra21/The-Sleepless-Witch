@@ -43,7 +43,7 @@ public class InteractionPromptUI : MonoBehaviour
 
         promptText.text = target.Prompt;
         // En la mesa de crafteo el cartel va abajo para no tapar la vista
-        prompt.parent.style.top = Length.Percent(interactor.Captured != null ? 90f : 58f);
+        prompt.parent.style.top = Length.Percent(interactor.Captured != null ? 93f : 58f);
     }
 
     private void TryBuild()

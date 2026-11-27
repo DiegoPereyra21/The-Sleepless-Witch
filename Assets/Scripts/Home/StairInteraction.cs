@@ -26,7 +26,7 @@ public class StairInteraction : Interactable
             return;
         }
 
-        playerController.GetComponent<PlayerStairClimber>()
+        playerController.GetComponent<PlayerAutoWalk>()
             .Climb(path, GoesUp, teleportDestination, cameraTransition, () => OnUsed?.Invoke());
     }
 }

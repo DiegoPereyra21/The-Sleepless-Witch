@@ -33,6 +33,13 @@ public class QuestJournalUI : MonoBehaviour
         journalRoot.style.scale = new Scale(new Vector3(1.15f, 1.15f, 1f));
     }
 
+    // Lo oculta, por ejemplo, la mesa de crafteo, que muestra su propio panel de receta
+    public void SetVisible(bool visible)
+    {
+        if (journalRoot != null)
+            journalRoot.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
+    }
+
     private void Update()
     {
         if (Keyboard.current.qKey.wasPressedThisFrame)

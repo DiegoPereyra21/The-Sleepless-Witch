@@ -15,10 +15,10 @@ public class TutorialUI : MonoBehaviour
 
     // Palabras que se resaltan solas en cualquier mensaje
     private static readonly Regex PlaceRegex = new Regex(
-        @"\b(tabla de picar|diario de objetivos|caldero|cuchara|mortero|buzón|puerta|mostrador|canasto|escaleras?|cama|pedidos?)\b",
+        @"\b(tabla de picar|diario de objetivos|caldero|cucharón|mortero|buzón|puerta|mostrador|canasto|escaleras?|cama|pedidos?)\b",
         RegexOptions.IgnoreCase);
 
-    private static readonly Regex KeyRegex = new Regex(@"\b(WASD|TAB|A y D|E|click)\b");
+    private static readonly Regex KeyRegex = new Regex(@"\b(WASD|TAB|E|click)\b");
 
     [Header("Animación al cambiar de mensaje")]
     [SerializeField] private float pulseDuration = 0.5f;
@@ -30,6 +30,7 @@ public class TutorialUI : MonoBehaviour
     private Label nameLabel;
     private Label textLabel;
     private Button nextButton;
+    private VisualElement anchor;
 
     private readonly Queue<string> messageQueue = new Queue<string>();
     private float pulseElapsed = -1f;
@@ -39,6 +40,7 @@ public class TutorialUI : MonoBehaviour
         Instance = this;
 
         VisualElement uiRoot = GetComponent<UIDocument>().rootVisualElement;
+        anchor = uiRoot.Q<VisualElement>("TutorialAnchor");
         root = uiRoot.Q<VisualElement>("TutorialPanel");
         nameLabel = root.Q<Label>("TutorialName");
         textLabel = root.Q<Label>("TutorialText");
@@ -98,6 +100,9 @@ public class TutorialUI : MonoBehaviour
     {
         root.style.display = DisplayStyle.None;
     }
+
+    // Versión baja y sin título, para no tapar la mesa mientras se craftea (ver Tutorial.uss)
+    public void SetCompact(bool value) => anchor.EnableInClassList("tutorial-anchor--crafting", value);
 
     // Para resaltar a mano el nombre de un ingrediente o poción dentro de un mensaje
     public static string Item(string name) => $"<color={ItemColor}><b>{name}</b></color>";

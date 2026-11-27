@@ -3380,7 +3380,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e11f5886c55b4c25935c80110841f116, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerStairClimber
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAutoWalk
   speed: 11
   turnSpeed: 10
   upAnimationSpeed: 1.2
