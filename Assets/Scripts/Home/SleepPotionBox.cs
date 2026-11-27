@@ -1,53 +1,22 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Collider))]
-public class SleepPotionBox : MonoBehaviour
+public class SleepPotionBox : TriggerInteractable
 {
-    [SerializeField] private PlayerInput playerInput;
-    [SerializeField] private InteractableOutline outline;
     [SerializeField] private int potionCost = 100;
     [SerializeField] private PlayerInventory inventory;
     [SerializeField] private BasketDisplay basketDisplay;
 
-    private InputAction interactAction;
-    private bool playerInRange;
+    public override string Prompt => Localized("Comerciar", "Trade");
+    public override bool IsAvailable => base.IsAvailable && !GameProgressManager.Instance.SleepIngredientObtained;
 
-    private void Awake()
-    {
-        interactAction = playerInput.actions["Interact"];
-    }
-
-    private void OnEnable() => interactAction.performed += OnInteract;
-    private void OnDisable() => interactAction.performed -= OnInteract;
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerInRange = true;
-            outline?.SetHighlighted(true);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerInRange = false;
-            outline?.SetHighlighted(false);
-        }
-    }
 
     private bool CanDeliverToday(GameProgressManager progress)
     {
         return progress.SleepIngredientPurchased && progress.CurrentDay > progress.SleepIngredientPurchaseDay;
     }
 
-    private void OnInteract(InputAction.CallbackContext ctx)
+    public override void Interact(PlayerInteractor player)
     {
-        if (!playerInRange) return;
-
         GameProgressManager progress = GameProgressManager.Instance;
 
         if (progress.SleepIngredientObtained) return;

@@ -851,8 +851,8 @@ public class BookController : MonoBehaviour
         pausedByBook = false;
         Time.timeScale = timeScaleBeforeBook;
     }
-    // Solo si estás afuera (cursor bloqueado): libera el mouse y frena el giro de cámara mientras el libro está abierto.
-    // Adentro (canasto, crafteo) el cursor ya está libre y no se toca nada.
+    // Solo con el cursor bloqueado (caminando): libera el mouse y frena el giro de cámara mientras el libro está abierto.
+    // En el canasto y el crafteo el cursor ya está libre y no se toca nada.
     private void UnlockCursor()
     {
         if (UnityEngine.Cursor.lockState != CursorLockMode.Locked) return;

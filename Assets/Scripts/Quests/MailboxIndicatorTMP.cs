@@ -5,15 +5,12 @@ public class MailboxIndicatorTMP : MonoBehaviour
 {
     [SerializeField] private Mailbox mailbox;
     [SerializeField] private TextMeshPro label;
-    [SerializeField] private float referenceDistance = 10f;
-
-    private Camera cam;
-    private Vector3 baseScale;
 
     private void Awake()
     {
-        cam = Camera.main;
-        baseScale = label.transform.localScale;
+        // El cartel siempre mira a la cámara, así no se lee al revés
+        if (label.GetComponent<Billboard>() == null)
+            label.gameObject.AddComponent<Billboard>();
     }
 
     private void LateUpdate()

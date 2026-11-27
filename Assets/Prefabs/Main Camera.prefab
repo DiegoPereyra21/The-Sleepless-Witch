@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6432262277579783965}
   - component: {fileID: 4138654538697430699}
   - component: {fileID: 8014131021340824055}
-  - component: {fileID: 2223317937662765522}
   - component: {fileID: 2958465881943343924}
   - component: {fileID: 311666011988180135}
   - component: {fileID: 2664130077511230652}
@@ -133,23 +132,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &2223317937662765522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2149129866516625040}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9950ecd131121374aae6f4470dd25db7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
-  target: {fileID: 0}
-  distance: 10
-  angle: 30
-  smoothSpeed: 10
-  angleTransitionSpeed: 3
 --- !u!114 &2958465881943343924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +147,6 @@ MonoBehaviour:
   cinemachineBrain: {fileID: 2856415725806157216}
   cinemachineCameraTransform: {fileID: 0}
   blendDuration: 0.42
-  startingAnchor: {fileID: 0}
 --- !u!114 &311666011988180135
 MonoBehaviour:
   m_ObjectHideFlags: 0

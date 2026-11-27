@@ -50,6 +50,9 @@ public class MainMenu : MonoBehaviour
         TutorialModeFlag.IsActive = false;
         TutorialModeFlag.IsActive = false;
         Time.timeScale = 1f;
+        // Se puede llegar desde el juego con el mouse bloqueado
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+        UnityEngine.Cursor.visible = true;
         root = GetComponent<UIDocument>().rootVisualElement;
 
         root.Query<Button>().ForEach(button =>

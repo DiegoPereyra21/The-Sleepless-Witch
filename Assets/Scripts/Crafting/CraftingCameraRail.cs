@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,30 +8,26 @@ public enum CraftingZone
     Right
 }
 
-// Las 3 vistas de cámara del crafteo. Se navega con la acción Move (A/D, flechas, stick) o con las zonas de click.
-public class CraftingCameraRail : MonoBehaviour
+// Las 3 vistas del crafteo: el caldero al centro y una mesa a cada lado.
+// Se navega con la acción Move (A/D, flechas, stick) o con las flechas en pantalla.
+public class CraftingCameraRail : CraftingView
 {
-    [SerializeField] private CraftingRoom room;
     [SerializeField] private PlayerInput playerInput;
-    [SerializeField] private CameraTransition cameraTransition;
 
-    [Header("Anclas de cámara")]
+    [Header("Vistas laterales")]
     [SerializeField] private Transform leftAnchor;
-    [SerializeField] private Transform centerAnchor;
     [SerializeField] private Transform rightAnchor;
-
-    [Header("Zonas de click laterales")]
-    [SerializeField] private GameObject leftClickZone;
-    [SerializeField] private GameObject rightClickZone;
+    [Tooltip("Mesa que se ve en la vista izquierda")]
+    [SerializeField] private WorkTable leftTable;
+    [Tooltip("Mesa que se ve en la vista derecha")]
+    [SerializeField] private WorkTable rightTable;
 
     [Tooltip("Cuánto hay que inclinar Move para cambiar de zona.")]
     [SerializeField, Range(0.1f, 1f)] private float inputThreshold = 0.5f;
 
-    public event Action<CraftingZone> OnZoneChanged;
-
     public CraftingZone CurrentZone { get; private set; } = CraftingZone.Center;
-    public bool IsActive { get; private set; }
-    public bool IsBusy => room.IsBusy;
+    // Vista a la que apunta el tutorial (la flecha que lleva hacia ahí titila)
+    public CraftingZone? Hint { get; private set; }
     private InputAction moveAction;
     private int lastDirection;
 
@@ -44,43 +39,66 @@ public class CraftingCameraRail : MonoBehaviour
             gameObject.AddComponent<CraftingNavArrows>();
     }
 
-    public void Activate()
+    public override void Activate()
     {
-        IsActive = true;
+        base.Activate(); // muestra la vista del caldero
+        CurrentZone = CraftingZone.Center;
         lastDirection = ReadDirection();
-        SetZone(CraftingZone.Center);
     }
-
-    public void Deactivate() => IsActive = false;
 
     private void Update()
     {
-        if (!IsActive) return;
+        if (!IsActive || Time.timeScale <= 0f) return;
 
         int direction = ReadDirection();
-        if (direction != 0 && direction != lastDirection && !room.IsBusy)
+        if (direction != 0 && direction != lastDirection && !IsBusy)
             Move(direction);
 
         lastDirection = direction;
     }
 
-    public bool TryHandleClick(GameObject target)
+    public override bool IsPointerOverUI => CraftingNavArrows.PointerOverUI;
+
+    public override string ControlsHint => "Flechas de la pantalla (o A y D): cambiar de mesa";
+
+    public override string DirectionsTo(TableType table)
     {
-        if (!IsActive || target == null) return false;
+        string tableName = table == TableType.Mortar ? "del mortero" : "de la tabla de picar";
+        return $"Está en la mesa {tableName}: hacé click en la flecha de la pantalla para ir hasta ahí.";
+    }
 
-        if (target == leftClickZone)
+    public override void PointTo(TableType? table)
+    {
+        Hint = null;
+        if (table == null) return;
+
+        Hint = leftTable != null && leftTable.Table == table ? CraftingZone.Left : CraftingZone.Right;
+    }
+
+    public string LabelFor(CraftingZone zone)
+    {
+        if (zone == CraftingZone.Center) return "Caldero";
+
+        WorkTable table = zone == CraftingZone.Left ? leftTable : rightTable;
+        if (table == null) return zone == CraftingZone.Left ? "Izquierda" : "Derecha";
+
+        return table.Table == TableType.Mortar ? "Mortero" : "Tabla de picar";
+    }
+
+    public void Navigate(int direction)
+    {
+        if (!IsActive || IsBusy || Time.timeScale <= 0f) return;
+        Move(direction);
+    }
+
+    public Transform GetAnchor(CraftingZone zone)
+    {
+        switch (zone)
         {
-            Move(CurrentZone == CraftingZone.Left ? 1 : -1);
-            return true;
+            case CraftingZone.Left: return leftAnchor;
+            case CraftingZone.Right: return rightAnchor;
+            default: return MainAnchor;
         }
-
-        if (target == rightClickZone)
-        {
-            Move(CurrentZone == CraftingZone.Right ? -1 : 1);
-            return true;
-        }
-
-        return false;
     }
 
     private int ReadDirection()
@@ -94,35 +112,9 @@ public class CraftingCameraRail : MonoBehaviour
     private void Move(int direction)
     {
         CraftingZone next = (CraftingZone)Mathf.Clamp((int)CurrentZone + direction, 0, 2);
-        if (next != CurrentZone)
-            SetZone(next);
-    }
+        if (next == CurrentZone) return;
 
-    private void SetZone(CraftingZone zone)
-    {
-        CurrentZone = zone;
-        cameraTransition.TransitionTo(GetAnchor(zone));
-        OnZoneChanged?.Invoke(zone);
+        CurrentZone = next;
+        Show(GetAnchor(next));
     }
-
-    public Transform GetAnchor(CraftingZone zone)
-    {
-        switch (zone)
-        {
-            case CraftingZone.Left: return leftAnchor;
-            case CraftingZone.Right: return rightAnchor;
-            default: return centerAnchor;
-        }
-    }
-    public void Navigate(int direction)
-    {
-        if (!IsActive || room.IsBusy) return;
-        Move(direction);
-    }
-    public void SetClickZonesActive(bool active)
-    {
-        if (leftClickZone != null) leftClickZone.SetActive(active);
-        if (rightClickZone != null) rightClickZone.SetActive(active);
-    }
-
 }

@@ -23,6 +23,7 @@ public class Cauldron : MonoBehaviour
     [SerializeField] private float shrinkDuration = 0.4f;
 
     public event Action<PotionData> OnPotionCrafted;
+    public GameObject ClickTarget => clickTarget;
 
     private readonly Dictionary<ItemKey, List<GameObject>> visuals = new Dictionary<ItemKey, List<GameObject>>();
     private ItemContainer contents;

@@ -4,7 +4,7 @@ using UnityEngine;
 //todo sobre la logica del objeto agarrable, y su mini aniumacion de recolectado
 namespace Game.Collectibles
 {
-    public class Collectible : MonoBehaviour
+    public class Collectible : Interactable
     {
         [SerializeField] private int value = 1;
         //esta bastante bien asi, no creo q haga falta tocarlo
@@ -30,12 +30,16 @@ namespace Game.Collectibles
 
         private RandomVisualVariant visualVariant;
 
-        //para el outline al acercarse
-        [SerializeField] private InteractableOutline outline;
-        public void SetHighlighted(bool highlighted)
+        protected override bool IsListed => false;
+        public override string Prompt => Localized("Recoger", "Pick up") + (item != null ? " " + item.DisplayName : "");
+        public override bool IsAvailable => base.IsAvailable && !collected;
+        // La cercanía ya la filtra PlayerCollector
+        public override bool IsInRange(Vector3 playerPosition) => true;
+
+        public override void Interact(PlayerInteractor player)
         {
-            if (collected) return;
-            outline?.SetHighlighted(highlighted);
+            if (player.TryGetComponent(out PlayerCollector collector))
+                collector.Collect(this);
         }
 
         public int Value => value;
@@ -47,15 +51,17 @@ namespace Game.Collectibles
         [SerializeField] private float dayShrinkScaleFactor = 0.35f;
         private bool shrunk;
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
             GameProgressManager.Instance.OnNightTimeExpired += HandleDayBroke;
             GameProgressManager.Instance.OnDayStarted += HandleDayBroke;
             GameProgressManager.Instance.OnNightStarted += HandleNightStarted;
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
             GameProgressManager.Instance.OnNightTimeExpired -= HandleDayBroke;
             GameProgressManager.Instance.OnDayStarted -= HandleDayBroke;
             GameProgressManager.Instance.OnNightStarted -= HandleNightStarted;

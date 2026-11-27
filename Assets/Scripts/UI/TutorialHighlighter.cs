@@ -63,8 +63,8 @@ public class TutorialHighlighter
         return outline != null ? outline : target.GetComponentInChildren<InteractableOutline>(true);
     }
 
-    // Lee un campo privado serializado (ej. "clickTarget" del Cauldron, "station" de WorkTable).
-    public static T GetField<T>(object owner, string fieldName) where T : class
+    // Lee un campo serializado que no es público.
+    private static T GetField<T>(object owner, string fieldName) where T : class
     {
         if (owner == null) return null;
 

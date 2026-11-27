@@ -9,7 +9,6 @@ public class CameraTransition : MonoBehaviour
     [SerializeField] private CinemachineBrain cinemachineBrain;
     [SerializeField] private Transform cinemachineCameraTransform;
     [SerializeField] private float blendDuration = 0.5f;
-    [SerializeField] private Transform startingAnchor;
 
 
     [SerializeField] private Camera targetCamera;
@@ -23,17 +22,12 @@ public class CameraTransition : MonoBehaviour
     {
         if (targetCamera == null) targetCamera = GetComponent<Camera>();
         defaultFov = targetCamera.fieldOfView;
-
-        if (startingAnchor != null)
-        {
-            cinemachineBrain.enabled = false;
-            transform.position = startingAnchor.position;
-            transform.rotation = startingAnchor.rotation;
-        }
     }
 
 
     public float BasketViewFov => basketViewFov;
+    // true mientras la cámara viaja desde una vista fija hacia la del player
+    public bool IsReturningToPlayer { get; private set; }
 
     public void TransitionTo(Transform anchor, Action onComplete = null) => TransitionTo(anchor, defaultFov, onComplete);
 
@@ -41,9 +35,9 @@ public class CameraTransition : MonoBehaviour
     {
         cinemachineBrain.enabled = false;
         activeAnchor = null;
+        IsReturningToPlayer = false;
 
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        SetCursorLocked(false);
 
         StartBlend(anchor, targetFov, () =>
         {
@@ -60,21 +54,64 @@ public class CameraTransition : MonoBehaviour
         // La cámara de destino depende de si el player está en una zona de 1ra persona
         Transform liveCamera = cinemachineCameraTransform;
         float liveFov = defaultFov;
-        PlayerCameraRig rig = cinemachineCameraTransform.GetComponentInParent<PlayerCameraRig>();
+        PlayerCameraRig rig = RefreshRig();
         if (rig != null)
         {
-            rig.RefreshMode();
             liveCamera = rig.ActiveCamera.transform;
             liveFov = rig.ActiveCamera.Lens.FieldOfView;
         }
 
+        IsReturningToPlayer = true;
         StartBlend(liveCamera, liveFov, () =>
         {
+            IsReturningToPlayer = false;
             cinemachineBrain.enabled = true;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            SetCursorLocked(true);
             onComplete?.Invoke();
         });
+    }
+
+    // Vuelve a la cámara del player de golpe: al aparecer o al teletransportarse
+    public void SnapToPlayer()
+    {
+        if (blendRoutine != null) StopCoroutine(blendRoutine);
+        blendRoutine = null;
+        activeAnchor = null;
+        IsReturningToPlayer = false;
+
+        RefreshFollowCamera();
+        PlayerCameraRig rig = RefreshRig();
+        if (rig != null) rig.ActiveCamera.PreviousStateIsValid = false;
+
+        cinemachineBrain.enabled = true;
+        cinemachineBrain.ResetState(); // sin mezcla desde la cámara anterior
+        SetCursorLocked(true);
+    }
+
+    // Salta a una cámara fija sin mezcla y sin soltar el mouse
+    public void CutTo(Transform anchor)
+    {
+        if (blendRoutine != null) StopCoroutine(blendRoutine);
+        blendRoutine = null;
+        IsReturningToPlayer = false;
+
+        cinemachineBrain.enabled = false;
+        activeAnchor = anchor;
+        targetCamera.fieldOfView = defaultFov;
+        transform.SetPositionAndRotation(anchor.position, anchor.rotation);
+    }
+
+    private PlayerCameraRig RefreshRig()
+    {
+        PlayerCameraRig rig = cinemachineCameraTransform.GetComponentInParent<PlayerCameraRig>();
+        if (rig != null) rig.RefreshMode();
+        return rig;
+    }
+
+    private static void SetCursorLocked(bool locked)
+    {
+        Cursor.lockState = locked ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.visible = !locked;
     }
 
     // Con el brain apagado la cámara de seguimiento no se actualiza: se recoloca detrás del player antes del blend

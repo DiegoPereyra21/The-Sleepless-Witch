@@ -12,6 +12,7 @@ public class WorkTable : MonoBehaviour
     [SerializeField] private AK.Wwise.Event processSound;
 
     public TableType Table => table;
+    public GameObject Station => station;
 
     private void Start()
     {

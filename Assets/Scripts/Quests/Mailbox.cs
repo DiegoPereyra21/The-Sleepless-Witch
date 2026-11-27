@@ -1,16 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class Mailbox : MonoBehaviour
+public class Mailbox : Interactable
 {
     private const string SaveKey = "Mailbox_Data";
 
-    [SerializeField] private PlayerInput playerInput;
-    [SerializeField] private Transform playerTransform;
     [SerializeField] private QuestManager questManager;
     [SerializeField] private List<QuestData> allLetters = new List<QuestData>(); //el catálogo completo, se configura en el Inspector
-    [SerializeField] private InteractableOutline outline;
     [SerializeField] private float interactRadius = 2f;
 
     private List<QuestData> pendingLetters = new List<QuestData>();
@@ -27,23 +23,17 @@ public class Mailbox : MonoBehaviour
         }
     }
 
-    private InputAction interactAction;
+    private void Awake() => Load();
 
-    private void Awake()
+    protected override void OnEnable()
     {
-        interactAction = playerInput.actions["Interact"];
-        Load();
-    }
-
-    private void OnEnable()
-    {
-        interactAction.performed += OnInteract;
+        base.OnEnable();
         GameProgressManager.Instance.OnNightStarted += DiscardExpiredLetters;
     }
 
-    private void OnDisable()
+    protected override void OnDisable()
     {
-        interactAction.performed -= OnInteract;
+        base.OnDisable();
         GameProgressManager.Instance.OnNightStarted -= DiscardExpiredLetters;
     }
 
@@ -55,20 +45,11 @@ public class Mailbox : MonoBehaviour
         if (pendingLetters.Count != before) Save();
     }
 
-    private void Update()
-    {
-        outline?.SetHighlighted(IsPlayerInRange());
-    }
+    public override string Prompt => Localized("Revisar el buzón", "Check the mailbox");
+    public override bool IsInRange(Vector3 playerPosition) => IsWithin(playerPosition, interactRadius);
 
-    private bool IsPlayerInRange()
+    public override void Interact(PlayerInteractor player)
     {
-        return Vector3.Distance(transform.position, playerTransform.position) <= interactRadius;
-    }
-
-    private void OnInteract(InputAction.CallbackContext ctx)
-    {
-        if (!IsPlayerInRange()) return;
-
         // Cartas que ya están activas (tomadas en una sesión anterior) no tienen que seguir bloqueando la lista
         pendingLetters.RemoveAll(q => questManager.IsQuestActive(q));
 

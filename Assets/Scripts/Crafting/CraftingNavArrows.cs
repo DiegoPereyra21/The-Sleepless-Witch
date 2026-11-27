@@ -13,54 +13,15 @@ public class CraftingNavArrows : MonoBehaviour
     private static readonly Color Gold = new Color(1f, 0.84f, 0.29f, 1f);
 
     private CraftingCameraRail rail;
-    private WorkTable[] tables;
     private UIDocument document;
     private VisualElement container;
     private Button leftButton;
     private Button rightButton;
-    private CraftingZone? hintTarget;
     private bool failed;
 
     private void Awake() => rail = GetComponent<CraftingCameraRail>();
 
     private void OnDisable() => PointerOverUI = false;
-
-    // El tutorial lo usa para hacer titilar la flecha que lleva a esa mesa (null = nada).
-    public void Hint(CraftingZone? target) => hintTarget = target;
-
-    public CraftingZone ZoneOf(TableType table)
-    {
-        if (TableAt(CraftingZone.Left) != null && TableAt(CraftingZone.Left).Table == table)
-            return CraftingZone.Left;
-
-        return CraftingZone.Right;
-    }
-
-    public string LabelFor(CraftingZone zone)
-    {
-        if (zone == CraftingZone.Center) return "Caldero";
-
-        WorkTable table = TableAt(zone);
-        if (table == null) return zone == CraftingZone.Left ? "Izquierda" : "Derecha";
-
-        return table.Table == TableType.Mortar ? "Mortero" : "Tabla de picar";
-    }
-
-    // La mesa más a la izquierda (según la cámara central) es la zona Left, la otra la Right.
-    private WorkTable TableAt(CraftingZone zone)
-    {
-        if (tables == null)
-            tables = FindObjectsByType<WorkTable>(FindObjectsSortMode.None);
-
-        Transform reference = rail.GetAnchor(CraftingZone.Center);
-        var sorted = tables
-            .Where(t => t != null)
-            .OrderBy(t => reference.InverseTransformPoint(t.transform.position).x)
-            .ToList();
-
-        if (sorted.Count == 0) return null;
-        return zone == CraftingZone.Left ? sorted.First() : sorted.Last();
-    }
 
     private void Update()
     {
@@ -72,7 +33,7 @@ public class CraftingNavArrows : MonoBehaviour
             return;
         }
 
-        bool show = rail.IsActive;
+        bool show = rail.IsActive && Time.timeScale > 0f; // en pausa no tapan el menú
         container.style.display = show ? DisplayStyle.Flex : DisplayStyle.None;
 
         if (!show)
@@ -88,14 +49,14 @@ public class CraftingNavArrows : MonoBehaviour
         leftButton.style.display = hasLeft ? DisplayStyle.Flex : DisplayStyle.None;
         rightButton.style.display = hasRight ? DisplayStyle.Flex : DisplayStyle.None;
 
-        if (hasLeft) leftButton.text = $"<  {LabelFor((CraftingZone)((int)zone - 1))}";
-        if (hasRight) rightButton.text = $"{LabelFor((CraftingZone)((int)zone + 1))}  >";
+        if (hasLeft) leftButton.text = $"<  {rail.LabelFor((CraftingZone)((int)zone - 1))}";
+        if (hasRight) rightButton.text = $"{rail.LabelFor((CraftingZone)((int)zone + 1))}  >";
 
         leftButton.SetEnabled(!rail.IsBusy);
         rightButton.SetEnabled(!rail.IsBusy);
 
-        int hintDirection = hintTarget.HasValue
-            ? Mathf.Clamp((int)hintTarget.Value - (int)zone, -1, 1)
+        int hintDirection = rail.Hint.HasValue
+            ? Mathf.Clamp((int)rail.Hint.Value - (int)zone, -1, 1)
             : 0;
 
         Pulse(leftButton, hintDirection < 0);
@@ -113,7 +74,7 @@ public class CraftingNavArrows : MonoBehaviour
 
             if (settings == null)
             {
-                failed = true; // sin UI en la escena: quedan las zonas de click originales
+                failed = true; // sin UI en la escena: se navega solo con Move (A/D)
                 return;
             }
 
@@ -142,8 +103,6 @@ public class CraftingNavArrows : MonoBehaviour
         container.Add(leftButton);
         container.Add(rightButton);
         root.Add(container);
-
-        rail.SetClickZonesActive(false); // las flechas reemplazan a las zonas invisibles
     }
 
     private Button CreateButton(int direction)

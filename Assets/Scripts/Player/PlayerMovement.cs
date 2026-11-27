@@ -30,17 +30,23 @@ public class PlayerMovement : MonoBehaviour
     private InputAction moveAction;
     private InputAction sprintAction;
     private CinemachineBrain cinemachineBrain;
+    private CameraTransition cameraTransition;
+    private PlayerStairClimber climber;
     private Vector3 horizontalVelocity;
     private float lastYaw;
     private float turnRate;
     private float turnRateVelocity;
     private Vector3 velocity;
     private int freezeCount;
-    private bool IsFrozen => freezeCount > 0;//para pausar al pj cuando este recolectando hongos, la ides es q sea reutilizable para distintas situaciones donde necesite una pausa
+    //para pausar al pj cuando este recolectando hongos, la ides es q sea reutilizable para distintas situaciones donde necesite una pausa
+    // También queda quieto mientras la cámara vuelve desde una vista fija
+    // Y mientras recorre una escalera, que lo mueve PlayerStairClimber
+    public bool IsFrozen => freezeCount > 0 || IsClimbing || (cameraTransition != null && cameraTransition.IsReturningToPlayer);
+    public bool IsClimbing => climber != null && climber.IsClimbing;
     
     public bool IsPickupInProgress { get; private set; }
 
-    // true con la cámara que sigue al personaje; false en las vistas fijas (casa, canasto, crafteo)
+    // true con la cámara que sigue al personaje; false en las vistas fijas (canasto, crafteo, escalera)
     public bool IsFollowView => cinemachineBrain != null && cinemachineBrain.isActiveAndEnabled;
     public float HorizontalSpeed => horizontalVelocity.magnitude;
     public bool IsGrounded => controller.isGrounded;
@@ -57,11 +63,15 @@ public class PlayerMovement : MonoBehaviour
         sprintAction = GetComponent<PlayerInput>().actions["Sprint"];
         animator = GetComponentInChildren<Animator>();
         cinemachineBrain = cameraTransform.GetComponent<CinemachineBrain>();
+        cameraTransition = cameraTransform.GetComponent<CameraTransition>();
+        climber = GetComponent<PlayerStairClimber>();
         lastYaw = transform.eulerAngles.y;
     }
 
     private void Update()
     {
+        if (IsClimbing) return;
+
         Vector2 input = IsFrozen ? Vector2.zero : moveAction.ReadValue<Vector2>();
 
         bool followView = IsFollowView;
@@ -86,7 +96,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (followView)
         {
-            float speed = sprintAction.IsPressed() ? WalkSpeed * runMultiplier : WalkSpeed;
+            // Dentro de la casa no se corre
+            bool running = GameProgressManager.Instance.IsOutside && sprintAction.IsPressed();
+            float speed = running ? RunSpeed : WalkSpeed;
             float rate = isMoving ? acceleration : deceleration;
             horizontalVelocity = Vector3.MoveTowards(horizontalVelocity, direction * speed, rate * Time.deltaTime);
         }
@@ -112,6 +124,36 @@ public class PlayerMovement : MonoBehaviour
 
         UpdateLocomotionAnimation();
         UpdateTurnAnimation();
+    }
+
+    // Mueve al personaje de golpe y lo deja mirando hacia donde apunta el destino (flecha azul)
+    public void Teleport(Transform destination)
+    {
+        controller.enabled = false;
+        transform.position = destination.position;
+        controller.enabled = true;
+
+        if (TryGetComponent(out PlayerLook look))
+            look.FaceDirection(destination.forward);
+
+        ResetMotion();
+    }
+
+    // Olvida el movimiento anterior (después de teletransportarse o de una escalera)
+    public void ResetMotion()
+    {
+        horizontalVelocity = Vector3.zero;
+        velocity = Vector3.zero;
+        turnRate = 0f;
+        turnRateVelocity = 0f;
+        lastYaw = transform.eulerAngles.y; // para que no dispare la animación de giro
+    }
+
+    // Quien mueve al personaje por su cuenta informa la velocidad, para la cámara en 1ra persona
+    public void SetScriptedVelocity(Vector3 value)
+    {
+        value.y = 0f;
+        horizontalVelocity = value;
     }
 
     // El Blend Tree elige la animación según la velocidad relativa al cuerpo (adelante, atrás, costados)

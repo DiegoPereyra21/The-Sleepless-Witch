@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class CraftingPointer : MonoBehaviour
 {
     [SerializeField] private CraftingRoom room;
-    [SerializeField] private CraftingCameraRail cameraRail;
+    [SerializeField] private CraftingView view;
     [SerializeField] private Cauldron cauldron;
     [SerializeField] private WorkTable[] tables;
 
@@ -26,6 +26,13 @@ public class CraftingPointer : MonoBehaviour
     private void Update()
     {
         if (!room.IsInside || room.IsBusy) return;
+
+        // En pausa (o con el libro abierto) los clicks no son para la mesa
+        if (Time.timeScale <= 0f)
+        {
+            CancelDrag();
+            return;
+        }
 
         Mouse mouse = Mouse.current;
         if (mouse == null) return;
@@ -52,13 +59,11 @@ public class CraftingPointer : MonoBehaviour
 
     private void HandlePress(Vector2 screenPos)
     {
-        if (CraftingNavArrows.PointerOverUI) return;
+        if (view.IsPointerOverUI) return;
 
         if (!TryRaycast(screenPos, out RaycastHit hit)) return;
 
         GameObject target = hit.collider.gameObject;
-
-        if (cameraRail.TryHandleClick(target)) return;
 
         ItemVisual visual = hit.collider.GetComponentInParent<ItemVisual>();
         if (visual != null)

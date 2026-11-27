@@ -1214,6 +1214,8 @@ GameObject:
   - component: {fileID: 3337292767426902070}
   - component: {fileID: 6419822900535283683}
   - component: {fileID: 8732548840508448101}
+  - component: {fileID: 7305118264902255101}
+  - component: {fileID: 7305118264902255102}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1479,7 +1481,7 @@ MonoBehaviour:
   - {fileID: 8547351470624977376}
   - {fileID: 5064229223575260613}
   - {fileID: 2830198949785695956}
-  eyeOffset: {x: 0, y: 0.55, z: -0.7}
+  eyeOffset: {x: 0, y: 0.55, z: -0.2}
   lookDownForward: 0.6
   headFollowTime: 0.25
   hideDistance: 3.5
@@ -3354,3 +3356,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PotionBoxVisibility
   potionBoxVisual: {fileID: 4039738172186432351}
+--- !u!114 &7305118264902255101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5548705520305781567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b997ae40058f47b38dcab39889f3f817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
+  lookTolerance: 8
+--- !u!114 &7305118264902255102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5548705520305781567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11f5886c55b4c25935c80110841f116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStairClimber
+  speed: 11
+  turnSpeed: 10
+  upAnimationSpeed: 1.2
+  downAnimationSpeed: 1
+  blendTime: 0.2
+  showCharacter: 1
+  lookHeight: 4
+  cameraFollowSpeed: 6

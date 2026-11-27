@@ -1,5 +1,5 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Game.Collectibles;
 //para q el player al apretar "E" agfgarre directamente el hongo, hada o baya o lo que sea
 public class PlayerCollector : MonoBehaviour
@@ -20,39 +20,11 @@ public class PlayerCollector : MonoBehaviour
     [SerializeField] private float dropPauseDuration = 0.15f; //pausa la animación mientras el item cae al canasto
 
     public bool CollectionBlocked { get; set; }
-    private InputAction interactAction;
-    private void Awake()
-    {
-        interactAction = GetComponent<PlayerInput>().actions["Interact"];
-    }
-
-    private Collectible currentHighlighted;
-
-    private void Update()
-    {
-        Collectible nearest = FindNearestCollectible();
-
-        if (nearest != currentHighlighted)
-        {
-            if (currentHighlighted != null)
-                currentHighlighted.SetHighlighted(false);
-
-            if (nearest != null)
-                nearest.SetHighlighted(true);
-
-            currentHighlighted = nearest;
-        }
-    }
-
-    private void OnEnable() => interactAction.performed += OnInteract;
-    private void OnDisable() => interactAction.performed -= OnInteract;
-    private void OnInteract(InputAction.CallbackContext ctx)
+    public void Collect(Collectible target)
     {
         if (basketDisplay.IsOpen) return;
         if (playerMovement.IsPickupInProgress) return;
         if (inventory.IsFull) return;
-
-        Collectible target = FindNearestCollectible();
         if (target == null || target.IsCollected) return;
 
         if (!GameProgressManager.Instance.IsNightActive)
@@ -106,21 +78,14 @@ public class PlayerCollector : MonoBehaviour
     }
 
     //hace como un collider frente al player para que "agarre" lo que tenga al frente suyo(luego tengo q hacer un inventario en el player para q los "guarde")
-    private Collectible FindNearestCollectible()
+    public void AddNearby(List<Interactable> results)
     {
         Collider[] hits = Physics.OverlapSphere(transform.position, collectRadius, collectibleLayer);
-        Collectible nearest = null;
-        float minDist = float.MaxValue;
 
         foreach (var hit in hits)
         {
             if (hit.TryGetComponent(out Collectible c))
-            {
-                float dist = Vector3.Distance(transform.position, hit.transform.position);
-                if (dist < minDist) { minDist = dist; nearest = c; }
-            }
+                results.Add(c);
         }
-
-        return nearest;
     }
 }

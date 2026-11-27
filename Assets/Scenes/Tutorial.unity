@@ -250,10 +250,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1097611477}
     - target: {fileID: 1018132212608544702, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
-      propertyPath: playerInput
-      value: 
-      objectReference: {fileID: 1097611476}
-    - target: {fileID: 1018132212608544702, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
       propertyPath: questManager
       value: 
       objectReference: {fileID: 1952524287}
@@ -261,10 +257,6 @@ PrefabInstance:
       propertyPath: basketDisplay
       value: 
       objectReference: {fileID: 1097611478}
-    - target: {fileID: 1018132212608544702, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
-      propertyPath: playerTransform
-      value: 
-      objectReference: {fileID: 1097611480}
     - target: {fileID: 1018132212608544702, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
       propertyPath: cameraTransition
       value: 
@@ -278,10 +270,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1097611479}
     - target: {fileID: 2166817073692332614, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
-      propertyPath: playerInput
-      value: 
-      objectReference: {fileID: 1097611476}
-    - target: {fileID: 2166817073692332614, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 1097611475}
@@ -290,17 +278,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1097611474}
     - target: {fileID: 2166817073692332614, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
-      propertyPath: playerTransform
-      value: 
-      objectReference: {fileID: 1097611480}
-    - target: {fileID: 2166817073692332614, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
       propertyPath: cameraTransition
       value: 
       objectReference: {fileID: 1560979842}
-    - target: {fileID: 4391997574762106731, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
-      propertyPath: playerInput
-      value: 
-      objectReference: {fileID: 1097611476}
     - target: {fileID: 4391997574762106731, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
       propertyPath: questManager
       value: 
@@ -314,17 +294,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1560979842}
     - target: {fileID: 5493438591194862085, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
-      propertyPath: playerInput
-      value: 
-      objectReference: {fileID: 1097611476}
-    - target: {fileID: 5493438591194862085, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
       propertyPath: questManager
       value: 
       objectReference: {fileID: 1952524287}
-    - target: {fileID: 5493438591194862085, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
-      propertyPath: playerTransform
-      value: 
-      objectReference: {fileID: 1097611480}
     - target: {fileID: 5493438591194862085, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
       propertyPath: allLetters.Array.size
       value: 2
@@ -337,14 +309,6 @@ PrefabInstance:
       propertyPath: 'allLetters.Array.data[1]'
       value: 
       objectReference: {fileID: 11400000, guid: c0ec2cbbb951dff438db49758d195352, type: 2}
-    - target: {fileID: 5736204252891480717, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
-      propertyPath: cameraFollow
-      value: 
-      objectReference: {fileID: 1560979843}
-    - target: {fileID: 5992739855093437766, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
-      propertyPath: playerInput
-      value: 
-      objectReference: {fileID: 1097611476}
     - target: {fileID: 5992739855093437766, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
       propertyPath: basketDisplay
       value: 
@@ -358,14 +322,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1460837694}
     - target: {fileID: 7000528412101637966, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
-      propertyPath: playerInput
-      value: 
-      objectReference: {fileID: 1097611476}
-    - target: {fileID: 7000528412101637966, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
-      propertyPath: playerTransform
-      value: 
-      objectReference: {fileID: 1097611480}
-    - target: {fileID: 7000528412101637966, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
       propertyPath: cameraTransition
       value: 
       objectReference: {fileID: 1560979842}
@@ -374,10 +330,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1460837694}
     - target: {fileID: 7261848673756056791, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
-      propertyPath: playerInput
-      value: 
-      objectReference: {fileID: 1097611476}
-    - target: {fileID: 7261848673756056791, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
       propertyPath: questManager
       value: 
       objectReference: {fileID: 1952524287}
@@ -385,14 +337,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HouseInGame
       objectReference: {fileID: 0}
-    - target: {fileID: 7472512903651474787, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
-      propertyPath: playerInput
-      value: 
-      objectReference: {fileID: 1097611476}
-    - target: {fileID: 7472512903651474787, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
-      propertyPath: playerTransform
-      value: 
-      objectReference: {fileID: 1097611480}
     - target: {fileID: 7472512903651474787, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
       propertyPath: cameraTransition
       value: 
@@ -405,10 +349,6 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1097611477}
-    - target: {fileID: 8331808047687805519, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
-      propertyPath: playerInput
-      value: 
-      objectReference: {fileID: 1097611476}
     - target: {fileID: 8331808047687805519, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
       propertyPath: basketDisplay
       value: 
@@ -441,11 +381,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
---- !u!4 &15915733 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7716764483667501304, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
-  m_PrefabInstance: {fileID: 15915732}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &15915734 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5992739855093437766, guid: 1e4ef9b36895ee942a7c73a32c2fc293, type: 3}
@@ -1626,6 +1561,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 610549398652735786, guid: 0910d19801bb0c54c9be9f52198483b8, type: 3}
+      propertyPath: startYaw
+      value: 225
+      objectReference: {fileID: 0}
     - target: {fileID: 152918761134319503, guid: 0910d19801bb0c54c9be9f52198483b8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.3052444
@@ -2675,10 +2614,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 2223317937662765522, guid: 2878466422381f64ca311bce8d84e78b, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1097611480}
     - target: {fileID: 2958465881943343924, guid: 2878466422381f64ca311bce8d84e78b, type: 3}
       propertyPath: targetCamera
       value: 
@@ -2687,10 +2622,6 @@ PrefabInstance:
       propertyPath: basketViewFov
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 2958465881943343924, guid: 2878466422381f64ca311bce8d84e78b, type: 3}
-      propertyPath: startingAnchor
-      value: 
-      objectReference: {fileID: 15915733}
     - target: {fileID: 2958465881943343924, guid: 2878466422381f64ca311bce8d84e78b, type: 3}
       propertyPath: cinemachineCameraTransform
       value: 
@@ -2751,17 +2682,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 461297416409bcd449b25695f837764c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraTransition
---- !u!114 &1560979843 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2223317937662765522, guid: 2878466422381f64ca311bce8d84e78b, type: 3}
-  m_PrefabInstance: {fileID: 1560979841}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9950ecd131121374aae6f4470dd25db7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
 --- !u!4 &1560979844 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6432262277579783965, guid: 2878466422381f64ca311bce8d84e78b, type: 3}

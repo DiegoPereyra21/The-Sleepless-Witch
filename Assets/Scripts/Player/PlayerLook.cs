@@ -50,6 +50,23 @@ public class PlayerLook : MonoBehaviour
         ApplyRotation();
     }
 
+    // Deja al personaje mirando hacia una dirección, con la vista nivelada (al teletransportarse)
+    public void FaceDirection(Vector3 direction)
+    {
+        pitch = 0f;
+        SetHeading(direction);
+    }
+
+    // Gira en horizontal sin tocar hacia dónde se mira en vertical
+    public void SetHeading(Vector3 direction)
+    {
+        direction.y = 0f;
+        if (direction.sqrMagnitude < 0.0001f) return;
+
+        yaw = Quaternion.LookRotation(direction).eulerAngles.y;
+        ApplyRotation();
+    }
+
     // Recupera la orientación de la cámara (el personaje pudo haber girado en una vista fija)
     public void ApplyRotation()
     {

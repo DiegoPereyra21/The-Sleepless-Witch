@@ -1,50 +1,20 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(DayTransition))]
-public class BedInteraction : MonoBehaviour
+public class BedInteraction : TriggerInteractable
 {
-    [SerializeField] private PlayerInput playerInput;
-    [SerializeField] private InteractableOutline outline;
     [SerializeField] private QuestManager questManager;
     [SerializeField] private PotionDisplayArea potionDisplayArea;
     private DayTransition dayTransition;
-    private InputAction interactAction;
-    private bool playerInRange;
 
-    private void Awake()
-    {
-        interactAction = playerInput.actions["Interact"];
-        dayTransition = GetComponent<DayTransition>();
-    }
+    private void Awake() => dayTransition = GetComponent<DayTransition>();
 
-    private void OnEnable() => interactAction.performed += OnInteract;
-    private void OnDisable() => interactAction.performed -= OnInteract;
+    public override string Prompt => Localized("Acostarse", "Go to bed");
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerInRange = true;
-            outline?.SetHighlighted(true);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerInRange = false;
-            outline?.SetHighlighted(false);
-        }
-    }
     //para que no pueda ir a dormir sin haber salido nunca
 
-    private void OnInteract(InputAction.CallbackContext ctx)
+    public override void Interact(PlayerInteractor player)
     {
-        if (!playerInRange) return;
-
         if (!GameProgressManager.Instance.HasBeenOutsideThisCycle)
         {
             DialogueUI.Instance.ShowMessage("Ofelia", "No puedo acostarme ahora, tengo que recolectar.");

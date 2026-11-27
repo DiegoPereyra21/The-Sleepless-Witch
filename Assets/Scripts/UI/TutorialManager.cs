@@ -49,8 +49,7 @@ public class TutorialManager : MonoBehaviour
     private Collectible[] collectibles;
     private float guideTimer;
     private string lastCraftingHint;
-    private CraftingNavArrows navArrows;
-    private CraftingZone? navHintZone;
+    private TableType? hintTable; // mesa fuera de la pantalla a la que hay que ir
 
     private void Start()
     {
@@ -58,7 +57,7 @@ public class TutorialManager : MonoBehaviour
         bed = FindFirstObjectByType<BedInteraction>();
         workTables = FindObjectsByType<WorkTable>(FindObjectsSortMode.None);
 
-        Show("Usá WASD para moverte y E para interactuar con las cosas que brillan. Empezá bajando las escaleras.");
+        Show("Usá WASD para moverte, el mouse para mirar y E para usar lo que estés mirando (se ilumina). Empezá bajando las escaleras.");
     }
 
     private void Update()
@@ -173,7 +172,7 @@ public class TutorialManager : MonoBehaviour
         if (currentStep != Step.GoOutside) return;
 
         currentStep = Step.CheckMailbox;
-        Show("Acercate al buzón y pulsá E para aceptar los pedidos. Cada pedido es una poción que vas a tener que preparar.");
+        Show("Acercate al buzón, miralo y pulsá E para aceptar los pedidos. Cada pedido es una poción que vas a tener que preparar.");
 
         if (playerCollector != null) playerCollector.CollectionBlocked = true;
 
@@ -231,7 +230,7 @@ public class TutorialManager : MonoBehaviour
 
         nightPhaseDone = true;
         currentStep = Step.CraftingIntro;
-        Show("Ahora toca preparar las pociones. Acercate al caldero y pulsá E.");
+        Show("Ahora toca preparar las pociones. Acercate al caldero, miralo y pulsá E.");
     }
 
     private void HandleEnteredCrafting()
@@ -287,7 +286,7 @@ public class TutorialManager : MonoBehaviour
     // Decide qué titila según el paso actual (y en el crafteo, también qué indicación mostrar).
     private void RefreshGuide()
     {
-        navHintZone = null;
+        hintTable = null;
         switch (currentStep)
         {
             case Step.Movement:
@@ -325,8 +324,7 @@ public class TutorialManager : MonoBehaviour
                 break;
         }
 
-        if (navArrows == null) navArrows = FindFirstObjectByType<CraftingNavArrows>();
-        if (navArrows != null) navArrows.Hint(navHintZone);
+        if (craftingRoom != null) craftingRoom.View.PointTo(hintTable);
 
         highlighter.Apply();
     }
@@ -384,7 +382,7 @@ public class TutorialManager : MonoBehaviour
         if (!craftingRoom.IsInside)
         {
             highlighter.Add(craftingRoom);
-            ShowCraftingHint("Acercate al caldero y pulsá E para seguir preparando las pociones.");
+            ShowCraftingHint("Acercate al caldero, miralo y pulsá E para seguir preparando las pociones.");
             return;
         }
 
@@ -397,7 +395,10 @@ public class TutorialManager : MonoBehaviour
 
         string instruction = BuildCraftingInstruction(target);
 
-        ShowCraftingHint($"Preparando: {TutorialUI.Item(target.DisplayName)}\n{instruction}\n<size=75%>Flechas de la pantalla (o A y D): cambiar de mesa   ·   E: salir de la mesa</size>");
+        string controls = craftingRoom.View.ControlsHint;
+        if (!string.IsNullOrEmpty(controls)) controls += "   ·   ";
+
+        ShowCraftingHint($"Preparando: {TutorialUI.Item(target.DisplayName)}\n{instruction}\n<size=75%>{controls}E: salir de la mesa</size>");
     }
 
     private PotionData GetTargetPotion()
@@ -474,7 +475,7 @@ public class TutorialManager : MonoBehaviour
         }
 
         // 3) Está todo: a revolver
-        highlighter.AddObject(TutorialHighlighter.GetField<GameObject>(cauldron, "clickTarget"));
+        highlighter.AddObject(cauldron.ClickTarget);
         return "¡Ya está todo en el caldero! Hacé click en la cuchara para preparar la poción.";
     }
 
@@ -505,11 +506,10 @@ public class TutorialManager : MonoBehaviour
     {
         if (visible) return text;
 
-        if (navArrows == null) navArrows = FindFirstObjectByType<CraftingNavArrows>();
-        if (navArrows != null) navHintZone = navArrows.ZoneOf(table);
+        hintTable = table;
 
-        string tableName = table == TableType.Mortar ? "del mortero" : "de la tabla de picar";
-        return $"{text}\nEstá en la mesa {tableName}: hacé click en la flecha de la pantalla para ir hasta ahí.";
+        string directions = craftingRoom.View.DirectionsTo(table);
+        return string.IsNullOrEmpty(directions) ? text : $"{text}\n{directions}";
     }
 
     private GameObject GetStation(TableType table)
@@ -517,7 +517,7 @@ public class TutorialManager : MonoBehaviour
         if (workTables == null) return null;
 
         WorkTable workTable = workTables.FirstOrDefault(t => t != null && t.Table == table);
-        return TutorialHighlighter.GetField<GameObject>(workTable, "station");
+        return workTable != null ? workTable.Station : null;
     }
 
     private static bool IsOnScreen(Vector3 worldPosition)

@@ -9,12 +9,14 @@ public class FootstepController : MonoBehaviour
     [SerializeField] private float distancePerStep = 5f;
 
     private CharacterController characterController;
+    private PlayerMovement playerMovement;
     private Vector3 lastPosition;
     private float distanceWalked;
 
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        playerMovement = GetComponent<PlayerMovement>();
         lastPosition = transform.position;
     }
 
@@ -31,8 +33,9 @@ public class FootstepController : MonoBehaviour
         if (distance <= 0f)
             return;
 
-        // No reproduce pasos mientras está en el aire
-        if (!characterController.isGrounded)
+        // No reproduce pasos mientras está en el aire (en la escalera sí, aunque el controlador esté apagado)
+        bool climbing = playerMovement != null && playerMovement.IsClimbing;
+        if (!characterController.isGrounded && !climbing)
             return;
 
         distanceWalked += distance;
