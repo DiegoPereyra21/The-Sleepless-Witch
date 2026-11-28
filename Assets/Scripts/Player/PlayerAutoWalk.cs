@@ -9,31 +9,31 @@ using UnityEngine;
 public class PlayerAutoWalk : MonoBehaviour
 {
     [Tooltip("Velocidad en la escalera (unidades de mundo por segundo)")]
-    [SerializeField, Min(1f)] private float speed = 11f;
+    [SerializeField, Min(1f)] private float speed = 6f;
     [Tooltip("Velocidad al cruzar una puerta")]
-    [SerializeField, Min(1f)] private float doorSpeed = 8f;
+    [SerializeField, Min(1f)] private float doorSpeed = 6f;
     [Tooltip("Qué tan rápido gira al caminar")]
-    [SerializeField, Min(1f)] private float turnSpeed = 10f;
+    [SerializeField, Min(1f)] private float turnSpeed = 8f;
 
     [Header("Animación de escalera")]
-    [SerializeField, Min(0.1f)] private float upAnimationSpeed = 1.2f;
+    [SerializeField, Min(0.1f)] private float upAnimationSpeed = 0.75f;
     [SerializeField, Min(0.1f)] private float downAnimationSpeed = 1f;
-    [SerializeField, Min(0f)] private float blendTime = 0.2f;
+    [SerializeField, Min(0f)] private float blendTime = 0.3f;
 
     [Header("Cierre en círculo (segundos)")]
     [Tooltip("Cuánto tarda en cerrarse el círculo")]
-    [SerializeField, Min(0.05f)] private float closeTime = 0.35f;
+    [SerializeField, Min(0.05f)] private float closeTime = 0.7f;
     [Tooltip("Cuánto queda la pantalla en negro")]
-    [SerializeField, Min(0f)] private float blackTime = 0.15f;
+    [SerializeField, Min(0f)] private float blackTime = 0.3f;
     [Tooltip("Cuánto tarda en abrirse del otro lado")]
-    [SerializeField, Min(0.05f)] private float openTime = 0.4f;
+    [SerializeField, Min(0.05f)] private float openTime = 0.8f;
 
     [Header("Cámara")]
     [Tooltip("Mientras camina solo se ve a Faunita. Apagado se queda en primera persona")]
     [SerializeField] private bool showCharacter = true;
     [Tooltip("Altura sobre los pies a la que apunta esa cámara")]
     [SerializeField] private float lookHeight = 4f;
-    [SerializeField, Min(0f)] private float cameraFollowSpeed = 6f;
+    [SerializeField, Min(0f)] private float cameraFollowSpeed = 3f;
 
     private const string WalkState = "Locomotion";
     private const string UpState = "StairsUp";

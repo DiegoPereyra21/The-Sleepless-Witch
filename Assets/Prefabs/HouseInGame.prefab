@@ -23129,7 +23129,7 @@ MonoBehaviour:
   - {fileID: 5830659973375970357}
   hinge: {fileID: 5120847366219006102}
   openAngle: 100
-  swingTime: 0.45
+  swingTime: 0.6
 --- !u!1 &5120847366219006004
 GameObject:
   m_ObjectHideFlags: 0

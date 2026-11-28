@@ -16,6 +16,8 @@ public class PlayerCameraRig : MonoBehaviour
     [Header("Primera persona")]
     [Tooltip("Mallas que en 1ra persona solo proyectan sombra: cabeza, pelo, sombrero y canasta. Sacá la canasta de la lista para verla")]
     [SerializeField] private Renderer[] hiddenRenderers;
+    [Tooltip("De las anteriores, las que se siguen viendo mientras la cámara viaja porque son lo que se mira: la canasta")]
+    [SerializeField] private Renderer[] shownWhileTravelling;
     [Tooltip("Posición de los ojos respecto del hueso de la cabeza (unidades de mundo). Y = altura, Z = adelante")]
     [SerializeField] private Vector3 eyeOffset = new Vector3(0f, 0.55f, -0.7f);
     [Tooltip("Cuánto se adelanta la cámara al mirar hacia abajo, para no ver dentro del cuello")]
@@ -33,6 +35,7 @@ public class PlayerCameraRig : MonoBehaviour
 
     private const int ActivePriority = 20;
     private const int InactivePriority = 0;
+    private const float ArrivalDistance = 0.6f; // tan cerca de los ojos ya se considera que la cámara volvió
 
     private PlayerMovement movement;
     private CameraTransition transition;
@@ -44,6 +47,7 @@ public class PlayerCameraRig : MonoBehaviour
     private float walkBlendVelocity;
     private ShadowCastingMode[] originalShadowModes;
     private bool renderersHidden;
+    private bool travellingHidden;
     public bool IsFirstPerson { get; private set; }
     public CinemachineCamera ActiveCamera => IsFirstPerson ? firstPersonCamera : thirdPersonCamera;
 
@@ -61,7 +65,7 @@ public class PlayerCameraRig : MonoBehaviour
         Apply(false);
     }
 
-    private void OnDisable() => SetHidden(false);
+    private void OnDisable() => SetHidden(false, false);
 
     private void Update() => RefreshMode();
 
@@ -75,17 +79,28 @@ public class PlayerCameraRig : MonoBehaviour
     private void LateUpdate()
     {
         PlaceFirstPersonCamera();
+        UpdateVisibility();
+    }
 
-        // Según la distancia real de la cámara, así no se ve la cabeza por dentro durante la transición.
-        // En las vistas fijas (canasto, crafteo, escalera) siempre se muestra.
+    // Según la distancia real de la cámara, así no se ve la cabeza por dentro cuando va o viene de otra vista.
+    // En las vistas fijas ya quietas (canasto, crafteo, escalera) siempre se muestra.
+    private void UpdateVisibility()
+    {
         Camera view = Camera.main;
-        if (transition == null && view != null) transition = view.GetComponent<CameraTransition>();
-        bool towardPlayer = movement.IsFollowView || (transition != null && transition.IsReturningToPlayer);
+        if (view == null)
+        {
+            SetHidden(false, false);
+            return;
+        }
 
-        bool hide = towardPlayer && view != null
-            && Vector3.Distance(view.transform.position, firstPersonCamera.transform.position) < hideDistance;
+        if (transition == null) transition = view.GetComponent<CameraTransition>();
+        bool travelling = transition != null && transition.IsBlending;
+        float distance = Vector3.Distance(view.transform.position, firstPersonCamera.transform.position);
+        bool hide = distance < hideDistance && (movement.IsFollowView || travelling);
 
-        SetHidden(hide);
+        // Lo que se está mirando se oculta recién cuando la cámara ya volvió a los ojos
+        bool arrived = travelling && transition.IsReturningToPlayer && IsFirstPerson && distance < ArrivalDistance;
+        SetHidden(hide, hide && (!travelling || arrived));
     }
 
     private Vector3 HeadPosition() =>
@@ -129,13 +144,20 @@ public class PlayerCameraRig : MonoBehaviour
     }
 
     // Usa el modo de sombras (no enabled) para no pisar a quienes ocultan los renderers
-    private void SetHidden(bool hidden)
+    private void SetHidden(bool hidden, bool travellingToo)
     {
-        if (hidden == renderersHidden || originalShadowModes == null) return;
+        if (originalShadowModes == null) return;
+        if (hidden == renderersHidden && travellingToo == travellingHidden) return;
         renderersHidden = hidden;
+        travellingHidden = travellingToo;
 
         for (int i = 0; i < hiddenRenderers.Length; i++)
-            if (hiddenRenderers[i] != null)
-                hiddenRenderers[i].shadowCastingMode = hidden ? ShadowCastingMode.ShadowsOnly : originalShadowModes[i];
+        {
+            Renderer part = hiddenRenderers[i];
+            if (part == null) continue;
+
+            bool hide = System.Array.IndexOf(shownWhileTravelling, part) >= 0 ? travellingToo : hidden;
+            part.shadowCastingMode = hide ? ShadowCastingMode.ShadowsOnly : originalShadowModes[i];
+        }
     }
 }

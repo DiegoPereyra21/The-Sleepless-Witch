@@ -1481,6 +1481,8 @@ MonoBehaviour:
   - {fileID: 8547351470624977376}
   - {fileID: 5064229223575260613}
   - {fileID: 2830198949785695956}
+  shownWhileTravelling:
+  - {fileID: 2830198949785695956}
   eyeOffset: {x: 0, y: 0.55, z: -0.2}
   lookDownForward: 0.6
   headFollowTime: 0.25
@@ -1510,8 +1512,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5608422201936600079}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.64135134, y: 0.56303555, z: -0.40926152, w: -0.32274538}
-  m_LocalPosition: {x: -0.539, y: 1.206, z: 1.444}
+  m_LocalRotation: {x: -0.417691, y: 0.144876, z: -0.281093, w: -0.851782}
+  m_LocalPosition: {x: -0.0765, y: 1.139, z: -1.7634}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3381,11 +3383,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e11f5886c55b4c25935c80110841f116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAutoWalk
-  speed: 11
-  turnSpeed: 10
-  upAnimationSpeed: 1.2
+  speed: 6
+  turnSpeed: 8
+  upAnimationSpeed: 0.75
   downAnimationSpeed: 1
-  blendTime: 0.2
+  blendTime: 0.3
   showCharacter: 1
   lookHeight: 4
-  cameraFollowSpeed: 6
+  cameraFollowSpeed: 3

@@ -15,12 +15,19 @@ public class BasketDisplay : MonoBehaviour
     [SerializeField] private LayerMask basketItemLayer;
     //para cambiar la llamda q tenia
     [SerializeField] private Transform basketViewAnchor;
+    [Tooltip("Segundos que tarda la cámara en bajar al canasto")]
+    [SerializeField, Min(0.05f)] private float openDuration = 0.9f;
+    [Tooltip("Segundos que tarda en volver")]
+    [SerializeField, Min(0.05f)] private float closeDuration = 0.8f;
     //para activar desactivar segun si esta dentro o fuera de la casa
     [SerializeField] private GameObject basketRoot;
     [SerializeField] private Transform[] dropSlots;
     private GameObject[] slotOccupants;
 
     [SerializeField] private Renderer[] playerRenderers; //renderers del personaje a ocultar mientras se ve el canasto
+    [Tooltip("Al ir y volver, Faunita se oculta cuando la cámara está más cerca que esto, para no atravesarla")]
+    [SerializeField, Min(0f)] private float bodyClearance = 4f;
+    private bool isReturning; // la cámara todavía está volviendo del canasto
     private bool isAvailable;
 
     public event System.Action OnOpened;
@@ -42,6 +49,23 @@ public class BasketDisplay : MonoBehaviour
         if (Mouse.current == null || !Mouse.current.leftButton.wasPressedThisFrame) return;
 
         TryRemoveClickedItem();
+    }
+
+    // Se mira cada cuadro porque depende de por dónde va la cámara
+    private void LateUpdate()
+    {
+        if (!isOpen && !isReturning) return;
+
+        if (!isOpen && !cameraTransition.IsReturningToPlayer)
+        {
+            isReturning = false;
+            SetPlayerVisible(true);
+            return;
+        }
+
+        float distance = Vector3.Distance(cameraTransition.transform.position, playerMovement.transform.position);
+        // Quieta sobre el canasto nunca se ve; de viaje, mientras la cámara esté lejos
+        SetPlayerVisible(cameraTransition.IsBlending && distance > bodyClearance);
     }
 
     private void TryRemoveClickedItem()
@@ -78,13 +102,12 @@ public class BasketDisplay : MonoBehaviour
 
         if (isOpen)
         {
-            cameraTransition.TransitionTo(basketViewAnchor, cameraTransition.BasketViewFov, () => SetPlayerVisible(false));
+            cameraTransition.TransitionTo(basketViewAnchor, cameraTransition.BasketViewFov, duration: openDuration);
             OnOpened?.Invoke();
         }
         else
         {
-            SetPlayerVisible(true);
-            cameraTransition.TransitionToPlayer();
+            ReturnToPlayer();
             OnClosed?.Invoke();
         }
     }
@@ -103,8 +126,14 @@ public class BasketDisplay : MonoBehaviour
         {
             isOpen = false;
             playerMovement.SetFrozen(false);
-            cameraTransition.TransitionToPlayer();
+            ReturnToPlayer();
         }
+    }
+
+    private void ReturnToPlayer()
+    {
+        isReturning = true;
+        cameraTransition.TransitionToPlayer(duration: closeDuration);
     }
     //logica de spawneo del item en el canasto: usa el modelo crudo del ítem escalado por basketScale
     public void Drop(ItemData item)

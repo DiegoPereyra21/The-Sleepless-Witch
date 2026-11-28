@@ -61,8 +61,8 @@ public class ScreenIris : MonoBehaviour
             Mathf.Max(center.x - area.xMin, area.xMax - center.x),
             Mathf.Max(center.y - area.yMin, area.yMax - center.y)).magnitude;
 
-        // Cuadrático: se achica rápido de lejos y se demora al cerrarse sobre el personaje
-        radius = open * (1f - amount) * (1f - amount);
+        // Suave en las dos puntas: arranca y termina sin tirones
+        radius = open * (1f - Mathf.SmoothStep(0f, 1f, amount));
         outerRadius = open * 1.1f + EdgeSoftness * 2f;
         overlay.MarkDirtyRepaint();
     }

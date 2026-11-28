@@ -23,7 +23,7 @@ public class DoorPassage : MonoBehaviour
     [SerializeField] private Transform hinge;
     [SerializeField, Range(0f, 150f)] private float openAngle = 100f;
     [Tooltip("Segundos que tarda en abrirse o cerrarse")]
-    [SerializeField, Min(0.05f)] private float swingTime = 0.45f;
+    [SerializeField, Min(0.05f)] private float swingTime = 0.6f;
 
     // Pose cerrada de cada pieza y hacia dónde va la hoja desde la bisagra
     private Vector3[] closedPositions;
