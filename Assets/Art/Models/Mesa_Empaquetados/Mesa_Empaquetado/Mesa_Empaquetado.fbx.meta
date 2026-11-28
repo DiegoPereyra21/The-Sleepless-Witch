@@ -1,0 +1,110 @@
+fileFormatVersion: 2
+guid: 48bdbaccd7981a42f50e8ac99e40f8f8
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Acero
+    second: {fileID: 2100000, guid: 62c678f0c5bc7871a9881140d8d66f00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Carton
+    second: {fileID: 2100000, guid: dd9b074bc5df185a869f38caa92d12e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_CartonInterior
+    second: {fileID: 2100000, guid: 3184e7d44140e9ef3361ee626d4b176d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Cera
+    second: {fileID: 2100000, guid: 6ed9feb28f6824b9939a50bbc3564609, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Ceramica
+    second: {fileID: 2100000, guid: 86189d301f914ea7359ec438fee0f44e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Cordel
+    second: {fileID: 2100000, guid: 9569fdafda0eda91676b5dee43382f8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Etiqueta
+    second: {fileID: 2100000, guid: c352b535df5d125142f16e9f451b8290, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hierro
+    second: {fileID: 2100000, guid: ad80f11389ca24c51b94eac3b21fcb97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Laton
+    second: {fileID: 2100000, guid: bb5fdf0c04de48d32057bf41e1cb8553, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_MaderaCuerpo
+    second: {fileID: 2100000, guid: 31589b7900ae96924bb987ad2dfcb096, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_MaderaFrente
+    second: {fileID: 2100000, guid: a299cf472b2f36c751a52bd5e88d27ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_MaderaMarco
+    second: {fileID: 2100000, guid: f40bce42b5c25389bee3b6af4cf9329f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_MaderaMesada
+    second: {fileID: 2100000, guid: 0a094952dcb1566089502a4418f1cab4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_PapelKraft
+    second: {fileID: 2100000, guid: 3b724baff0cf14585e03cdd5ae3036b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Pluma
+    second: {fileID: 2100000, guid: 52eef93ad90e42b4379abaf36ea38496, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_PlumaGris
+    second: {fileID: 2100000, guid: b18cb1cf917bcc12355680a86eb1f62b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Tinta
+    second: {fileID: 2100000, guid: 3b7a85c8ceb4aa6b637167e56c538915, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Vela
+    second: {fileID: 2100000, guid: 886503535ceed74659b25cb8703685ed, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    animationType: 0
+  globalScale: 1
+  useFileScale: 1
+  importBlendShapes: 0
+  importCameras: 0
+  importLights: 0
+  generateSecondaryUV: 0
+  userData: 
